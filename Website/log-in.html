@@ -8,6 +8,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <!-- Font Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Tinos -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tinos&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="/Website/css/log-in.css" />
     <title>INTROWEAR</title>
   </head>
@@ -46,26 +57,46 @@
     <!-- NOI DUNG -->
     <div class="content">
       <div class="login-container">
-        <div class="login-title">TÀI KHOẢN CỦA TÔI</div>
-        <div class="login-subtitle">
+        <div class="login-title font-tinos">TÀI KHOẢN CỦA TÔI</div>
+        <div class="login-subtitle font-tinos">
           Đăng nhập ngay để nhận các ưu đãi độc quyền
         </div>
         <div class="login-options">
-          <div class="login-choice">ĐĂNG NHẬP</div>
-          <div class="register-choice">ĐĂNG KÝ</div>
+          <div id="login-page" class="login-choice font-tinos">ĐĂNG NHẬP</div>
+          <div id="register-page" class="register-choice font-tinos">ĐĂNG KÝ</div>
         </div>
-        <form action="#" class="login-form">
-          <div><input type="email" class="login-email" /></div>
-          <div><input type="password" class="login-password" /></div>
-          <div>Quên mật khẩu?</div>
-          <div><input type="submit" value="ĐĂNG NHẬP" /></div>
-        </form>
-        <div>Hoặc</div>
-        <div class="login-with-google">
-          <img src="/Website/assets/images/" alt="">ĐĂNG NHẬP GOOGLE
-        </div>
-        <div class="login-with-facebook">
-          <i class="fab fa-facebook-f"></i>ĐĂNG NHẬP FACEBOOK
+        <div class="login-form-container">
+          <form action="#" class="login-form">
+            <div class="form-group">
+              <input type="email" id="login-email" placeholder="Email *" />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Password"
+              />
+            </div>
+            <div class="forget-password">
+              <a class="font-tinos" href="#">Quên mật khẩu?</a>
+            </div>
+            <input type="submit" class="font-inter" value="ĐĂNG NHẬP" />
+          </form>
+          <div class="font-tinos">Hoặc</div>
+          <div class="login-with-google font-inter item-size">
+            <div class="logo-google">
+              <img
+                src="/Website/assets/images/logo-google.png"
+                alt="logo-google"
+                width="18px"
+              />
+            </div>
+            <a href="#" class="btn-google font-inter btn-link">ĐĂNG NHẬP GOOGLE</a>
+          </div>
+          <div class="login-with-facebook font-inter item-size">
+            <div class="logo-facebook"><i class="fa-brands fa-facebook" style="color: #ffffff; width: 18px;"></i></div>
+            <a href="#" class="btn-facebook font-inter btn-link">ĐĂNG NHẬP FACEBOOK</a>
+          </div>
         </div>
       </div>
     </div>
