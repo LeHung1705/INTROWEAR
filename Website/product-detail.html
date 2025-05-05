@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Website/css/main.css" />
+    <link rel="stylesheet" href="/Website/css/product-detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Font Tinos -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tinos&display=swap"
+      rel="stylesheet"
+    />
+    <title>INTROWEAR</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header-main">
+      <div class="header-top">
+        <div class="logo">
+          <img src="./assets/images/logo.png" alt="logo" />
+        </div>
+        <div class="header-actions">
+          <div class="search-bar">
+            <input type="text" placeholder="Search" />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+          <div class="icons">
+            <i class="fas fa-user user-icon"></i>
+            <i class="fas fa-shopping-cart cart-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <nav>
+          <ul>
+            <li><a href="#">HOMEPAGE</a></li>
+            <li class="dropdown">
+              <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+              <!-- Bạn có thể thêm dropdown menu ở đây nếu cần -->
+            </li>
+            <li><a href="#">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- NOI DUNG -->
+    <div class="content">
+      <div class="product-detail-container">
+        <div class="product-detail-container-item1">
+          <div class="slider-wrapper">
+            <div class="btn-slider">
+              <button onclick="scrollUp()">
+                <i class="fa fa-chevron-up"></i>
+              </button>
+            </div>
+            <div class="slider-viewport">
+              <div class="slider-inner" id="slider-inner">
+                <div class="slider-item" id="slider-item1">
+                  <img
+                    src="/Admin/asset/images/avt.png"
+                    alt="ex"
+                    width="93px"
+                  />
+                </div>
+                <div class="slider-item" id="slider-item1">
+                  <img
+                    src="/Admin/asset/images/avt.png"
+                    alt="ex"
+                    width="93px"
+                  />
+                </div>
+                <div class="slider-item" id="slider-item1">
+                  <img
+                    src="/Admin/asset/images/avt.png"
+                    alt="ex"
+                    width="93px"
+                  />
+                </div>
+                <div class="slider-item" id="slider-item1">
+                  <img
+                    src="/Admin/asset/images/avt.png"
+                    alt="ex"
+                    width="93px"
+                  />
+                </div>
+                <div class="slider-item" id="slider-item1">
+                  <img
+                    src="/Admin/asset/images/avt.png"
+                    alt="ex"
+                    width="93px"
+                  />
+                </div>
+                <div class="slider-item" id="slider-item1">
+                  <img
+                    src="/Admin/asset/images/avt.png"
+                    alt="ex"
+                    width="93px"
+                  />
+                </div>
+                <div class="slider-item" id="slider-item1">
+                  <img
+                    src="/Admin/asset/images/avt.png"
+                    alt="ex"
+                    width="93px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="btn-slider">
+              <button onclick="scrollDown()">
+                <i class="fa fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-images">
+            <img src="/Admin/asset/images/avt.png" alt="ex" width="100%" />
+          </div>
+        </div>
+        <div class="product-detail-container-item2">
+          <div class="product-name">
+            <span>MEO MEO MEO MEO MEO MEO SAHUR</span>
+          </div>
+          <div class="product-price">
+            <div class="product-price-item1">
+              <span class="font-tinos" style="font-size: 20px; font-weight: 200"
+                >500,000₫</span
+              >
+            </div>
+            <div class="product-price-item2">
+              <span
+                class="font-tinos"
+                style="
+                  font-size: 16px;
+                  color: #979797;
+                  font-weight: 200;
+                  text-decoration: line-through;
+                "
+                >1,000,000₫</span
+              >
+            </div>
+            <div class="product-price-item3">
+              <span
+                class="font-tinos"
+                style="font-size: 16px; color: red; font-weight: 300"
+                >50%</span
+              >
+            </div>
+          </div>
+          <div class="product-price-save">
+            <span class="font-tinos" style="font-size: 16px; font-weight: 200"
+              >(Tiết kiệm 500,000₫)</span
+            >
+          </div>
+          <div class="product-size-container">
+            <span class="font-tinos" style="font-size: 16px; font-weight: 200"
+              >Màu sắc</span
+            >
+            <div class="product-color">
+              <div class="product-color-item">
+                <div id="product-color-1"></div>
+              </div>
+              <div class="product-color-item">
+                <div id="product-color-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-size-container">
+            <span class="font-tinos" style="font-size: 16px; font-weight: 200"
+              >Kich thước</span
+            >
+            <div class="product-size">
+              <div id="product-size-M" class="product-size-item">M</div>
+              <div id="product-size-L" class="product-size-item">L</div>
+              <div id="product-size-XL" class="product-size-item">XL</div>
+            </div>
+          </div>
+          <button class="buy-now">
+            <span class="font-tinos" style="font-size: 16px; font-weight: 200"
+              >MUA NGAY</span
+            >
+          </button>
+          <button class="add-to-cart">
+            <span class="font-tinos" style="font-size: 16px; font-weight: 200"
+              >THÊM VÀO GIỎ</span
+            >
+          </button>
+          <div class="product-description">
+            <button class="product-description-item">
+              <span
+                class="font-tinos"
+                style="font-size: 16px; color: black; font-weight: 300"
+                >Thông tin sản phẩm</span
+              >
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="product-description-item-content">
+              <p>
+                meo meo mèo méo meo mẹo mẽo meo meo mèo méo meo mẹo mẽo meo meo
+                mèo méo meo mẹo mẽo meo meo mèo méo meo mẹo mẽomeo meo mèo méo
+                meo mẹo mẽo meo meo mèo méo meo mẹo mẽo
+              </p>
+            </div>
+            <button class="product-description-item">
+              <span
+                class="font-tinos"
+                style="font-size: 16px; color: black; font-weight: 300"
+                >Kích thước</span
+              >
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="product-description-item-content">
+              <img src="/Admin/asset/images/avt.png" alt="ex" width="100%" />
+            </div>
+            <button class="product-description-item">
+              <span
+                class="font-tinos"
+                style="font-size: 16px; color: black; font-weight: 300"
+                >Chính sách giao hàng</span
+              >
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="product-description-item-content">
+              <p>
+                meo meo mèo méo meo mẹo mẽo meo meo mèo méo meo mẹo mẽo meo meo
+                mèo méo meo mẹo mẽo meo meo mèo méo meo mẹo mẽomeo meo mèo méo
+                meo mẹo mẽo meo meo mèo méo meo mẹo mẽo
+              </p>
+            </div>
+            <button class="product-description-item">
+              <span
+                class="font-tinos"
+                style="font-size: 16px; color: black; font-weight: 300"
+                >Chính sách đổi trả</span
+              >
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="product-description-item-content">
+              <p>
+                meo meo mèo méo meo mẹo mẽo meo meo mèo méo meo mẹo mẽo meo meo
+                mèo méo meo mẹo mẽo meo meo mèo méo meo mẹo mẽomeo meo mèo méo
+                meo mẹo mẽo meo meo mèo méo meo mẹo mẽo
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-suggest"></div>
+      <div class="product-watched"></div>
+    </div>
+    <script src="/Website/js/product-detail.js"></script>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <!-- Top section of footer -->
+      <div class="footer__top">
+        <div class="footer__container-wide">
+          <div class="footer__row">
+            <!-- Certificate -->
+            <div class="footer__certificate footer__col">
+              <a href="#" target="_blank">
+                <img
+                  src="//theme.hstatic.net/200000677367/1001276449/14/dathongbao.png?v=2486"
+                  alt="Bộ công thương"
+                />
+              </a>
+            </div>
+
+            <!-- Contact information -->
+            <div class="footer__contact footer__col">
+              <div class="contact-list">
+                <p class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span
+                    ><strong>Địa chỉ:</strong><br />
+                    METUB TOWER, số 35/2 Nguyễn Văn Hưởng, Phường Thảo Điền, TP.
+                    Thủ Đức, TP. Hồ Chí Minh.</span
+                  >
+                </p>
+
+                <p class="contact-item">
+                  <i class="fas fa-building"></i>
+                  <span
+                    ><strong>Công ty:</strong><br />
+                    CÔNG TY CỔ PHẦN VIETNAM NEW LIFESTYLE INCUBATION</span
+                  >
+                </p>
+
+                <p class="contact-item">
+                  <i class="fas fa-file-alt"></i>
+                  <span><strong>MST: </strong> 0316416910</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="footer__phone footer__col">
+              <p class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span
+                  ><strong>Điện thoại:</strong><br />
+                  0877.534.588 (Zalo)</span
+                >
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div class="footer__email footer__col">
+              <p class="contact-item">
+                <i class="far fa-envelope"></i>
+                <span><strong>Email:</strong> contact@soustate.com</span>
+              </p>
+            </div>
+
+            <!-- Social media links -->
+            <div class="footer__social footer__col">
+              <ul class="social-list">
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Facebook"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Tiktok"
+                    ><i class="fab fa-tiktok"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="YouTube"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Instagram"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom section of footer (copyright) -->
+      <div class="footer__bottom">
+        <!-- Policy links -->
+        <div class="footer__policy">
+          <ul class="policy-list">
+            <li class="policy-item"><a href="#">Giới thiệu</a></li>
+            <li class="policy-item"><a href="#">Điều khoản dịch vụ</a></li>
+            <li class="policy-item"><a href="#">Phương thức thanh toán</a></li>
+            <li class="policy-item">
+              <a href="#">Chính sách vận chuyển & đổi trả</a>
+            </li>
+            <li class="policy-item"><a href="#">Liên hệ</a></li>
+            <li class="policy-item">
+              <a href="#">Chính sách thu thập và xử lý dữ liệu cá nhân</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__container">
+          <p class="footer__copyright">
+            Copyright © 2025 <a href="#">INTROWEAR</a>. Powered by
+            <a href="#" target="_blank">TEAM INTROWEAR</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
