@@ -9,25 +9,28 @@
     .header-main {
         border-bottom: 1px solid #000;
     }
-
+    
     .header-top {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 150px;
+        padding: 10px 20px;
         border-bottom: 6px solid #000;
     }
-
+    
     .logo img {
-        width: 220px;
+        height: auto;
+        width: 150px;
+        margin-left: 140px;
     }
-
+    
     .header-actions {
         display: flex;
         align-items: center;
         gap: 15px;
+        margin-right: 140px;
     }
-
+    
     .search-bar {
         display: flex;
         align-items: center;
@@ -35,49 +38,59 @@
         border-radius: 20px;
         padding: 5px 10px;
     }
-
+    
     .search-bar input {
         border: none;
         outline: none;
         padding: 5px;
         width: 150px;
     }
-
+    
     .search-icon {
         font-size: 16px;
-        color: #000; /* Màu đen */
+        color: #000;
     }
-
+    
     .icons {
         display: flex;
         gap: 10px;
     }
-
-    .user-icon, .cart-icon {
+    
+    .user-icon,
+    .cart-icon {
         font-size: 20px;
         cursor: pointer;
-        color: #000; /* Màu đen */
+        color: #000;
     }
-
+    
+    .header-bottom {
+        padding: 10px 20px;
+    }
+    
     .header-bottom nav ul {
         list-style: none;
         display: flex;
+        gap: 20px;
     }
-
+    
     .header-bottom nav ul li {
         display: inline;
-        padding: 18px 50px;
     }
-
+    
     .header-bottom nav ul li a {
         text-decoration: none;
         color: #000;
-        font-size: 14px;
-
+        font-size: 10px;
     }
-
-    .header-bottom nav ul li:hover {
-        background-color: #f1f1f1;
+    
+    
+    
+    .hamburger-menu {
+        display: none; /* Ẩn trên desktop */
+    }
+    
+    .header-bottom.responsive-nav {
+        display: block; /* Hiển thị menu trên desktop */
     }
 
     /* FOOTER */
@@ -213,47 +226,75 @@
         }
         
         .header-top {
-            padding: 10px 20px; 
-            flex-wrap: wrap; 
+            justify-content: space-between; 
         }
     
-        .logo h1 {
-            font-size: 20px; 
+        .logo {
+            margin-left: 0; 
         }
     
-        .header-actions {
-            gap: 10px; 
+        .hamburger-menu {
+            display: block; 
+            font-size: 24px;
+            cursor: pointer;
         }
     
-        .search-bar {
-            flex: 1; 
-            max-width: 120px; 
-        }
-    
-        .search-bar input {
+        .header-bottom.responsive-nav {
+            display: none; 
             width: 100%; 
-            padding: 3px; 
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            background-color: #f9f9f9; 
+            z-index: 10; 
+            padding: 10px 20px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
         }
     
-        .search-icon {
-            font-size: 14px; 
-        }
-    
-        .user-icon, .cart-icon {
-            font-size: 16px; 
-        }
-    
-        .header-bottom nav ul {
+        .header-bottom.responsive-nav nav ul {
             flex-direction: column; 
+            align-items: flex-start; 
             gap: 10px; 
-            text-align: center; 
         }
     
-        .header-bottom nav ul li {
+        .header-bottom.responsive-nav nav ul li {
             display: block; 
         }
     
-        .header-bottom nav ul li a {
-            font-size: 12px; 
+        .header-bottom.responsive-nav nav ul li a {
+            font-size: 16px; 
+            padding: 8px 0; 
+            display: block; 
+        }
+    
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 0; 
+        }
+    
+        .search-bar {
+            border: none;
+            padding: 0;
+            margin-left: 10px;
+        }
+    
+        .search-bar input {
+            display: none; 
+        }
+    
+       
+        .header-actions .fa-search {
+            order: -1; 
+        }
+    
+       
+        .header-actions .fa-user {
+            order: 1;
+        }
+    
+        .header-actions .cart-wrapper {
+            order: 2;
         }
     }
