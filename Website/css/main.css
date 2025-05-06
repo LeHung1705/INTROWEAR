@@ -91,7 +91,10 @@
     
     .header-bottom.responsive-nav {
         display: block; /* Hiển thị menu trên desktop */
-    }
+        width: calc(100% - 270px); /* 20px mỗi bên */
+        margin: 0 auto;
+        }
+
 
     /* FOOTER */
     /* Footer Container */
