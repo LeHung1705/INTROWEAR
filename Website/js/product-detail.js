@@ -71,4 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  // Hide the product watched item if it has no src
+  const watchedItems = document.querySelectorAll(".product-watched-item");
+  watchedItems.forEach(item => {
+    const img = item.querySelector("img");
+    if (img && img.getAttribute("src") === "") {
+      item.style.display = "none";
+    }
+  });
 });
