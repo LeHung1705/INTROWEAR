@@ -58,7 +58,7 @@
 
 .slider-inner {
   width: 105px;
-  height: auto;
+  height: 548px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +85,7 @@
 
 .product-detail-container-item2 {
   width: 49%;
-  
+
   gap: 10px;
   display: flex;
   flex-direction: column;
@@ -112,23 +112,31 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
+
+.product-color-item:hover {
+  border: black 2px solid;
+}
 #product-color-1 {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
+  border: none;
   border-radius: 50%;
   background-color: #c70606;
+  cursor: pointer;
 }
 #product-color-2 {
-  width: 27px;
-  height: 27px;
+  width: 20px;
+  height: 20px;
+  border: none;
   border-radius: 50%;
   background-color: #5837ee;
+  cursor: pointer;
 }
 
 .product-size-container {
@@ -180,25 +188,46 @@
 }
 
 .product-description {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .product-description-item {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 47.5px;
-    background-color: #ffffff;
-    border: none;
-    border-bottom: 2px solid black;
-    cursor: pointer;
-
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 47.5px;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 2px solid black;
+  cursor: pointer;
 }
 .product-description-item-content {
-    display: none;
+  display: none;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .product-detail-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .product-detail-container-item1 {
+    width: 95%;
+    height: auto;
+  }
+  .product-detail-container-item2 {
+    width: 95%;
+    height: auto;
+  }
+  .slider-viewport {
+    width: 100%;
+  }
+  .slider-inner {
+    width: 100%;
+  }
 }
