@@ -90,8 +90,10 @@
     }
     
     .header-bottom.responsive-nav {
-        display: block; /* Hiển thị menu trên desktop */
-    }
+        display: block; 
+        width: calc(100% - 270px);
+        margin: 0 auto;
+        }
 
     /* FOOTER */
     /* Footer Container */
