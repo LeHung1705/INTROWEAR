@@ -1,3 +1,7 @@
+* {
+  font-family: sans-serif;
+}
+
 .content {
   display: flex;
   flex: 1;
@@ -17,11 +21,7 @@
 }
 
 .font-inter {
-  font-family: "Inter", sans-serif;
-}
-
-.font-tinos {
-  font-family: "Tinos", serif;
+  border-radius: 5px;
 }
 
 .login-title {
