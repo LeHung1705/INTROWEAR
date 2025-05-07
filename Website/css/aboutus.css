@@ -1,0 +1,138 @@
+/* Reset */
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #ffffff;
+    color: #000;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Breadcrumb */
+  .breadcrumb-bar {
+    background-color: #f3f3f3;
+    padding: 12px 0;
+  }
+  
+  .breadcrumb-text {
+    font-size: 0.9rem;
+    color: #999;
+    font-family: sans-serif;
+    padding-left: 20px;
+  }
+  
+  /* Page heading */
+  .page-heading {
+    padding: 40px 0 20px;
+    background-color: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .page-heading h1 {
+    font-size: 1.5rem;
+    color: #222;
+  }
+  
+  /* Logo chữ INTROWEAR */
+  .intro-text-logo {
+    display: block;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    margin-left: 30px;
+    margin-top: -50px;
+  }
+  
+  /* Banner Matching */
+  .banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
+  
+  /* Main Section */
+  .intro-main {
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #ffffff;
+    line-height: 2;
+  }
+  
+  /* Final Section */
+  .intro-final {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.8;
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #fff;
+  }
+  
+  /* Logo cuối trang */
+  .intro-logo {
+    width: 600px;
+    margin-bottom: 1.5rem;
+    padding: 30px 0;
+  }
+  /*responsive*/
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 10px;
+    }
+  
+    .breadcrumb-bar {
+      padding: 10px 0;
+    }
+  
+    .breadcrumb-text {
+      padding-left: 10px;
+      font-size: 0.8rem;
+    }
+  
+    .page-heading {
+      padding: 20px 10px;
+      text-align: center;
+    }
+  
+    .page-heading h1 {
+      font-size: 1.2rem;
+    }
+  
+    .intro-text-logo,
+    .intro-logo {
+      width: 90%;
+      margin: 0 auto;
+      padding: 15px 0;
+      margin-top: 0;
+    }
+  
+    .banner {
+      width: 100%;
+      padding-bottom: 20px;
+    }
+  
+    .intro-main,
+    .intro-final {
+      font-size: 0.95rem;
+      padding: 20px 10px;
+      line-height: 1.6;
+    }
+  }
+  

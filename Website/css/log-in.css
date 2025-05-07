@@ -3,8 +3,9 @@
   flex: 1;
   text-align: center;
   justify-content: center;
-  height: 100vh;
+  height: auto;
   width: 100%;
+  padding-bottom: 40px;
 }
 
 .font-inter {
@@ -44,38 +45,57 @@
 }
 
 .login-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: none;
   border-bottom: solid 3px black;
+  background-color: white;
   width: 35%;
   padding-bottom: 10px;
   cursor: pointer;
 }
 
 .register-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: none;
+  background-color: white;
   border-bottom: solid 3px rgb(148, 143, 143);
   width: 35%;
   padding-bottom: 10px;
   cursor: pointer;
 }
 
+.register-choice:hover {
+  border-bottom: solid 3px black;
+}
+
 .login-form-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 55%;
   height: 60%;
   border: solid 1px #d0d1d2;
   border-radius: 1px;
   gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 464px;
 }
 
 .login-form {
+  height: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 50%;
   gap: 25px;
-  margin-top: 40px;
 }
 
 .form-group {
@@ -126,7 +146,7 @@ input[type="submit"]:hover {
     display: flex;
     align-items: center;
     background-color: #ffcad4;
-    margin-top: 10px;
+    border: none;
 }
 
 .login-with-google .logo-google {
@@ -156,8 +176,8 @@ input[type="submit"]:hover {
 .login-with-facebook {
     display: flex;
     align-items: center;
+    border: none;
     background-color: #1a77f2;
-    margin-top: 10px;
 }
 
 .login-with-facebook .logo-facebook {
@@ -181,6 +201,20 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 768px) {
+  .login-container {
+    width: 80%;
+  }
+
+  .login-form-container {
+    width: 100%;
+  }
+
+  .login-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
   .login-container {
     width: 90%;
   }
