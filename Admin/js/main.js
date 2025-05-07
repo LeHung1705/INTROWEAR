@@ -3,7 +3,7 @@ function redirectToManageProductPage() {
 }
 
 function redirectToCSOPage() {
-  window.location.href = "/Admin/cso.html";
+  window.location.href = "#";
 }
 
 function redirectToAddProductPage() {
