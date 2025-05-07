@@ -6,7 +6,7 @@
   }
   
   body {
-    font-family: 'Times New Roman', serif;
+    font-family: sans-serif;
     background-color: #ffffff;
     color: #000;
     line-height: 1.6;
@@ -27,7 +27,7 @@
   .breadcrumb-text {
     font-size: 0.9rem;
     color: #999;
-    font-family: 'Times New Roman', serif;
+    font-family: sans-serif;
     padding-left: 20px;
   }
   
