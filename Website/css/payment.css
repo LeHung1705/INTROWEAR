@@ -15,9 +15,8 @@
 
 .checkout-main {
     flex: 0 0 55%;
-    max-width: 55%;
-    padding: 30px 40px 40px 80px;
-    width: 100%; 
+    max-width: 54%;
+    padding: 30px 20px 20px 80px;
 }
 
 .checkout-logo {
@@ -220,9 +219,8 @@ select.form-input {
 
 /* SIDEBAR */
 .checkout-sidebar {
-    flex: 0 0 45%;
-    max-width: 45%;
-    width: 100%; 
+    flex: 0 0 43%;
+    max-width: 42%;
     background-color: #f7f7f7;
     padding: 20px;
     border-left: 1px solid #ababab;

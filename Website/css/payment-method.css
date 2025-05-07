@@ -16,9 +16,8 @@
 
     .checkout-main {
         flex: 0 0 55%;
-        max-width: 55%;
-        padding: 30px 40px 40px 80px;
-        width: 100%; 
+        max-width: 54%;
+        padding: 30px 20px 20px 80px;
     }
 
     .checkout-logo {
@@ -108,15 +107,12 @@
       .payment-options {
         border: 1px solid #ddd;
         border-radius: 8px;
-        padding: 10px 0;
-        max-width: 600px;
-        font-family: sans-serif;
       }
       
       .payment-option {
         display: flex;
         align-items: center;
-        padding: 15px 20px;
+        padding: 7px 10px;
         border-top: 1px solid #eee;
         position: relative;
         cursor: pointer;
@@ -132,7 +128,6 @@
         border-top: none;
       }
       
-      
       .payment-option input[type="radio"] {
         appearance: none;
         -webkit-appearance: none;
@@ -145,8 +140,7 @@
         position: relative;
         cursor: pointer;
       }
-      
-      
+          
       .payment-option input[type="radio"]:checked {
         background-color: #3498db;
       }
@@ -206,9 +200,8 @@
     
     /* SIDEBAR */
     .checkout-sidebar {
-        flex: 0 0 45%;
-        max-width: 45%;
-        width: 100%; 
+        flex: 0 0 43%;
+        max-width: 42%;
         background-color: #f7f7f7;
         padding: 20px;
         border-left: 1px solid #ababab;
@@ -221,7 +214,7 @@
       }
       
       .checkout-summary {
-        padding: 20px;
+        padding: 0px;
       }
 
       .visually-hidden {
