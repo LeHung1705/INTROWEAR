@@ -45,17 +45,33 @@
 }
 
 .login-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: none;
   border-bottom: solid 3px black;
+  background-color: white;
   width: 35%;
   padding-bottom: 10px;
   cursor: pointer;
 }
 
 .register-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: none;
+  background-color: white;
   border-bottom: solid 3px rgb(148, 143, 143);
   width: 35%;
   padding-bottom: 10px;
   cursor: pointer;
+}
+
+.register-choice:hover {
+  border-bottom: solid 3px black;
 }
 
 .login-form-container {
@@ -130,6 +146,7 @@ input[type="submit"]:hover {
     display: flex;
     align-items: center;
     background-color: #ffcad4;
+    border: none;
 }
 
 .login-with-google .logo-google {
@@ -159,6 +176,7 @@ input[type="submit"]:hover {
 .login-with-facebook {
     display: flex;
     align-items: center;
+    border: none;
     background-color: #1a77f2;
 }
 
