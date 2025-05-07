@@ -23,17 +23,30 @@ function scrollUp() {
 document.addEventListener('DOMContentLoaded', () => {
   // Display product description item content when click on product description item
   const coll = document.getElementsByClassName('product-description-item');
-  for (let i = 0; i < coll.length; i++) {
-    coll[i].addEventListener('click', function () {
-      this.classList.toggle('active');
-      const content = this.nextElementSibling;
-      if (content.style.display === 'block') {
-        content.style.display = 'none';
-      } else {
-        content.style.display = 'block';
+for (let i = 0; i < coll.length; i++) {
+  coll[i].addEventListener('click', function () {
+    const content = this.nextElementSibling;
+    const isCurrentlyOpen = content.style.display === 'block';
+
+    // Đóng tất cả các content khác
+    for (let j = 0; j < coll.length; j++) {
+      coll[j].classList.remove('active');
+      const otherContent = coll[j].nextElementSibling;
+      if (otherContent && otherContent.style.display === 'block') {
+        otherContent.style.display = 'none';
       }
-    });
-  }
+    }
+
+    // Nếu content hiện tại đang mở, đóng nó; nếu không, mở nó
+    if (isCurrentlyOpen) {
+      this.classList.remove('active');
+      content.style.display = 'none';
+    } else {
+      this.classList.add('active');
+      content.style.display = 'block';
+    }
+  });
+}
 
   // Display product size item is selected when click on product size item
   const sizeItems = document.querySelectorAll('.product-size-item');
