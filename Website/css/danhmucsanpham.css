@@ -8,6 +8,7 @@
  width: calc(100% - 300px); /* 20px mỗi bên */
     margin: 0 auto;
     margin-bottom: 40px;
+    margin-top:20px;
 }
 
 .breadcrumb a {
@@ -212,4 +213,5 @@
 }
 .filter-section {
     display: none; /* Ẩn hoàn toàn filter section */
+}
 }
