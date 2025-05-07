@@ -62,8 +62,8 @@
           Đăng nhập ngay để nhận các ưu đãi độc quyền
         </div>
         <div class="login-options">
-          <div id="login-page" class="login-choice font-tinos">ĐĂNG NHẬP</div>
-          <div id="register-page" class="register-choice font-tinos">ĐĂNG KÝ</div>
+          <button id="login-page" class="login-choice font-tinos">ĐĂNG NHẬP</button>
+          <button id="register-page" class="register-choice font-tinos" onclick="redirectToRegisterPage()">ĐĂNG KÝ</button>
         </div>
         <div class="login-form-container">
           <form action="#" class="login-form">
@@ -83,7 +83,7 @@
             <input type="submit" class="font-inter" value="ĐĂNG NHẬP" />
           </form>
           <div class="font-tinos">Hoặc</div>
-          <div class="login-with-google font-inter item-size">
+          <button class="login-with-google font-inter item-size">
             <div class="logo-google">
               <img
                 src="/Website/assets/images/logo-google.png"
@@ -91,12 +91,12 @@
                 width="18px"
               />
             </div>
-            <a href="#" class="btn-google font-inter btn-link">ĐĂNG NHẬP GOOGLE</a>
-          </div>
-          <div class="login-with-facebook font-inter item-size">
+            <span class="btn-google font-inter btn-link">ĐĂNG NHẬP GOOGLE</span>
+          </button>
+          <button class="login-with-facebook font-inter item-size">
             <div class="logo-facebook"><i class="fa-brands fa-facebook" style="color: #ffffff; width: 18px;"></i></div>
-            <a href="#" class="btn-facebook font-inter btn-link">ĐĂNG NHẬP FACEBOOK</a>
-          </div>
+            <span class="btn-facebook font-inter btn-link">ĐĂNG NHẬP FACEBOOK</span>
+          </button>
         </div>
       </div>
     </div>
@@ -217,5 +217,7 @@
         </div>
       </div>
     </footer>
+    <script src="/Website/js/log-in.js"></script>
+    <script src="/Website/js/main.js"></script>
   </body>
 </html>

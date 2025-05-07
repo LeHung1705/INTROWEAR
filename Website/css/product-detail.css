@@ -12,7 +12,7 @@
 
 .product-detail-container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   height: auto;
   display: flex;
   margin-top: 20px;
@@ -183,6 +183,10 @@
   cursor: pointer;
 }
 
+.buy-now:active {
+  background-color: #f5f5f5;
+}
+
 .add-to-cart {
   width: 100%;
   height: 47.5px;
@@ -193,6 +197,10 @@
   color: white;
   border: 1px solid black;
   cursor: pointer;
+}
+
+.add-to-cart:active {
+  background-color: #1b1b1b;
 }
 
 .product-description {
@@ -263,7 +271,7 @@
 
 .product-suggest-container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -277,7 +285,7 @@
   height: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   
 }
 .product-suggest-title {
@@ -333,7 +341,7 @@
 
 .product-watched-container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -347,7 +355,7 @@
   height: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
 }
 
 .product-watched-title {
@@ -362,7 +370,7 @@
 
 .product-watched-item {
   width: 23%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
