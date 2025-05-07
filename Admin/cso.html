@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/Admin/css/main.css" />
+    <link rel="stylesheet" href="/Admin/css/cso.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-left">
+        <i class="fas fa-bars"></i>
+        <img src="/Admin/asset/images/logo.png" alt="INTROWEAR" />
+      </div>
+      <section class="header-right">
+        <img src="/Admin/asset/images/avt.png" alt="avt" />
+        <p>ADMIN</p>
+      </section>
+    </header>
+
+    <div class="container">
+      <div class="main">
+        <nav class="sidebar">
+          <button class="nav-button" onclick="redirectToManageProductPage()">
+            MANAGE PRODUCT
+          </button>
+          <button class="nav-button" onclick="redirectToCSOPage()">
+            CONFIRM STATUS ORDER
+          </button>
+          <button class="nav-button" onclick="redirectToAddProductPage()">
+            ADD PRODUCT
+          </button>
+          <button class="nav-button" onclick="redirectToUpdateProductPage()">
+            UPDATE PRODUCT
+          </button>
+          <button class="nav-button" onclick="redirectToCreateCouponPage()">
+            CREATE COUPON
+          </button>
+        </nav>
+
+        <div class="content">
+          <h1>CONFIRM STATUS ORDER</h1>
+
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th>UserID</th>
+                <th>OrderID</th>
+                <th>Tổng mức giá</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>3hud78jwg21</td>
+                <td>875000.00</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="actions">
+            <button class="action-btn">Xác nhận đơn hàng</button>
+            <button class="action-btn cancel">Huỷ đơn hàng</button>
+          </div>
+
+          <div class="pagination">
+            <button class="page">1</button>
+            <button class="page">2</button>
+            <button class="page">3</button>
+            <button class="page">4</button>
+            <button class="page">5</button>
+            <button class="page">6</button>
+            <button class="page">7</button>
+            <button class="page">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/Admin/js/main.js"></script>
+  </body>
+</html>
+<script>
+  document.querySelector(".action-btn").addEventListener("click", function () {
+    alert("Đơn hàng đã được xác nhận!");
+  });
+
+  document
+    .querySelector(".action-btn.cancel")
+    .addEventListener("click", function () {
+      const confirmCancel = confirm("Bạn có chắc muốn huỷ đơn hàng này không?");
+      if (confirmCancel) {
+        alert("Đơn hàng đã bị huỷ.");
+      }
+    });
+</script>
