@@ -1,5 +1,3 @@
-
-/* Breadcrumb */
 .breadcrumb {
     font-size: 14px;
     color: #666;
@@ -11,6 +9,7 @@
     margin-top:20px;
 }
 
+
 .breadcrumb a {
     color: #666;
     text-decoration: none;
@@ -19,8 +18,8 @@
 .breadcrumb span {
     color: #666;
 }
-
 /* Main layout */
+
 .container {
     display: flex;
     gap: 20px;
@@ -28,6 +27,7 @@
     margin: 0 auto;
 }
 
+/* Filter section */
 /* Filter section */
 .filter-section {
     width: 200px;
@@ -56,22 +56,21 @@
     color: #333;
     font-size: 14px;
 }
-
 /* Product list */
 .product-list {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-bottom: 40px;
 }
 
 .product-item {
     position: relative;
     background-color: #fff;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    border: none; /* Bỏ viền */
-    overflow: hidden;
+   
 }
 
 .product-item .image-container {
@@ -156,62 +155,35 @@
     height: 15px;
     border-radius: 50%;
 }
-/* Pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #00f;
-}
-
-.pagination a {
-    text-decoration: none;
-    color: #000;
-    font-size: 16px;
-    padding: 5px 10px;
-}
-
-.pagination a:hover {
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-
-.pagination .arrow {
-    font-size: 20px;
-    color: #000;
-}
 @media (max-width: 768px) {
 
-.product-list {
-    grid-template-columns: repeat(2, 1fr); /* Thay đổi số cột thành 2 */
-}
-
-/* Có thể cần điều chỉnh thêm khoảng cách giữa các sản phẩm */
-.product-list {
-    gap: 10px; /* Giảm khoảng cách nếu cần */
-}
-
-.product-item {
-    /* Có thể cần điều chỉnh padding hoặc margin của mỗi sản phẩm */
-    padding: 10px;
-}
-
-.product-item .image-container {
-    height: 150px; /* Điều chỉnh chiều cao ảnh cho phù hợp */
-    margin-bottom: 5px;
-}
-
-.product-item h4 {
-    font-size: 12px; /* Điều chỉnh kích thước chữ tiêu đề */
-}
-
-.product-item .price {
-    font-size: 12px; /* Điều chỉnh kích thước chữ giá */
-}
-.filter-section {
-    display: none; /* Ẩn hoàn toàn filter section */
-}
-}
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Thay đổi số cột thành 2 */
+    }
+    
+    /* Có thể cần điều chỉnh thêm khoảng cách giữa các sản phẩm */
+    .product-list {
+        gap: 10px; /* Giảm khoảng cách nếu cần */
+    }
+    
+    .product-item {
+        /* Có thể cần điều chỉnh padding hoặc margin của mỗi sản phẩm */
+        padding: 10px;
+    }
+    
+    .product-item .image-container {
+        height: 150px; /* Điều chỉnh chiều cao ảnh cho phù hợp */
+        margin-bottom: 5px;
+    }
+    
+    .product-item h4 {
+        font-size: 12px; /* Điều chỉnh kích thước chữ tiêu đề */
+    }
+    
+    .product-item .price {
+        font-size: 12px; /* Điều chỉnh kích thước chữ giá */
+    }
+    .filter-section {
+        display: none; /* Ẩn hoàn toàn filter section */
+    }
+    }
