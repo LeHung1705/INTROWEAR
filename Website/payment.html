@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Website/css/payment.css">
+    <script src="/Website/js/payment.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>INTROWEAR - Trang thanh toán</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="wrap">
+          <a href="/" class="logo">
+            <h1 class="logo-text">INTROWEAR</h1>
+          </a>
+        </div>
+      </div>
+
+    <div class="checkout-wrapper">
+        <div class="checkout-main">
+            <div class="checkout-header">
+                <h1 class="checkout-logo">INTROWEAR</h1>
+          
+            <ul class="checkout-steps">
+                <li class="checkout-step"><a href="#">Giỏ hàng</a></li>
+                <li class="checkout-step checkout-step-current">Thông tin giao hàng</li>
+                <li class="checkout-step checkout-step-disabled">Phương thức thanh toán</li>
+            </ul>
+            </div>
+            
+            <h2 class="checkout-section-title">Thông tin giao hàng</h2>
+          
+            <p class="checkout-login-text">
+              Bạn đã có tài khoản? <a href="#">Đăng nhập</a>
+            </p>
+          
+            <form autocomplete="off" class="checkout-form">
+              <div class="form-group">
+                <input type="text" id="fullName" class="form-input" placeholder=" " required>
+                <label for="fullName" class="form-label">Họ và tên</label>
+              </div>
+    
+              <div class="form-group form-group-row-1">
+                <div class="form-group">
+                  <input type="email" id="email" class="form-input" placeholder=" " required>
+                  <label for="email" class="form-label">Email</label>
+                </div>
+                  
+                <div class="form-group">
+                  <input type="tel" id="phone" class="form-input" placeholder=" " required>
+                  <label for="phone" class="form-label">Số điện thoại</label>
+                </div>
+              </div>
+    
+              <div class="form-group">
+                <input type="text" id="address" class="form-input" placeholder=" " required>
+                <label for="address" class="form-label">Địa chỉ</label>
+              </div>            
+    
+              <div class="form-group form-group-row">
+                <div class="form-group">
+                  <select id="province" class="form-input checkout-select-location" placeholder=" " required>
+                    <option selected> Chọn Tỉnh / thành </option>
+                    <option>TP.HCM</option>
+                    <option>Hà Nội</option>
+                  </select>
+                  <label for="province" class="form-label">Tỉnh / thành</label>
+                </div>
+
+                <div class="form-group">
+                  <select id="district" class="form-input checkout-select-location" placeholder=" " required>
+                    <option selected> Chọn Quận / huyện </option>
+                    <option value="q1">Quận 1</option>
+                    <option value="q2">Quận 2</option>
+                  </select>
+                  <label for="district" class="form-label">Quận / huyện</label>
+                </div>
+
+                <div class="form-group">
+                  <select id="ward" class="form-input checkout-select-location" placeholder=" " required>
+                    <option selected> Chọn Phường / xã </option>
+                    <option value="p1">Phường 1</option>
+                    <option value="p2">Phường 2</option>
+                  </select>
+                  <label for="ward" class="form-label">Phường / xã</label>
+                </div>
+              </div>
+              
+              <div class="checkout-buttons">
+                <a href="#" class="back-to-cart">Giỏ hàng</a>
+                <button type="button" class="continue-btn" onclick="redirectToPaymentPage()">Tiếp tục đến phương thức thanh toán</button>
+              </div>
+            </form>
+          
+            <div class="checkout-powered">Powered by Team INTROWEAR</div>
+        </div>
+        
+        <div class="toggle-summary-link" onclick="toggleSummary()">
+            <i class="fa-solid fa-cart-shopping"></i> 
+            <span class="toggle-summary-text">Ẩn thông tin đơn hàng</span>
+        </div>
+        
+        <div class="checkout-sidebar">
+            <div class="checkout-sidebar-content">
+                <div class="checkout-summary">
+                <h2 class="visually-hidden">Thông tin đơn hàng</h2>
+          
+                <div class="checkout-summary-sections">
+          
+                  <!-- List product -->
+                  <div class="checkout-summary-section checkout-summary-product-list">
+                    <table class="checkout-product-table">
+                      <thead>
+                        <tr>
+                          <th scope="col"><span class="visually-hidden">Hình ảnh</span></th>
+                          <th scope="col"><span class="visually-hidden">Mô tả</span></th>
+                          <th scope="col"><span class="visually-hidden">Số lượng</span></th>
+                          <th scope="col"><span class="visually-hidden">Giá</span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="checkout-product-row">
+                          <td class="checkout-product-image-cell">
+                            <div class="checkout-product-thumbnail">
+                              <div class="checkout-product-thumbnail-wrapper">
+                                <img class="checkout-product-thumbnail-image" src="//product.hstatic.net/200000677367/product/7_ao_dai_do_32723ab387944e908365f43c98cdd94d_small.jpg" alt="Áo dài">
+                              </div>
+                              <span class="checkout-product-quantity-badge">1</span>
+                            </div>
+                          </td>
+                          <td class="checkout-product-description-cell">
+                            <span class="checkout-product-name checkout-summary-bold">“ÁO DÀI” BOXY LONG-SLEEVE T-SHIRT</span>
+                            <span class="checkout-product-variant checkout-summary-small-text">Red Tet / M</span>
+                          </td>
+                          <td class="checkout-product-quantity-cell visually-hidden">1</td>
+                          <td class="checkout-product-price-cell">
+                            <span class="checkout-summary-bold">309,000₫</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+                  <!-- Mã giảm giá -->
+                  <div class="checkout-summary-section checkout-summary-discount">
+                    <form class="checkout-fieldset" method="post">
+                      <div class="checkout-field">
+                        <div class="checkout-field-input-btn-wrapper">
+                          <div class="checkout-field-input-wrapper">
+                            <label class="checkout-label" for="discount-code">Mã giảm giá</label>
+                            <input id="discount-code" name="discount.code" placeholder="Mã giảm giá" class="checkout-input" type="text">
+                          </div>
+                          <button type="submit" class="checkout-input-btn checkout-btn">
+                            <span class="checkout-btn-text">Sử dụng</span>
+                            <i class="checkout-btn-spinner"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+          
+                  <!-- Tổng tiền -->
+                  <div class="checkout-summary-section checkout-summary-totals checkout-payment-lines">
+                    <table class="checkout-total-table">
+                      <thead>
+                        <tr>
+                          <th scope="col"><span class="visually-hidden">Mô tả</span></th>
+                          <th scope="col"><span class="visually-hidden">Giá</span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="checkout-total-line checkout-total-subtotal">
+                          <td class="checkout-total-line-name">Tạm tính</td>
+                          <td class="checkout-total-line-price">
+                            <span class="checkout-summary-bold">309,000₫</span>
+                          </td>
+                        </tr>
+                        <tr class="checkout-total-line checkout-total-shipping">
+                          <td class="checkout-total-line-name">Phí vận chuyển</td>
+                          <td class="checkout-total-line-price">
+                            <span class="checkout-summary-bold">—</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr class="checkout-total-line">
+                          <td class="checkout-total-line-name checkout-payment-due-label">
+                            <span class="checkout-payment-due-label-total">Tổng cộng</span>
+                          </td>
+                          <td class="checkout-payment-due">
+                            <span class="checkout-payment-due-currency">VND</span>
+                            <span class="checkout-payment-due-price">309,000₫</span>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+          
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+      
+</body>
+</html>
