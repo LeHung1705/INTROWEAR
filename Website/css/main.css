@@ -81,16 +81,15 @@
     text-decoration: none;
     color: #000;
     font-size: 10px;
-
 }
 
 .hamburger-menu {
-    display: none; /* Ẩn trên desktop */
+    display: none;
 }
 
 .header-bottom.responsive-nav {
-    display: block; /* Hiển thị menu trên desktop */
-    width: calc(100% - 300px); /* 20px mỗi bên */
+    display: block;
+    width: calc(100% - 300px);
     margin: 0 auto;
 }
 
@@ -236,7 +235,7 @@
         }
         .search-bar {
             margin-right: auto;
-            margin-left: 10px;
+            margin-left: 5%;
         }
         .logo {
             position: absolute;
@@ -245,7 +244,7 @@
         }
         .logo img {
             margin-left: 0;
-            width: 120px;
+            width: 30%;
         }
         .header-actions {
             margin-right: 0;
