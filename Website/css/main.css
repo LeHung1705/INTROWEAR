@@ -37,6 +37,8 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     padding: 5px 10px;
+    margin-left: auto; /* đẩy nó sang phải */
+  margin-right: 5px;
 }
 
 .search-bar input {
@@ -235,7 +237,7 @@
         }
         .search-bar {
             margin-right: auto;
-            margin-left: 5%;
+            margin-left: 5px;
         }
         .logo {
             position: absolute;
@@ -244,7 +246,7 @@
         }
         .logo img {
             margin-left: 0;
-            width: 30%;
+            width: 150px;
         }
         .header-actions {
             margin-right: 0;
@@ -257,5 +259,8 @@
         .header-bottom.responsive-nav.open {
             display: block; /* Hiển thị menu khi toggle class 'open' */
         }
+        .search-bar input {
+            display:none;
     
     }
+}
