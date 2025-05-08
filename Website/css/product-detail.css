@@ -308,6 +308,7 @@
   box-shadow: 0px 0px 5px #acabab;
   gap: 10px;
   cursor: pointer;
+  min-width: 150px;
 }
 
 .product-suggest-item:hover {
@@ -326,7 +327,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: bold;
 }
 .product-suggest-item-price {
@@ -378,6 +379,7 @@
   background-color: #ffffff;
   box-shadow: 0px 0px 5px #acabab;
   gap: 10px;
+  min-width: 150px;
   cursor: pointer;
 }
 
@@ -398,7 +400,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: bold;
 }
 
@@ -431,5 +433,21 @@
   }
   .slider-inner {
     width: 100%;
+  }
+
+  .product-suggest-item {
+    width: 30%;
+  }
+
+  #product-suggest-item-4 {
+    display: none;
+  }
+
+  .product-watched-item {
+    width: 30%;
+  }
+
+  #product-watched-item-4 {
+    display: none;
   }
 }
