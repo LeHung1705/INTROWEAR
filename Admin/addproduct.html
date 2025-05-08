@@ -32,12 +32,23 @@
     <div class="container">
         <div class="main">
           <nav class="sidebar">
-            <button class="nav-button">MANAGE PRODUCT</button>
-            <button class="nav-button">CONFIRM STATUS ORDER</button>
-            <button class="nav-button">ADD PRODUCT</button>
-            <button class="nav-button">UPDATE PRODUCT</button>
-            <button class="nav-button" id="create-coupon">CREATE COUPON</button>
+            <button class="nav-button" onclick="redirectToManageProductPage()">
+              MANAGE PRODUCT
+            </button>
+            <button class="nav-button" onclick="redirectToCSOPage()">
+              CONFIRM STATUS ORDER
+            </button>
+            <button class="nav-button current-button" onclick="redirectToAddProductPage()">
+              ADD PRODUCT
+            </button>
+            <button class="nav-button" onclick="redirectToUpdateProductPage()">
+              UPDATE PRODUCT
+            </button>
+            <button class="nav-button" id="create-coupon" onclick="redirectToCreateCouponPage()">
+              CREATE COUPON
+            </button>
           </nav>
+          
           <div class="content">
             <!-- Add Product Form -->
             <div class="add-product-form">
@@ -188,5 +199,6 @@
           </div>
         </div>
       </footer>
+      <script src="/Admin/js/main.js"></script>
     </body>
   </html>

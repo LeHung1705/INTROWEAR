@@ -12,11 +12,21 @@
   <div class="container">
     <div class="main">
       <nav class="sidebar">
-        <button class="nav-button">MANAGE PRODUCT</button>
-        <button class="nav-button">CONFIRM STATUS ORDER</button>
-        <button class="nav-button">ADD PRODUCT</button>
-        <button class="nav-button">UPDATE PRODUCT</button>
-        <button class="nav-button">CREATE COUPON</button>
+        <button class="nav-button" onclick="redirectToManageProductPage()">
+          MANAGE PRODUCT
+        </button>
+        <button class="nav-button current-button" onclick="redirectToCSOPage()">
+          CONFIRM STATUS ORDER
+        </button>
+        <button class="nav-button" onclick="redirectToAddProductPage()">
+          ADD PRODUCT
+        </button>
+        <button class="nav-button" onclick="redirectToUpdateProductPage()">
+          UPDATE PRODUCT
+        </button>
+        <button class="nav-button" onclick="redirectToCreateCouponPage()">
+          CREATE COUPON
+        </button>
       </nav>
 
       <div class="content">
@@ -71,3 +81,5 @@
       }
     });
   </script>
+
+  <script src="/Admin/js/main.js"></script>
