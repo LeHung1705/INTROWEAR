@@ -8,7 +8,6 @@
   
   .manage-product {
     width: 100%;
-    max-width: 1200px; 
   }
 
     .title {
@@ -39,7 +38,7 @@
   .product-table {
     justify-content: center;
     width: 100%;
-    max-width: 620px;  
+    max-width: 60%;  
     margin: 0 auto;
     text-align: left;
     border-collapse: separate;   
@@ -87,7 +86,7 @@
   }
   
   .pagination-wrapper {
-    max-width: 620px;    
+    max-width: 60%;    
     margin: 0 auto;      
   }
   

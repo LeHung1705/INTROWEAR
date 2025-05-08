@@ -1,14 +1,13 @@
-    /* UPDATE PRODUCT  */
+  /* UPDATE PRODUCT  */
     .content {
         display: flex;
         justify-content: center; 
         padding: 20px;
         flex: 1; 
     }
-  
+
     .update-product {
         width: 100%;
-        max-width: 1200px; 
     }
 
     .update-title {
