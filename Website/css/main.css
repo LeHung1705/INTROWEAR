@@ -37,6 +37,8 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     padding: 5px 10px;
+    margin-left: auto; /* đẩy nó sang phải */
+  margin-right: 5px;
 }
 
 .search-bar input {
@@ -81,16 +83,15 @@
     text-decoration: none;
     color: #000;
     font-size: 10px;
-
 }
 
 .hamburger-menu {
-    display: none; /* Ẩn trên desktop */
+    display: none;
 }
 
 .header-bottom.responsive-nav {
-    display: block; /* Hiển thị menu trên desktop */
-    width: calc(100% - 300px); /* 20px mỗi bên */
+    display: block;
+    width: calc(100% - 300px);
     margin: 0 auto;
 }
 
@@ -236,7 +237,7 @@
         }
         .search-bar {
             margin-right: auto;
-            margin-left: 10px;
+            margin-left: 5px;
         }
         .logo {
             position: absolute;
@@ -245,7 +246,7 @@
         }
         .logo img {
             margin-left: 0;
-            width: 120px;
+            width: 150px;
         }
         .header-actions {
             margin-right: 0;
@@ -258,5 +259,8 @@
         .header-bottom.responsive-nav.open {
             display: block; /* Hiển thị menu khi toggle class 'open' */
         }
+        .search-bar input {
+            display:none;
     
     }
+}
