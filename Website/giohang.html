@@ -3,15 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giỏ hàng</title>
-<<<<<<< HEAD
-  <link rel="stylesheet" href="/Website/css/main.css">
-    <link rel="stylesheet" href="/Website/css/giohang.css">
-=======
    <link rel="stylesheet" href="/Website/css/main.css">
     <link rel="stylesheet" href="/Website/css/giohang.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
->>>>>>> 33a16a8485e7b003d2cce0ce6cc74c428459c125
 </head>
 <body>
   <!-- Breadcrumb -->
@@ -36,7 +30,7 @@
         <div class="total-label">TỔNG CỘNG</div>
         <div class="total-price">0<span class="underline">đ</span></div>
       </div>
-      <button class="checkout-btn">Thanh Toán</button>
+      <button type="button" class="finish-btn" onclick="redirectToPaymentPage()">Thanh toán</button>
     </div>
   </div>
 
@@ -45,5 +39,10 @@
     <h2>SẢN PHẨM BẠN CÓ THỂ THÍCH</h2>
     <!-- Thêm sản phẩm gợi ý ở đây -->
   </div>
+  <script>
+    function redirectToPaymentPage() {
+      window.location.href = "/Website/payment.html";
+    }
+  </script>
 </body>
 </html>
