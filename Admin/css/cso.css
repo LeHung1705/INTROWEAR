@@ -20,36 +20,6 @@
     flex: 1;
   }
   
-  /* Sidebar */
-  .sidebar {
-    width: 220px;
-    background-color: white;
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    border-right: 1px solid #ccc;
-  }
-  
-  .nav-button {
-    padding: 18px 12px;
-    background-color: #ccc;
-    border: none;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-    white-space: nowrap;
-  }
-  
-  .nav-button:hover,
-  .nav-button.active {
-    background-color: #3399ff;
-    color: white;
-  }
-  
   /* Content */
   .content {
     flex: 1;

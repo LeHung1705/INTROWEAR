@@ -5,11 +5,16 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
+
 .checkout-wrapper {
     background-color: #ffffff;
     display: flex;
     width: 100%;
-    max-width: 1200px;
+    min-height: 100vh;
     margin: 0;
     gap: 40px;
 }
