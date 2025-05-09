@@ -34,12 +34,12 @@
     <div class="header-bottom">
       <nav>
         <ul>
-          <li><span class="nav-link" onclick="goToHomePage()">HOMEPAGE</span></li>
-          <li class="dropdown">
-            <span class="nav-link">SHOP <i class="fa fa-chevron-down"></i></span>
-            <!-- Bạn có thể thêm dropdown menu ở đây nếu cần -->
-          </li>
-          <li><span class="nav-link" onclick="goToAboutPage()">ABOUT US</span></li>
+          <li><a href="/Website/index.html">HOMEPAGE</a></li>
+  <li class="dropdown">
+    <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+    <!-- Thêm dropdown menu nếu có -->
+  </li>
+  <li><a href="/Website/aboutus.html">ABOUT US</a></li>
         </ul>
       </nav>
     </div>
@@ -218,14 +218,6 @@
   <script src="/Website/js/aboutus.js"></script>
     <script src="/Website/js/main.js"></script>
     <script>
-      function goToHomePage() {
-    window.location.href = "/Website/trangchu.html"; 
-  }
-
-  function goToAboutPage() {
-    window.location.href = "/Website/aboutus.html"; 
-  }
-
       function redirectToRegisterPage() {
         window.location.href = "/Website/register.html"; 
       }
