@@ -20,33 +20,40 @@
     <!-- HEADER -->
     <header class="header-main">
       <div class="header-top">
-        <div class="logo">
-          <img src="./assets/images/logo.png" alt="logo" />
-        </div>
-        <div class="header-actions">
+          <div class="hamburger-menu">
+              <i class="fas fa-bars"></i>
+          </div>
+          <div class="logo">
+              <img src="/Website/assets/images/logo.png " alt="INTROWEAR Logo" class="logo-img">
+              <span class="logo-text"></span>
+          </div>
+          
           <div class="search-bar">
-            <input type="text" placeholder="Search" />
-            <i class="fas fa-search search-icon"></i>
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" placeholder="Search">
           </div>
-          <div class="icons">
-            <i class="fas fa-user user-icon"></i>
-            <i class="fas fa-shopping-cart cart-icon"></i>
+          <div class="header-actions">
+              <div class="icons">
+                  <i class="fas fa-user user-icon"></i>
+                  <div class="cart-wrapper">
+                      <i class="fas fa-shopping-cart cart-icon"></i>
+                      <span class="cart-count"></span>
+                  </div>
+              </div>
           </div>
-        </div>
+      
+  </div>
+      <div class="header-bottom responsive-nav">
+          <nav>
+              <ul>
+                  <li><a href="/Website/trangchu.html" id="homepageLink">HOMEPAGE</a></li>
+                  <li class="dropdown"><a href="/Website/trangchu.html">SHOP <i class="fas fa-chevron-down dropdown-icon"></i></a></li>
+                  <li><a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a></li>
+              </ul>
+          </nav>
       </div>
-      <div class="header-bottom">
-        <nav>
-          <ul>
-            <li><a href="#">HOMEPAGE</a></li>
-            <li class="dropdown">
-              <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
-              <!-- Bạn có thể thêm dropdown menu ở đây nếu cần -->
-            </li>
-            <li><a href="#">ABOUT US</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+     
+  </header>
 
     <!-- NOI DUNG -->
     <div class="content">
