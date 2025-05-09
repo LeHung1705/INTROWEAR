@@ -64,10 +64,20 @@
   }
   
   /* Main Section */
+
+  .intro-main span {
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #ffffff;
+    line-height: 2;
+  }
   .intro-main {
     font-size: 1rem;
     font-weight: bold;
-    font-style: italic;
+    transform: skewX(-10deg);
     padding: 30px 0;
     text-align: center;
     background-color: #ffffff;
