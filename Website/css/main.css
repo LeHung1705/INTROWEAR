@@ -37,7 +37,7 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     padding: 5px 10px;
-    margin-left: auto; /* đẩy nó sang phải */
+    margin-left: auto; 
   margin-right: 5px;
 }
 
@@ -93,6 +93,41 @@
     display: block;
     width: calc(100% - 300px);
     margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .header-top {
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #ccc;
+    }
+    .hamburger-menu {
+        display: block;
+        margin-right: 10px;
+    }
+    .search-bar {
+        margin-right: auto;
+        margin-left: 5px;
+        width:20%;
+    }
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .logo img {
+        margin-left: 0;
+        width: 150px;
+    }
+    .header-actions {
+        margin-right: 0;
+        gap: 5px;
+        justify-content: flex-end;
+    }
+    .header-bottom.responsive-nav {
+        display: none; 
+    }
+    .header-bottom.responsive-nav.open {
+        display: block; 
+    }
 }
 
     /* FOOTER */
@@ -226,41 +261,4 @@
         .footer__certificate img {
         width: 20%; 
         }
-        
-        .header-top {
-            padding: 0.5rem 1rem;
-            border-bottom: 1px solid #ccc;
-        }
-        .hamburger-menu {
-            display: block;
-            margin-right: 10px;
-        }
-        .search-bar {
-            margin-right: auto;
-            margin-left: 5px;
-        }
-        .logo {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .logo img {
-            margin-left: 0;
-            width: 150px;
-        }
-        .header-actions {
-            margin-right: 0;
-            gap: 5px;
-            justify-content: flex-end;
-        }
-        .header-bottom.responsive-nav {
-            display: none; /* Ẩn menu trên mobile mặc định */
-        }
-        .header-bottom.responsive-nav.open {
-            display: block; /* Hiển thị menu khi toggle class 'open' */
-        }
-        .search-bar input {
-            display:none;
-    
     }
-}
