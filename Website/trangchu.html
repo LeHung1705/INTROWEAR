@@ -21,20 +21,20 @@
           <i class="fas fa-search search-icon"></i>
         </div>
         <div class="icons">
-          <i class="fas fa-user user-icon"></i>
-          <i class="fas fa-shopping-cart cart-icon"></i>
+          <i class="fas fa-user user-icon" onclick="redirectToRegisterPage()"></i>
+          <i class="fas fa-shopping-cart cart-icon" onclick="redirectToCartPage()"></i>
         </div>
       </div>
     </div>
     <div class="header-bottom">
       <nav>
         <ul>
-          <li><a href="#">HOMEPAGE</a></li>
+          <li><a href="/Website/trangchu.html">HOMEPAGE</a></li>
           <li class="dropdown">
             <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
             <!-- Bạn có thể thêm dropdown menu ở đây nếu cần -->
           </li>
-          <li><a href="#">ABOUT US</a></li>
+          <li><a href="/Website/aboutus.html">ABOUT US</a></li>
         </ul>
       </nav>
     </div>
@@ -289,7 +289,16 @@
     </script>
     <script>
       function redirectToRedPage() {
-        window.location.href = "/Website/red.html";  
+        window.location.href = "/Website/RED.HTML";  
+      }
+    </script>
+    <script>
+      function redirectToRegisterPage() {
+        window.location.href = "/Website/register.html"; 
+      }
+    
+      function redirectToCartPage() {
+        window.location.href = "/Website/giohang.html"; 
       }
     </script>
 </body>
