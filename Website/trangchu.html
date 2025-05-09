@@ -161,7 +161,7 @@
     </div>
     <div class="register">
       <p>Đăng ký thành viên Soustate</p>
-      <a href="#" class="btn-register">ĐĂNG KÝ TÀI KHOẢN</a>
+      <button type="button" class="btn-register" onclick="redirectToRegisterPage()">ĐĂNG KÝ TÀI KHOẢN</button>
     </div>
   </section>
   <!-- FOOTER -->
@@ -282,6 +282,11 @@
   </footer>
   <script src="/Website/js/trangchu.js"></script>
     <script src="/Website/js/main.js"></script>
+    <script>
+      function redirectToRegisterPage() {
+        window.location.href = "/Website/register.html";  
+      }
+    </script>
 </body>
 </html>
 
