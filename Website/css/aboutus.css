@@ -6,22 +6,26 @@
     box-sizing: border-box;
   }
   
-  body {
+  
+  
+  .container {
+    width: calc(100% - 300px);
+    margin: 0 auto;
     background-color: #ffffff;
     color: #000;
     line-height: 1.6;
   }
   
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
   /* Breadcrumb */
+  .breadcrumb-bar-container {
+    width: 100%;
+    background-color: #f3f3f3;
+  }
   .breadcrumb-bar {
+    width: calc(100% - 300px);
     background-color: #f3f3f3;
     padding: 12px 0;
+    margin: 0 auto;
   }
   
   .breadcrumb-text {
@@ -64,6 +68,16 @@
   }
   
   /* Main Section */
+
+  .intro-main span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #ffffff;
+    line-height: 2;
+  }
   .intro-main {
     font-size: 1rem;
     font-weight: bold;
@@ -94,45 +108,16 @@
   /*responsive*/
   @media (max-width: 768px) {
     .container {
-      padding: 0 10px;
+        width: 90%;
     }
-  
+
+    br {
+        display: none;
+    }
+
     .breadcrumb-bar {
-      padding: 10px 0;
+        width: 90%;
     }
-  
-    .breadcrumb-text {
-      padding-left: 10px;
-      font-size: 0.8rem;
-    }
-  
-    .page-heading {
-      padding: 20px 10px;
-      text-align: center;
-    }
-  
-    .page-heading h1 {
-      font-size: 1.2rem;
-    }
-  
-    .intro-text-logo,
-    .intro-logo {
-      width: 90%;
-      margin: 0 auto;
-      padding: 15px 0;
-      margin-top: 0;
-    }
-  
-    .banner {
-      width: 100%;
-      padding-bottom: 20px;
-    }
-  
-    .intro-main,
-    .intro-final {
-      font-size: 0.95rem;
-      padding: 20px 10px;
-      line-height: 1.6;
-    }
+
   }
   
