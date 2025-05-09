@@ -1,68 +1,265 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ABOUT US - INTROWEAR</title>
-  <link rel="stylesheet" href="/Website/css/main.css">
-  <link rel="stylesheet" href="/Website/css/aboutus.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap&subset=vietnamese" rel="stylesheet">
-</head>
-<body>
-  <!-- Breadcrumb -->
-  <div class="breadcrumb-bar">
-    <div class="breadcrumb-text">
-      Trang chủ / <span>ABOUT US</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABOUT US - INTROWEAR</title>
+    <link rel="stylesheet" href="/Website/css/main.css" />
+    <link rel="stylesheet" href="/Website/css/aboutus.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap&subset=vietnamese"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header-main">
+      <div class="header-top">
+        <div class="hamburger-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">
+          <img
+            src="/Website/assets/images/logo.png "
+            alt="INTROWEAR Logo"
+            class="logo-img"
+          />
+          <span class="logo-text"></span>
+        </div>
+
+        <div class="search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+        <div class="header-actions">
+          <div class="icons">
+            <i class="fas fa-user user-icon"></i>
+            <div class="cart-wrapper">
+              <i class="fas fa-shopping-cart cart-icon"></i>
+              <span class="cart-count"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom responsive-nav">
+        <nav>
+          <ul>
+            <li>
+              <a href="/Website/trangchu.html" id="homepageLink">HOMEPAGE</a>
+            </li>
+            <li class="dropdown">
+              <a href="/Website/trangchu.html"
+                >SHOP <i class="fas fa-chevron-down dropdown-icon"></i
+              ></a>
+            </li>
+            <li>
+              <a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar-container">
+      <div class="breadcrumb-bar">
+        <div class="breadcrumb-text">Trang chủ / <span>ABOUT US</span></div>
+      </div>
     </div>
-  </div>
+    <div class="container">
+      <!-- Page Title -->
+      <div class="page-heading">
+        <h1>ABOUT US</h1>
+      </div>
 
-  <!-- Page Title -->
-  <div class="page-heading">
-    <h1>ABOUT US</h1>
-  </div>
+      <!-- Logo chữ INTROWEAR -->
+      <img
+        src="/Website/assets/images/logo_chu.png"
+        alt="INTROWEAR Text Logo"
+        class="intro-text-logo"
+      />
+      <!-- Banner ảnh Matching -->
+      <img
+        src="/Website/assets/images/anh_header_trangchu.png"
+        alt="INTROWEAR Banner"
+        class="banner"
+      />
 
-  <!-- Logo chữ INTROWEAR -->
-  <img src="/Website/assets/images/logo_chu.png" alt="INTROWEAR Text Logo" class="intro-text-logo">
-  <!-- Banner ảnh Matching -->
-  <img src="/Website/assets/images/anh_header_trangchu.png" alt="INTROWEAR Banner" class="banner">
+      <!-- Main Content -->
+      <main class="intro-main">
+        <span>Đây là INTROWEAR.</span>
+        <p>
+          Không chỉ là một thương hiệu, chúng tôi là một tập thể những người có
+          tư duy tự do lan tỏa<br />
+          trong cộng đồng sáng tạo bao gồm thời trang, âm nhạc, thể thao, văn
+          hóa đại chúng<br />
+          và nhiều lĩnh vực khác.<br />
+          Chúng tôi ở đây để truyền cảm hứng cho một thế hệ trẻ mới đang tìm
+          kiếm công cụ nghệ<br />
+          thuật để thể hiện bản thân – chúng tôi tin rằng sự cá nhân hóa nên
+          được tôn vinh thông<br />
+          qua việc chọn lọc có chủ đích những khoảnh khắc phong phú nhất<br />
+          trong cuộc sống hàng ngày, và biến chúng thành nghệ thuật.<br />
+          Nguyên lý cốt lõi của chúng tôi xoay quanh các khái niệm chính của một
+          thương hiệu thực<br />
+          sự “sáng tạo – chất & kết nối”; và nhờ đó, ghi lại những khoảnh
+          khắc<br />
+          phong phú nhất trong đời sống thường nhật, biến chúng thành nghệ thuật
+          đương đại.
+        </p>
+      </main>
 
-  <!-- Main Content -->
-  <main class="intro-main">
-    <span>Đây là INTROWEAR.</span>
-    <p>
-      Không chỉ là một thương hiệu, chúng tôi là một tập thể những người có tư duy tự do lan tỏa<br>
-      trong cộng đồng sáng tạo bao gồm thời trang, âm nhạc, thể thao, văn hóa đại chúng<br>
-      và nhiều lĩnh vực khác.<br>
-      Chúng tôi ở đây để truyền cảm hứng cho một thế hệ trẻ mới đang tìm kiếm công cụ nghệ<br>
-      thuật để thể hiện bản thân – chúng tôi tin rằng sự cá nhân hóa nên được tôn vinh thông<br>
-      qua việc chọn lọc có chủ đích những khoảnh khắc phong phú nhất<br>
-      trong cuộc sống hàng ngày, và biến chúng thành nghệ thuật.<br>
-      Nguyên lý cốt lõi của chúng tôi xoay quanh các khái niệm chính của một thương hiệu thực<br>
-      sự “sáng tạo – chất & kết nối”; và nhờ đó, ghi lại những khoảnh khắc<br>
-      phong phú nhất trong đời sống thường nhật, biến chúng thành nghệ thuật đương đại.
-    </p>
-  </main>
+      <!-- Final Intro Section -->
+      <section class="intro-final">
+        <img
+          src="/Website/assets/images/logo_trangchu.png"
+          alt="IntroWear Logo"
+          class="intro-logo"
+        />
 
-  <!-- Final Intro Section -->
-  <section class="intro-final">
-    <img src="/Website/assets/images/logo_trangchu.png" alt="IntroWear Logo" class="intro-logo">
+        <p>Chúng tôi sống để tạo nên những khoảnh khắc táo bạo</p>
+        <br />
+        <p>
+          Tại INTROWEAR, chúng tôi tin rằng mỗi khoảnh khắc trong đời đều có thể
+          trở thành<br />
+          một tác phẩm nghệ thuật – khi được nhìn qua lăng kính của sự sáng tạo
+          và bản lĩnh.<br />
 
-    <p>Chúng tôi sống để tạo nên những khoảnh khắc táo bạo</p>
-    <br>
-    <p>
-      Tại INTROWEAR, chúng tôi tin rằng mỗi khoảnh khắc trong đời đều có thể trở thành<br>
-      một tác phẩm nghệ thuật – khi được nhìn qua lăng kính của sự sáng tạo và bản lĩnh.<br>
+          Sứ mệnh của chúng tôi là đánh thức khả năng tự thể hiện và sự độc
+          đáo<br />
+          không sợ hãi trong mỗi con người.<br />
 
-      Sứ mệnh của chúng tôi là đánh thức khả năng tự thể hiện và sự độc đáo<br>
-      không sợ hãi trong mỗi con người.<br>
+          Từ những tuyên ngôn mạnh mẽ trên đường phố đến những phút giây trầm
+          lắng nội tâm,<br />
+          chúng tôi chuyển hóa trải nghiệm thường nhật thành những thiết kế vượt
+          thời gian –<br />
+          kết nối với văn hóa, cảm xúc và sự đổi mới thành nghệ thuật có thể
+          chạm tới.<br />
 
-      Từ những tuyên ngôn mạnh mẽ trên đường phố đến những phút giây trầm lắng nội tâm,<br>
-      chúng tôi chuyển hóa trải nghiệm thường nhật thành những thiết kế vượt thời gian –<br>
-      kết nối với văn hóa, cảm xúc và sự đổi mới thành nghệ thuật có thể chạm tới.<br>
+          Đây không chỉ là thời trang. Đây là một phong trào.<br />
+          Một tư duy. Một <span style="letter-spacing: 1px">INTROWEAR</span>.
+        </p>
+      </section>
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <!-- Top section of footer -->
+      <div class="footer__top">
+        <div class="footer__container-wide">
+          <div class="footer__row">
+            <!-- Certificate -->
+            <div class="footer__certificate footer__col">
+              <a href="#" target="_blank">
+                <img
+                  src="//theme.hstatic.net/200000677367/1001276449/14/dathongbao.png?v=2486"
+                  alt="Bộ công thương"
+                />
+              </a>
+            </div>
 
-      Đây không chỉ là thời trang. Đây là một phong trào.<br>
-      Một tư duy. Một <span style="letter-spacing: 1px;">INTROWEAR</span>.
-    </p>
-  </section>
-</body>
+            <!-- Contact information -->
+            <div class="footer__contact footer__col">
+              <div class="contact-list">
+                <p class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span
+                    ><strong>Địa chỉ:</strong><br />
+                    METUB TOWER, số 35/2 Nguyễn Văn Hưởng, Phường Thảo Điền, TP.
+                    Thủ Đức, TP. Hồ Chí Minh.</span
+                  >
+                </p>
+
+                <p class="contact-item">
+                  <i class="fas fa-building"></i>
+                  <span
+                    ><strong>Công ty:</strong><br />
+                    CÔNG TY CỔ PHẦN VIETNAM NEW LIFESTYLE INCUBATION</span
+                  >
+                </p>
+
+                <p class="contact-item">
+                  <i class="fas fa-file-alt"></i>
+                  <span><strong>MST: </strong> 0316416910</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="footer__phone footer__col">
+              <p class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span
+                  ><strong>Điện thoại:</strong><br />
+                  0877.534.588 (Zalo)</span
+                >
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div class="footer__email footer__col">
+              <p class="contact-item">
+                <i class="far fa-envelope"></i>
+                <span><strong>Email:</strong> contact@introwear.com</span>
+              </p>
+            </div>
+
+            <!-- Social media links -->
+            <div class="footer__social footer__col">
+              <ul class="social-list">
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Facebook"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Tiktok"
+                    ><i class="fab fa-tiktok"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="YouTube"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Instagram"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom section of footer (copyright) -->
+      <div class="footer__bottom">
+        <!-- Policy links -->
+        <div class="footer__policy">
+          <ul class="policy-list">
+            <li class="policy-item"><a href="./aboutus.html">Giới thiệu</a></li>
+            <li class="policy-item"><a href="#">Điều khoản dịch vụ</a></li>
+            <li class="policy-item"><a href="#">Phương thức thanh toán</a></li>
+            <li class="policy-item">
+              <a href="#">Chính sách vận chuyển & đổi trả</a>
+            </li>
+            <li class="policy-item"><a href="#">Liên hệ</a></li>
+            <li class="policy-item">
+              <a href="#">Chính sách thu thập và xử lý dữ liệu cá nhân</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__container">
+          <p class="footer__copyright">
+            Copyright © 2025 <a href="#">INTROWEAR</a>. Powered by
+            <a href="#" target="_blank">TEAM INTROWEAR</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/Website/js/main.js"></script>
+  </body>
 </html>
