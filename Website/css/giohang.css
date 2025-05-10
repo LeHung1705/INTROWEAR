@@ -118,6 +118,21 @@
     background-color: #595252; 
   }
   
+  .finish-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .finish-btn:hover {
+    background-color: #3e8e41;
+  }
   
   .suggested-products {
     margin-top: 40px;
