@@ -1,11 +1,11 @@
 * {
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
   body {
-    font-family: 'Times New Roman', serif;
     background-color: #fff;
     color: #000;
     padding: 20px;
@@ -14,19 +14,14 @@
   .breadcrumb-bar {
     background-color: #f3f3f3;
     padding: 12px 0;
-    width: 100vw; 
-    margin: 0; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    z-index: 10; 
+    width: 100%; 
+    margin: 0;  
     box-sizing: border-box; 
 }
 
 .breadcrumb-text {
     font-size: 0.9rem;
     color: #999;
-    font-family: 'Times New Roman', serif;
     padding-left: 20px; 
     margin: 0; 
 }
