@@ -11,20 +11,23 @@
     padding: 20px;
   }
   
+  .breadcrumb-bar-container {
+    width: 100%;
+    background-color: #f3f3f3;
+  }
   .breadcrumb-bar {
+    width: calc(100% - 300px);
     background-color: #f3f3f3;
     padding: 12px 0;
-    width: 100%; 
-    margin: 0;  
-    box-sizing: border-box; 
-}
-
-.breadcrumb-text {
+    margin: 0 auto;
+  }
+  
+  .breadcrumb-text {
     font-size: 0.9rem;
     color: #999;
-    padding-left: 20px; 
-    margin: 0; 
-}
+    font-family: sans-serif;
+    padding-left: 20px;
+  }
 
   .cart-container {
     display: flex;

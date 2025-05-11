@@ -59,11 +59,11 @@
      
   </header>
     <!-- Breadcrumb -->
-    <div class="breadcrumb-bar-container">
-      <div class="breadcrumb-bar">
-        <div class="breadcrumb-text">Trang chủ / <span>ABOUT US</span></div>
-      </div>
-    </div>
+     <div class="breadcrumb-bar">
+  <div class="breadcrumb-text">
+    <span id="breadcrumb-home" style="cursor: pointer;">Trang chủ</span> / <span>ABOUT US</span>
+  </div>
+</div>
     <div class="container">
       <!-- Page Title -->
       <div class="page-heading">
@@ -256,5 +256,11 @@
       </div>
     </footer>
     <script src="/Website/js/main.js"></script>
+    <script src="/Website/js/main.js"></script>
+    <script>
+  document.getElementById("breadcrumb-home").addEventListener("click", function () {
+    window.location.href = "/Website/trangchu.html";
+  });
+</script>
   </body>
 </html>

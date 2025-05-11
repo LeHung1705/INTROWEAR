@@ -53,10 +53,10 @@
   </header>
   <!-- Breadcrumb -->
   <div class="breadcrumb-bar">
-    <div class="breadcrumb-text">
-      Trang chủ / <span>Giỏ hàng (0)</span>
-    </div>
+  <div class="breadcrumb-text">
+    <span id="breadcrumb-home" style="cursor: pointer;">Trang chủ</span> / <span>Giỏ hàng (0)</span>
   </div>
+</div>
   <!-- Giỏ hàng -->
   <div class="cart-container">
     <h1>Giỏ hàng</h1>
@@ -203,5 +203,10 @@
     }
   </script>
     <script src="/Website/js/main.js"></script>
+    <script>
+  document.getElementById("breadcrumb-home").addEventListener("click", function () {
+    window.location.href = "/Website/trangchu.html";
+  });
+</script>
 </body>
 </html>
