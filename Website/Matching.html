@@ -16,8 +16,10 @@
                 <i class="fas fa-bars"></i>
             </div>
             <div class="logo">
+              <a href="/Website/trangchu.html">
                 <img src="/Website/assets/images/logo.png " alt="INTROWEAR Logo" class="logo-img">
                 <span class="logo-text"></span>
+                </a>
             </div>
             
             <div class="search-bar">
@@ -43,20 +45,21 @@
             <nav>
                 <ul>
                     <li><a href="/Website/trangchu.html" id="homepageLink">HOMEPAGE</a></li>
-                    <li class="dropdown"><a href="/Website/trangchu.html">SHOP <i class="fas fa-chevron-down dropdown-icon"></i></a></li>
+                    <li class="dropdown"><a href="/Website/trangchu.html">SHOP</a></li>
                     <li><a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a></li>
                 </ul>
             </nav>
+
         </div>
        
     </header>
    
      <!-- Breadcrumb -->
-     <div style="background-color:#f8f4f4">
-     <div class="breadcrumb">
-        <a href="/Website/trangchu.html">Trang chủ</a>/<a href="/Website/danhmucsanpham.html">Danh Mục</a>/<span>'MATCHING' new drops</span>
-    </div>
-    </div>
+      <div class="breadcrumb-bar">
+  <div class="breadcrumb-text">
+    <span id="breadcrumb-home" style="cursor: pointer;">Trang chủ</span> / <span id="breadcrumb-category" style="cursor: pointer;">Danh mục</span> Matching new drop</span>
+  </div>
+</div>
      <!-- Main container -->
      <div class="container">
         <!-- Filter section -->
@@ -235,5 +238,16 @@
         
             </footer>
             <script src="/Website/js/main.js"></script>
+             <script>
+  document.getElementById("breadcrumb-home").addEventListener("click", function () {
+    window.location.href = "/Website/trangchu.html";
+  });
+</script>
+<script>
+    document.getElementById("breadcrumb-category").addEventListener("click", function () {
+    window.location.href = "/Website/danhmucsanpham.html";
+  });
+</script>
+
         </body> 
         </html>
