@@ -9,72 +9,180 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/trangchu.css')}}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    @stack('styles')
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+    <!-- HEADER -->
+    <header class="header-main">
+        <div class="header-top">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+              <a href="/Website/trangchu.html">
+                <img src="{{ asset('/assets/images/logo.png')}} " alt="INTROWEAR Logo" class="logo-img">
+                <span class="logo-text"></span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="header-actions">
+                <div class="icons">
+                    <a href="/Website/log-in.html">
+                    <i class="fas fa-user user-icon"></i>
+                </a>
+                    <div class="cart-wrapper">
+                        <a href="/Website/giohang.html">
+                        <i class="fas fa-shopping-cart cart-icon"></i>
+                    </a>
+                        <span class="cart-count"></span>
+                    </div>
                 </div>
             </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+        
     </div>
-</body>
+        <div class="header-bottom responsive-nav">
+            <nav>
+                <ul>
+                    <li><a href="/Website/trangchu.html" id="homepageLink">HOMEPAGE</a></li>
+                    <li class="dropdown"><a href="/Website/trangchu.html">SHOP</a></li>
+                    <li><a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a></li>
+                </ul>
+            </nav>
+
+        </div>
+       
+    </header>
+
+    <!-- MAIN CONTENT -->
+    @yield('content')
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <!-- Top section of footer -->
+      <div class="footer__top">
+        <div class="footer__container-wide">
+          <div class="footer__row">
+            <!-- Certificate -->
+            <div class="footer__certificate footer__col">
+              <a href="#" target="_blank">
+                <img
+                  src="//theme.hstatic.net/200000677367/1001276449/14/dathongbao.png?v=2486"
+                  alt="Bộ công thương"
+                />
+              </a>
+            </div>
+
+            <!-- Contact information -->
+            <div class="footer__contact footer__col">
+              <div class="contact-list">
+                <p class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span
+                    ><strong>Địa chỉ:</strong><br />
+                    METUB TOWER, số 35/2 Nguyễn Văn Hưởng, Phường Thảo Điền, TP.
+                    Thủ Đức, TP. Hồ Chí Minh.</span
+                  >
+                </p>
+
+                <p class="contact-item">
+                  <i class="fas fa-building"></i>
+                  <span
+                    ><strong>Công ty:</strong><br />
+                    CÔNG TY CỔ PHẦN VIETNAM NEW LIFESTYLE INCUBATION</span
+                  >
+                </p>
+
+                <p class="contact-item">
+                  <i class="fas fa-file-alt"></i>
+                  <span><strong>MST: </strong> 0316416910</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="footer__phone footer__col">
+              <p class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span
+                  ><strong>Điện thoại:</strong><br />
+                  0877.534.588 (Zalo)</span
+                >
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div class="footer__email footer__col">
+              <p class="contact-item">
+                <i class="far fa-envelope"></i>
+                <span><strong>Email:</strong> contact@introwear.com</span>
+              </p>
+            </div>
+
+            <!-- Social media links -->
+            <div class="footer__social footer__col">
+              <ul class="social-list">
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Facebook"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Tiktok"
+                    ><i class="fab fa-tiktok"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="YouTube"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                </li>
+                <li class="social-item">
+                  <a href="#" target="_blank" aria-label="Instagram"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom section of footer (copyright) -->
+      <div class="footer__bottom">
+        <!-- Policy links -->
+        <div class="footer__policy">
+          <ul class="policy-list">
+            <li class="policy-item"><a href="./aboutus.html">Giới thiệu</a></li>
+            <li class="policy-item"><a href="#">Điều khoản dịch vụ</a></li>
+            <li class="policy-item"><a href="#">Phương thức thanh toán</a></li>
+            <li class="policy-item">
+              <a href="#">Chính sách vận chuyển & đổi trả</a>
+            </li>
+            <li class="policy-item"><a href="#">Liên hệ</a></li>
+            <li class="policy-item">
+              <a href="#">Chính sách thu thập và xử lý dữ liệu cá nhân</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__container">
+          <p class="footer__copyright">
+            Copyright © 2025 <a href="#">INTROWEAR</a>. Powered by
+            <a href="#" target="_blank">TEAM INTROWEAR</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="{{ asset('assets/js/main.js')}}"></script>
+    @stack('scripts')
+  </body>
 </html>
