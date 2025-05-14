@@ -13,13 +13,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('name'); 
+            $table->string('phone', 11)->unique(); 
+            $table->string('email')->unique(); 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+            $table->string('utype')->default('USR')->comment('ADM for Admin and USR for User or Customer');
+            $table->boolean('STATUS')->default(1); //1.hoạt động, 0.không hoạt động
+            $table->timestamps(); 
         });
+     
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
