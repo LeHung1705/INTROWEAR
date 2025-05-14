@@ -11,4 +11,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Xử lý đơn hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
