@@ -60,6 +60,33 @@
   .form-group button:hover {
     background-color: #555;
   }
+  #imgpreview {
+  width: 100%;
+  text-align: center;
+}
+#imgpreview img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+#galUpload {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+.gallery-preview {
+  max-width: 100px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+  
   @media (max-width: 768px) {
   
     .container {
@@ -77,4 +104,17 @@
     .form-group {
       margin-bottom: 1rem;
     }
+    .item.up-load {
+    padding: 0.75rem;
+    min-height: 100px;
+  }
+  .icon {
+    font-size: 1.2rem;
+  }
+  .body-text {
+    font-size: 0.8rem;
+  }
+  .gallery-preview {
+    max-width: 80px;
+  }
 }
