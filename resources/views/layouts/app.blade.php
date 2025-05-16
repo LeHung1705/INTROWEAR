@@ -41,8 +41,12 @@
                     <i class="fas fa-user user-icon"></i>
                 </a>
                     <div class="cart-wrapper">
-                        <a href="/Website/giohang.html">
-                        <i class="fas fa-shopping-cart cart-icon"></i>
+                        <a href="{{route('cart.index')}}">
+                        <i class="fas fa-shopping-cart cart-icon">
+                          @if(Cart::instance('cart')->content()->count() > 0)
+                          <sub>({{Cart::instance('cart')->content()->count()}})</sub>
+                          @endif
+                        </i>
                     </a>
                         <span class="cart-count"></span>
                     </div>

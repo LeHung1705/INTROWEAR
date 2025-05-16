@@ -1,14 +1,14 @@
-    <?php
+<?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
-    use Illuminate\Http\Request;
-    use Surfsidemedia\Shoppingcart\Facades\Cart; //
+use Illuminate\Http\Request;
+use Surfsidemedia\Shoppingcart\Facades\Cart; //
 
-    class CartController extends Controller
-    {
-        public function index(){
-            $items = Cart::instance('cart')->content();
-            return view('cart', compact('items'));
-        }
+class CartController extends Controller
+{
+    public function index(){
+        $items = Cart::instance('cart')->content();
+        return view('cart', compact('items'));
     }
+}
