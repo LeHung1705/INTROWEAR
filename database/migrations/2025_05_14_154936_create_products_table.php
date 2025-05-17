@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('price_sale', 15, 2)->nullable();
             $table->string('description');
             $table->integer('stock_quantity');
-            $table->enum('status_product',['còn hàng','hết hàng','ngừng kinh doanh']);
+            $table->enum('status_product',['conhang','hethang','ngungkinhdoanh']);
             $table->unsignedBigInteger('supplier_id')->nullable();
             $table->string('image');   
          });
