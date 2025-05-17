@@ -3,13 +3,11 @@
 .breadcrumb-bar-container {
     width: 100%;
     background-color: #f3f3f3;
-
   }
   .breadcrumb-bar {
     width: 100%;
     background-color: #f3f3f3;
     padding: 12px 20px;
-    
   }
   
   .breadcrumb-text {
@@ -34,7 +32,6 @@
     padding: 15px;
     border: 1px solid #ddd;
     height:200px;
-    margin-top: 25px;
 }
 
 .filter-section h3 {

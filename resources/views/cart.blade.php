@@ -1,9 +1,4 @@
 @extends('layouts.app')
-
-@push('styles')
-  <link rel="stylesheet" href="{{ asset('assets/css/giohang.css') }}" />
-@endpush
-
 @section('content')
   <!-- Breadcrumb -->
   <div class="breadcrumb-bar">
@@ -28,16 +23,15 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($items as $item)
             <tr>
               <td>
                 <div class="shopping-cart__product-item">
-                  <img loading="lazy" src="{{asset('uploads/products/thumbnails')}}/{{$item->model->image}}" width="120" height="120" alt="" />
+                  <img loading="lazy" src="assets/images/cart-item-1.jpg" width="120" height="120" alt="" />
                 </div>
               </td>
               <td>
                 <div class="shopping-cart__product-item__detail">
-                  <h4>{{$item->name()}}</h4>
+                  <h4>Zessi Dresses</h4>
                   <ul class="shopping-cart__product-item__options">
                     <li>Color: Yellow</li>
                     <li>Size: L</li>
@@ -45,7 +39,7 @@
                 </div>
               </td>
               <td>
-                <span class="shopping-cart__product-price">{{$item->price}}000VND</span>
+                <span class="shopping-cart__product-price">$99</span>
               </td>
               <td>
                 <div class="qty-control position-relative">
@@ -55,7 +49,7 @@
                 </div>
               </td>
               <td>
-                <span class="shopping-cart__subtotal">{{$item->subTotal()}}000VND</span>
+                <span class="shopping-cart__subtotal">$297</span>
               </td>
               <td>
                 <a href="#" class="remove-cart">
@@ -66,7 +60,80 @@
                 </a>
               </td>
             </tr>
-            @endforeach
+            <tr>
+              <td>
+                <div class="shopping-cart__product-item">
+                  <img loading="lazy" src="assets/images/cart-item-2.jpg" width="120" height="120" alt="" />
+                </div>
+              </td>
+              <td>
+                <div class="shopping-cart__product-item__detail">
+                  <h4>Kirby T-Shirt</h4>
+                  <ul class="shopping-cart__product-item__options">
+                    <li>Color: Yellow</li>
+                    <li>Size: L</li>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <span class="shopping-cart__product-price">$99</span>
+              </td>
+              <td>
+                <div class="qty-control position-relative">
+                  <input type="number" name="quantity" value="3" min="1" class="qty-control__number text-center">
+                  <div class="qty-control__reduce">-</div>
+                  <div class="qty-control__increase">+</div>
+                </div>
+              </td>
+              <td>
+                <span class="shopping-cart__subtotal">$297</span>
+              </td>
+              <td>
+                <a href="#" class="remove-cart">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="#767676" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z" />
+                    <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
+                  </svg>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="shopping-cart__product-item">
+                  <img loading="lazy" src="assets/images/cart-item-3.jpg" width="120" height="120" alt="" />
+                </div>
+              </td>
+              <td>
+                <div class="shopping-cart__product-item__detail">
+                  <h4>Cobleknit Shawl</h4>
+                  <ul class="shopping-cart__product-item__options">
+                    <li>Color: Yellow</li>
+                    <li>Size: L</li>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <span class="shopping-cart__product-price">$99</span>
+              </td>
+              <td>
+                <div class="qty-control position-relative">
+                  <input type="number" name="quantity" value="3" min="1" class="qty-control__number text-center">
+                  <div class="qty-control__reduce">-</div>
+                  <div class="qty-control__increase">+</div>
+                </div>
+              </td>
+              <td>
+                <span class="shopping-cart__subtotal">$297</span>
+              </td>
+              <td>
+                <a href="#" class="remove-cart">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="#767676" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z" />
+                    <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
+                  </svg>
+                </a>
+              </td>
+            </tr>
           </tbody>
         </table>
         <div class="cart-table-footer">
@@ -86,7 +153,7 @@
               <tbody>
                 <tr>
                   <th>Subtotal</th>
-                  <td>{{Cart::instance('cart')->subtotal()}}000VND</td>
+                  <td>$1300</td>
                 </tr>
                 <tr>
                   <th>Shipping</th>
@@ -96,7 +163,7 @@
                 </tr>
                 <tr>
                   <th>Total</th>
-                  <td>{{Cart::instance('cart')->total()}}</td>
+                  <td>$1319</td>
                 </tr>
               </tbody>
             </table>
@@ -111,10 +178,7 @@
       @else
         <div class="empty-cart">
             <h2>Giỏ hàng của bạn đang trống</h2>
-            <br>
             <p>Hãy thêm sản phẩm vào giỏ hàng để bắt đầu mua sắm!</p>
-            {{-- <a href="{{ route('shop.index') }}" style="display: inline-block; padding: 10px 20px; background-color: #17a2b8; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">Tiếp tục mua sắm</a> --}}
+            <a href="{{ route('home') }}" style="display: inline-block; padding: 10px 20px; background-color: #17a2b8; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">Tiếp tục mua sắm</a>
         </div>
-      @endif
-    </div>
 @endsection
