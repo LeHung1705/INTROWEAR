@@ -1,111 +1,111 @@
 * {
-  font-family: sans-serif
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-  }
-  
-  .banner {
+}
+
+.banner {
     width: 100vw;
     overflow: hidden;
     position: relative;
-  }
-  
-  .banner-image img {
+}
+
+.banner-image img {
     max-width: 100vw;
     height: auto;
     display: block;
     object-fit: cover;
-  }
-  .new-in {
+}
+.new-in {
     padding: 40px 20px;
     margin-left: 60px;
     font-size: 14px;
-  }
-  .product-row {
+}
+.product-row {
     display: flex;
-    flex-wrap: nowrap;          
+    flex-wrap: nowrap;
     gap: 40px;
-    padding-left: 40px;          
-    overflow: hidden;            
-  }
-  
-  .products {
+    padding-left: 40px;
+    overflow: hidden;
+}
+
+.products {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-  }
-  
-  .product {
+}
+
+.product {
     max-width: 200px;
     text-align: center;
     font-weight: bold;
-    flex-shrink: 0;  
-  }
-  
-  .product img {
+    flex-shrink: 0;
+}
+
+.product img {
     width: 100%;
     height: auto;
     object-fit: cover;
-  }
-  
-  .price {
+}
+
+.price {
     margin-top: 5px;
-  }
-  
-  .price .new {
+}
+
+.price .new {
     font-weight: bold;
-  }
-  
-  .price .old {
+}
+
+.price .old {
     text-decoration: line-through;
     color: #999;
     margin-left: 8px;
-  }
-  .top-banner {
+}
+.top-banner {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; 
+    align-items: stretch;
     padding: 0 40px;
-  }
-  
-  .main-banner-img {
+}
+
+.main-banner-img {
     max-width: 1020px;
     height: auto;
     margin-left: 50px;
     margin-top: 0;
-  }
-  
-  .right-content {
+}
+
+.right-content {
     max-width: 350px;
     text-align: right;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-  }
-  
-  
-  .right-content h3 {
+    justify-content: center;
+}
+
+.right-content h3 {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 6px;
-  }
-  
-  .right-content p {
+}
+
+.right-content p {
     font-size: 16px;
     line-height: 1.4;
     margin-bottom: 20px;
     text-align: right;
-  }
-  
-  .view-more-btn {
+}
+
+.view-more-btn {
     display: inline-block;
     padding: 6px 16px;
     background-color: black;
@@ -117,48 +117,48 @@ html, body {
     transition: background-color 0.3s ease;
     width: fit-content;
     margin-left: 200px;
-  }
-  
-  .view-more-btn:hover {
+}
+
+.view-more-btn:hover {
     background-color: #555;
-  }
-  
-  .made-different-container {
+}
+
+.made-different-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin: 10px 40px 40px;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
-    padding-left: 40px; 
+    padding-left: 40px;
     text-transform: uppercase;
 }
-  
-  .product-grid {
+
+.product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     margin-left: auto;
     padding-left: 20px;
-  }
-  
-  .product-box {
+}
+
+.product-box {
     position: relative;
     top: 40px;
-  }
-  
-  .product-box.outerwear {
+}
+
+.product-box.outerwear {
     top: -65px;
-  }
-  .product-box img {
+}
+.product-box img {
     width: 100%;
     display: block;
-  }
-  /* TRENDING NOW */
+}
+/* TRENDING NOW */
 .trending-now {
     font-size: 16px;
     font-weight: bold;
@@ -167,142 +167,141 @@ html, body {
     padding: 40px 20px;
     margin-left: 60px;
     text-transform: uppercase;
-  }
+}
 
-  
-  .trending-now h2 {
-    font-size: 20px;      
-    font-weight: bold;    
+.trending-now h2 {
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 20px;
-    padding-left: 40px;   
+    padding-left: 40px;
     text-transform: uppercase;
-  }
-  
-  .trending-products {
+}
+
+.trending-products {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-  }
-  
-  .product-item {
+}
+
+.product-item {
     text-align: center;
     min-width: 180px;
-  }
-  
-  .product-item img {
+}
+
+.product-item img {
     width: 100%;
     height: auto;
-  }
-  
-  .product-name {
+}
+
+.product-name {
     font-size: 13px;
     font-weight: bold;
     margin: 10px 0 4px;
-  }
-  
-  .price {
+}
+
+.price {
     margin-top: 5px;
-  }
-  
-  .price .new {
+}
+
+.price .new {
     font-weight: bold;
-  }
-  
-  .price .old {
+}
+
+.price .old {
     text-decoration: line-through;
     color: #999;
     margin-left: 8px;
-  }
-  /* COLLECTION */
-  .collection {
+}
+/* COLLECTION */
+.collection {
     font-size: 16px;
     font-weight: bold;
     margin-top: 0;
     padding-top: 10px;
     padding: 40px 20px;
     margin-left: 60px;
-  }
-  
-  .collection h2 {
-    font-size: 20px;      
-    font-weight: bold;    
+}
+
+.collection h2 {
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 20px;
-    padding-left: 30px;   
+    padding-left: 30px;
     text-transform: uppercase;
-  }
-  
-  .collection-grid {
+}
+
+.collection-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-  }
-  
-  .collection-item img {
+}
+
+.collection-item img {
     width: 100%;
     height: auto;
-  }
-  
-  .collection-item p {
+}
+
+.collection-item p {
     font-size: 13px;
     text-align: center;
     margin-top: 8px;
-  }
-  
-  .collection-item a {
+}
+
+.collection-item a {
     font-size: 11px;
     text-decoration: none;
     color: black;
     border-bottom: 1px solid black;
-  }
-  
-  /* FLEXIN */
-  .soustage-flexin {
+}
+
+/* FLEXIN */
+.soustage-flexin {
     font-size: 16px;
     font-weight: bold;
     margin-top: 0;
     padding-top: 10px;
     padding: 40px 20px;
     margin-left: 60px;
-  }
-  
-  .soustage-flexin h2 {
-    font-size: 20px;      
-    font-weight: bold;    
+}
+
+.soustage-flexin h2 {
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 20px;
-    padding-left: 40px;   
+    padding-left: 40px;
     text-transform: uppercase;
-  }
-  
-  .flexin-grid {
+}
+
+.flexin-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-  }
-  
-  .flexin-grid img {
+}
+
+.flexin-grid img {
     width: 100%;
     height: auto;
-  }
-  
-  .register {
+}
+
+.register {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .register p {
+}
+
+.register p {
     font-size: 13px;
-  }
-  
-  .btn-register {
+}
+
+.btn-register {
     background-color: black;
     color: white;
     text-decoration: none;
     padding: 6px 16px;
     font-size: 12px;
     border-radius: 4px;
-  }
+}
 
 .collection-item p a {
     display: inline-block;
@@ -311,28 +310,28 @@ html, body {
     text-decoration: none;
     color: #000;
     transition: color 0.3s ease;
-  }
-  
-  .collection-item p a:hover {
-    color: #ff3333; 
-  }
-  
-  .register {
-    background-color: #f2f2f2; 
+}
+
+.collection-item p a:hover {
+    color: #ff3333;
+}
+
+.register {
+    background-color: #f2f2f2;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 40px 0;
     border-radius: 4px;
-  }
-  
-  .register p {
+}
+
+.register p {
     margin: 0;
     font-size: 15px;
-  }
-  
-  .btn-register {
+}
+
+.btn-register {
     background-color: #3a3737;
     color: white;
     padding: 10px 16px;
@@ -342,99 +341,99 @@ html, body {
     font-weight: bold;
     text-decoration: none;
     transition: background-color 0.3s ease;
-  }
-  
-  .btn-register:hover {
+}
+
+.btn-register:hover {
     background-color: #000;
-  }
+}
 
-  /* Mobile First – dưới 768px */
+/* Mobile First – dưới 768px */
 @media screen and (max-width: 767px) {
-  .banner,
-  .new-in,
-  .trending-now,
-  .collection,
-  .soustage-flexin {
-    margin-left: 0;
-    padding: 20px 10px;
-  }
+    .banner,
+    .new-in,
+    .trending-now,
+    .collection,
+    .soustage-flexin {
+        margin-left: 0;
+        padding: 20px 10px;
+    }
 
-  .product-row,
-  .trending-products {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    gap: 20px;
-    padding-left: 0;
-    justify-content: center;
-  }
+    .product-row,
+    .trending-products {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        gap: 20px;
+        padding-left: 0;
+        justify-content: center;
+    }
 
-  .product,
-  .product-item {
-    flex: 1 1 45%;
-    max-width: 100%;
-  }
+    .product,
+    .product-item {
+        flex: 1 1 45%;
+        max-width: 100%;
+    }
 
-  .top-banner {
-    flex-direction: column;
-    padding: 20px 10px;
-    align-items: center;
-  }
+    .top-banner {
+        flex-direction: column;
+        padding: 20px 10px;
+        align-items: center;
+    }
 
-  .main-banner-img {
-    margin-left: 0;
-    max-width: 100%;
-  }
+    .main-banner-img {
+        margin-left: 0;
+        max-width: 100%;
+    }
 
-  .right-content {
-    max-width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 0;
-  }
+    .right-content {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 0;
+    }
 
-  .view-more-btn {
-    margin-left: 0;
-    align-self: center;
-  }
+    .view-more-btn {
+        margin-left: 0;
+        align-self: center;
+    }
 
-  .product-grid,
-  .collection-grid,
-  .flexin-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+    .product-grid,
+    .collection-grid,
+    .flexin-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-  .register {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
+    .register {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
 
 /* Tablet – từ 768px đến 1023px */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .product-grid,
-  .collection-grid,
-  .flexin-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .product-grid,
+    .collection-grid,
+    .flexin-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .top-banner {
-    flex-direction: column;
-    align-items: center;
-  }
+    .top-banner {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .main-banner-img {
-    max-width: 100%;
-    margin-left: 0;
-  }
+    .main-banner-img {
+        max-width: 100%;
+        margin-left: 0;
+    }
 
-  .right-content {
-    max-width: 100%;
-    text-align: center;
-    margin-top: 20px;
-  }
+    .right-content {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
 
-  .view-more-btn {
-    margin-left: 0;
-  }
+    .view-more-btn {
+        margin-left: 0;
+    }
 }

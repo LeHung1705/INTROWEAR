@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/Admin/css/main.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <title>INTROWEAR</title>
+        <link rel="stylesheet" href="/Admin/css/orders.css" />
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="header-left">
+                <i class="fas fa-bars"></i>
+                <img src="/Admin/asset/images/logo.png" alt="INTROWEAR" />
+            </div>
+            <section class="header-right">
+                <img src="/Admin/asset/images/avt.png" alt="avt" />
+                <p>ADMIN</p>
+            </section>
+        </header>
+
+        <!-- NAVIGATION -->
+        <div class="container">
+            <div class="main">
+                <nav class="sidebar">
+                    <button
+                        class="nav-button"
+                        onclick="redirectToManageProductPage()"
+                    >
+                        MANAGE PRODUCT
+                    </button>
+                    <button class="nav-button" onclick="redirectToOrdersPage()">
+                         ORDERS
+                    </button>
+                    <button
+                        class="nav-button"
+                        onclick="redirectToAddProductPage()"
+                    >
+                        ADD PRODUCT
+                    </button>
+                    <button
+                        class="nav-button"
+                        onclick="redirectToUpdateProductPage()"
+                    >
+                        UPDATE PRODUCT
+                    </button>
+                    <button
+                        class="nav-button"
+                        onclick="redirectToCreateCouponPage()"
+                    >
+                        CREATE COUPON
+                    </button>
+                </nav>
+
+                <div class="content">
+                    <!-- Nội dung trang đặt ở đây -->
+                    <div class="orders-container">
+                        <div class="orders-title">
+                            <span style="font-size: 30px; font-weight: 600;">Orders</span>
+                            <div class="breadcrumb-bar">
+                                <a href="#">Dashboard</a>
+                                <span>></span>
+                                <a href="#">Orders</a>
+                            </div>
+                        </div>
+                        <div class="orders-table-container">
+                            <div style="width: 95%;">
+                                <div class="search-box">
+                                <input
+                                    type="text"
+                                    placeholder="Search here..."
+                                /><i class="fa-solid fa-magnifying-glass fa-2xs" style="color: #c7e0f5;"></i>
+                            </div>
+                            </div>
+                            <div class="table-viewport">
+                                <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 70px">OrderNo</th>
+                                        <th class="text-center">Name</th>
+                                        <th class="text-center">Phone</th>
+                                        <th class="text-center">Total</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Order Date</th>
+                                        <th class="text-center">Total Items</th>
+                                        <th class="text-center">
+                                            Delivered On
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">
+                                            Divyansh Kumar
+                                        </td>
+                                        <td class="text-center">1234567891</td>
+                                        <td class="text-center">$208.12</td>
+                                        <td class="text-center">ordered</td>
+                                        <td class="text-center">
+                                            2024-07-11 00:54:14
+                                        </td>
+                                        <td class="text-center">2</td>
+                                        <td></td>
+                                        <td class="text-center">
+                                            <a href="order-details.html">
+                                                <div class="list-icon-function">
+                                                    <div class="item eye">
+                                                        <i class="fa-solid fa-eye"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <!-- Top section of footer -->
+            <div class="footer__top">
+                <div class="footer__container-wide">
+                    <div class="footer__row">
+                        <!-- Certificate -->
+                        <div class="footer__certificate footer__col">
+                            <a href="#" target="_blank">
+                                <img
+                                    src="//theme.hstatic.net/200000677367/1001276449/14/dathongbao.png?v=2486"
+                                    alt="Bộ công thương"
+                                />
+                            </a>
+                        </div>
+
+                        <!-- Contact information -->
+                        <div class="footer__contact footer__col">
+                            <div class="contact-list">
+                                <p class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span
+                                        ><strong>Địa chỉ:</strong><br />
+                                        METUB TOWER, số 35/2 Nguyễn Văn Hưởng,
+                                        Phường Thảo Điền, TP. Thủ Đức, TP. Hồ
+                                        Chí Minh.</span
+                                    >
+                                </p>
+
+                                <p class="contact-item">
+                                    <i class="fas fa-building"></i>
+                                    <span
+                                        ><strong>Công ty:</strong><br />
+                                        CÔNG TY CỔ PHẦN VIETNAM NEW LIFESTYLE
+                                        INCUBATION</span
+                                    >
+                                </p>
+
+                                <p class="contact-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span
+                                        ><strong>MST: </strong> 0316416910</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="footer__phone footer__col">
+                            <p class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span
+                                    ><strong>Điện thoại:</strong><br />
+                                    0877.534.588 (Zalo)</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="footer__email footer__col">
+                            <p class="contact-item">
+                                <i class="far fa-envelope"></i>
+                                <span
+                                    ><strong>Email:</strong>
+                                    contact@introwear.com</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- Social media links -->
+                        <div class="footer__social footer__col">
+                            <ul class="social-list">
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Facebook"
+                                        ><i class="fab fa-facebook-f"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Tiktok"
+                                        ><i class="fab fa-tiktok"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="YouTube"
+                                        ><i class="fab fa-youtube"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Instagram"
+                                        ><i class="fab fa-instagram"></i
+                                    ></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom section of footer (copyright) -->
+            <div class="footer__bottom">
+                <!-- Policy links -->
+                <div class="footer__policy">
+                    <ul class="policy-list">
+                        <li class="policy-item">
+                            <a href="/Website/aboutus.html">Giới thiệu</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Điều khoản dịch vụ</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Phương thức thanh toán</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Chính sách vận chuyển & đổi trả</a>
+                        </li>
+                        <li class="policy-item"><a href="#">Liên hệ</a></li>
+                        <li class="policy-item">
+                            <a href="#"
+                                >Chính sách thu thập và xử lý dữ liệu cá nhân</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__container">
+                    <p class="footer__copyright">
+                        Copyright © 2025 <a href="#">INTROWEAR</a>. Powered by
+                        <a href="#" target="_blank">TEAM INTROWEAR</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script src="/Admin/js/main.js"></script>
+    </body>
+</html>

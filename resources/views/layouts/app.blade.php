@@ -3,10 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link rel="stylesheet" href="{{ asset('assets/css/main.css')}}" />
@@ -41,8 +38,12 @@
                     <i class="fas fa-user user-icon"></i>
                 </a>
                     <div class="cart-wrapper">
-                        <a href="/Website/giohang.html">
-                        <i class="fas fa-shopping-cart cart-icon"></i>
+                        <a href="{{route('cart.index')}}">
+                        <i class="fas fa-shopping-cart cart-icon">
+                          @if(Cart::instance('cart')->content()->count() > 0)
+                          <sub>({{Cart::instance('cart')->content()->count()}})</sub>
+                          @endif
+                        </i>
                     </a>
                         <span class="cart-count"></span>
                     </div>

@@ -1,14 +1,43 @@
-    <?php
+<?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
-    use Illuminate\Http\Request;
-    use Surfsidemedia\Shoppingcart\Facades\Cart; //
+use App\Models\Order;
+use Illuminate\Http\Request;
+use Surfsidemedia\Shoppingcart\Facades\Cart; //
 
-    class CartController extends Controller
-    {
-        public function index(){
-            $items = Cart::instance('cart')->content();
-            return view('cart', compact('items'));
-        }
+class CartController extends Controller
+{
+    public function index(){
+        $items = Cart::instance('cart')->content();
+        return view('cart', compact('items'));
     }
+    public function place_an_order( Request $request)
+    {
+         $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'phone' => 'required|regex:/^[0-9]{10,11}$/',
+        'address' => 'required|string|max:500',
+        // Thêm xác thực payment_method nếu cần
+    ]);
+
+    $order = new Order();
+    $order->user_id = Auth::id() ?? null; 
+    $order->name = $validatedData['name'];
+    $order->phone = $validatedData['phone'];
+    $order->address = $validatedData['address'];
+      //$payment_method 
+    $order->status = 'ordered';
+    $order->total = Session::get('checkout')['total'];
+    $order->save();
+
+    foreach (Cart::instance('cart')->content() as $item) {
+    $orderItem = new OrderItem();
+    $orderItem->product_id = $item->id;
+    $orderItem->order_id = $order->id;
+    $orderItem->price = $item->price;
+    $orderItem->quantity = $item->qty;
+    $orderItem->save();
+}
+    }
+}
