@@ -17,8 +17,6 @@ return new class extends Migration
             $table->bigInteger('order_id')->unsigned();
             $table->decimal('price');
             $table->integer('quantity');
-            $table->longText('options')->nullable();
-            $table->boolean('rstatus')->default(false); //trang thai hoan tra
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');   
