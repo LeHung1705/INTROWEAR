@@ -2,8 +2,8 @@ function redirectToManageProductPage() {
   window.location.href = "/Admin/manage-product.html";
 }
 
-function redirectToCSOPage() {
-  window.location.href = "/Admin/cso.html";
+function redirectToOrdersPage() {
+  window.location.href = "/Admin/orders.html";
 }
 
 function redirectToAddProductPage() {
