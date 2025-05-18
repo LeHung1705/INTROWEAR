@@ -160,29 +160,40 @@
 .pagination {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 10px;
     margin-top: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #00f;
 }
 
-.pagination a {
+.pagination a,
+.pagination span {
+    padding: 8px 12px;
     text-decoration: none;
-    color: #000;
-    font-size: 16px;
-    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    transition: background-color 0.2s;
 }
 
 .pagination a:hover {
     background-color: #f0f0f0;
-    border-radius: 5px;
+}
+
+.pagination .active {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
 }
 
 .pagination .arrow {
-    font-size: 20px;
-    color: #000;
+    font-weight: bold;
 }
+
+.pagination .disabled {
+    color: #999;
+    cursor: not-allowed;
+    border-color: #eee;
+}
+
 @media (max-width: 768px) {
 
 .product-list {
