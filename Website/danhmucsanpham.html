@@ -1,576 +1,869 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>danhmucsanpham</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/danhmucsanpham.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-     <header class="header-main">
-        <div class="header-top">
-            <div class="hamburger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <div class="logo">
-              <a href="/Website/trangchu.html">
-                <img src="/Website/assets/images/logo.png " alt="INTROWEAR Logo" class="logo-img">
-                <span class="logo-text"></span>
-                </a>
-            </div>
-            
-            <div class="search-bar">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="header-actions">
-                <div class="icons">
-                    <a href="/Website/log-in.html">
-                    <i class="fas fa-user user-icon"></i>
-                </a>
-                    <div class="cart-wrapper">
-                        <a href="/Website/giohang.html">
-                        <i class="fas fa-shopping-cart cart-icon"></i>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>danhmucsanpham</title>
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/danhmucsanpham.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <header class="header-main">
+            <div class="header-top">
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="logo">
+                    <a href="/Website/trangchu.html">
+                        <img
+                            src="/Website/assets/images/logo.png "
+                            alt="INTROWEAR Logo"
+                            class="logo-img"
+                        />
+                        <span class="logo-text"></span>
                     </a>
-                        <span class="cart-count"></span>
-                    </div>
                 </div>
-            </div>
-        
-    </div>
-        <div class="header-bottom responsive-nav">
-            <nav>
-                <ul>
-                    <li><a href="/Website/trangchu.html" id="homepageLink">HOMEPAGE</a></li>
-                    <li class="dropdown"><a href="/Website/trangchu.html">SHOP</a></li>
-                    <li><a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a></li>
-                </ul>
-            </nav>
 
-        </div>
-       
-    </header>
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-bar">
-  <div class="breadcrumb-text">
-    <span id="breadcrumb-home" style="cursor: pointer;">Trang chủ</span>   /    <span id="breadcrumb-category" style="cursor: pointer;">Danh mục</span> / <span>ALL PRODUCTS</span>
-  </div>
-</div>
-    <!-- Main container -->
-    <div class="container">
-        <!-- Filter section -->
-        <div class="filter-section">
-            <h3>SẮP XẾP</h3>
-            <ul>
-                <li><a href="#">Sản phẩm bán chạy</a></li>
-                <li><a href="#">Giá từ thấp đến cao</a></li>
-                <li><a href="#">Giá từ cao đến thấp</a></li>
-                <li><a href="#">Sản phẩm mới nhất</a></li>
-            </ul>
-        </div>
-
-        <!-- Product list -->
-        <div class="product-list">
-             <!-- Product 4 -->
-            <div class="product-item">
-                <div class="image-container">
-                    <img class="default-img"src ="/Website/assets/images/product4.jpg">
-                    <img class="hover-img" src ="/Website/assets/images/product4.3.jpg">
-                    <div class="quick-view">Quick View</div>
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search" />
                 </div>
-                <h4>"ÁO DÀI" BOXY LONG-SLEEVE T-SHIRT</h4>
-                <div class="price">384,000đ <del>550,000đ</del></div>
-        </div>
-            <!-- Product 1 -->
-            <div class="product-item">
-                <div class="image-container">
-                    <img class="default-img" src="/Website/assets/images/product1.webp" alt="Tất trắng">
-                    <img class="hover-img" src="/Website/assets/images/product1.webp" alt="Tất trắng góc khác">
-                    <div class="quick-view">Quick View</div>
-                </div>
-                <h4>[KIDS] SET 03 SS LOGO</h4>
-                <div class="price">99,000đ </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-item">
-                <div class="image-container">
-                    <img class="default-img" src="/Website/assets/images/quan.webp" alt="Tất trắng">
-                    <img class="hover-img" src="/Website/assets/images/anh hover quan.webp" alt="Tất trắng góc khác">
-                    <div class="quick-view">Quick View</div>
-                </div>
-                <h4>SS LOGO CARGO PANTS</h4>
-                <div class="price">349,000đ <del>690,000đ</del></div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-item">
-                <div class="image-container">
-                    <img class="default-img"src ="/Website/assets/images/product3.webp">
-                    <img class="hover-img" src ="/Website/assets/images/product3.1.webp">
-                    <div class="quick-view">Quick View</div>
-                </div>
-                <h4>STAFF BIG BOXY LONG SLEEVE T-SHIRT</h4>
-                <div class="price">309,000đ <del>450,000đ</del></div>
-        </div>
-
-        
-            <!-- Product 5 -->
-            <div class="product-item">
-                <div class="image-container">
-                    <img class="default-img"src ="/Website/assets/images/product5.png">
-                    <img class="hover-img" src ="/Website/assets/images/product5.1.jpg">
-                    <div class="quick-view">Quick View</div>
-                </div>
-                <h4>STAFF BIG BOXY LONG SLEEVE T-SHIRT</h4>
-                <div class="price">450,000đ <del>520,000đ</del></div>
-        </div>
-            <!-- Product 6 -->
-            <div class="product-item">
-                <div class="image-container">
-                    <img class="default-img"src ="/Website/assets/images/product6.jpg">
-                    <img class="hover-img" src ="/Website/assets/images/product6.1.jpg">
-                    <div class="quick-view">Quick View</div>
-                </div>
-                <h4>LOGO BOXY CARDIGAN</h4>
-                <div class="price">419,000đ <del>750,000đ</del></div>
-        </div>
-         <!-- Product 7 -->
-        <div class="product-item">
-            <div class="image-container">
-                <img class="default-img"src ="/Website/assets/images/product7.jpg">
-                <img class="hover-img" src ="/Website/assets/images/product7.1.jpg">
-                <div class="quick-view">Quick View</div>
-            </div>
-            <h4>A RED BUTTON BAGGY PANTS</h4>
-            <div class="price">550,000đ <del>600,000đ</del></div>
-    </div>
-     <!-- Product 8 -->
-     <div class="product-item">
-        <div class="image-container">
-            <img class="default-img"src ="/Website/assets/images/product8.jpg">
-            <img class="hover-img" src ="/Website/assets/images/product8.1.jpg">
-            <div class="quick-view">Quick View</div>
-        </div>
-        <h4>STRIPED BOXY SHIRT</h4>
-        <div class="price">580,000đ <del>650,000đ</del></div>
-</div>
-<!-- Product 9 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product9.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product9.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>CORE BASIC BOXY T-SHIRT</h4>
-    <div class="price">325,000đ <del>380,000đ</del></div>
-</div>
-<!-- Product 10 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product10.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product10.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>"SỔ ĐỎ" RED ENVELOPE</h4>
-    <div class="price">99,000đ </div>
-</div>
-<!-- Product 11 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product11.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product11.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>SS SHOPPER TO TE BAG</h4>
-    <div class="price">320,000đ </div>
-</div>
-<!-- Product 12 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product12.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product12.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>STICKER SOUSTATE SIGNATURE 1.0</h4>
-    <div class="price">89,000đ </div>
-</div>
-<!-- Product 13 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product13.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product13.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>[KIDS] BASIC LOGO SWEATSHORTS</h4>
-    <div class="price">179,000đ </div>
-</div>
-<!-- Product 14 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product14.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product14.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>SS LOGO NECKLACE </h4>
-    <div class="price">180,000đ </div>
-</div>
-<!-- Product 15 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product15.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product15.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>BASIC LOGO SWEATPANTS </h4>
-    <div class="price">620,000đ </div>
-</div>
-<!-- Product 15 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product15a.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product15.1a.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>[SOUSTATE x HOPEFUL HORIZON] BABY YOU ARE NOT ALONE BIG BOXY T-SHIRT</h4>
-    <div class="price">380,000đ </div>
-</div>
-<!-- Product 16 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product16.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product16.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>BLANK OVERSIZE LONG SLEEVE T-SHIRT</h4>
-    <div class="price">350,000đ </div>
-</div>
-<!-- Product 17 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product17.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product17.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>SS OXFORD BOXY SHIRT</h4>
-    <div class="price">468,000đ<del>580,000đ</del> </div>
-</div>
-<!-- Product 18 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product18.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product18.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>[KIDS] BASIC LOGO FULLZIP HOODIE</h4>
-    <div class="price">299,000đ<del>420,000đ</del> </div>
-</div>
-
-<!-- Product 19 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product19.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product19.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>THE STAR BOXY HOODIE</h4>
-    <div class="price">579,000đ<del>650,000đ</del></div>
-</div>
-<!-- Product 20 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product20.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product20.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>BASIC TYPO BIG BOXY T-SHIRT</h4>
-    <div class="price">350,000đ</div>
-</div>
-<!-- Product 21 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product21.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product21.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>BASIC TYPO BOXY FULLZIP HOODIE</h4>
-    <div class="price">680,000đ</div>
-</div>
-<!-- Product 22 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product22.jpg">
-        <img class="hover-img" src ="Website/assets/images/product22.1.png">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>[KIDS] BASIC TYPO OVERSIZED T-SHIRT</h4>
-    <div class="price">169,000đ<del>250,000đ</del></div>
-</div>
-<!-- Product 23 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product23.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product23.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>SS NO.2 BIG BOXY SHIRT</h4>
-    <div class="price">419,000đ<del>450,000đ</del></div>
-</div>
-<!-- Product 23 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product23a.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product23a.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>SS LOGO BAGGY PANTS</h4>
-    <div class="price">599,000đ</div>
-</div>
-<!-- Product 24 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product24.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product24.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>BLANK BIG BOXY T-SHIRT</h4>
-    <div class="price">300,000đ</div>
-</div>
-<!-- Product 25 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product25.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product25.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>BLANK OVERSIZE T-SHIRT</h4>
-    <div class="price">300,000đ</div>
-</div>
-<!-- Product 26 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product26.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product26.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>WORD FLEX BIG BOXY T-SHIRT</h4>
-    <div class="price">279,000đ<del>350,000đ</del></div>
-</div>
-<!-- Product 27 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product27.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product27.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>SS LOGO NO.2 BIG BOXY T-SHIRT</h4>
-    <div class="price">279,000đ<del>350,000đ</del></div>
-</div>
-<!-- Product 28 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product28.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product28.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>BIG LOGO BIG BOXY T-SHIRT</h4>
-    <div class="price">279,000đ<del>350,000đ</del></div>
-</div>
-<!-- Product 29 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product29.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product29.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>CARABINERS BIG BOXY T-SHIRT</h4>
-    <div class="price">279,000đ<del>400,000đ</del></div>
-</div>
-<!-- Product 29 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product29a.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product29a.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>GOAT BIG BOXY T-SHIRT</h4>
-    <div class="price">279,000đ<del>390,000đ</del></div>
-</div>
-<!-- Product 30 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product30.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product30.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>MESH JERSEY BIG BOXY T-SHIRT</h4>
-    <div class="price">259,000đ<del>420,000đ</del></div>
-</div>
-<!-- Product 31 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product31.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product31.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>KEEP THE FIRE BIG BOXY T-SHIRT</h4>
-    <div class="price">279,000đ<del>400,000đ</del></div>
-</div>
-<!-- Product 32 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product32.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product32.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>RULING THE SOUL'S FLAME BIG BOXY T-SHIRT</h4>
-    <div class="price">279,000đ<del>400,000đ</del></div>
-</div>
-<!-- Product 33 -->
-<div class="product-item">
-    <div class="image-container">
-        <img class="default-img"src ="/Website/assets/images/product33.jpg">
-        <img class="hover-img" src ="/Website/assets/images/product32.1.jpg">
-        <div class="quick-view">Quick View</div>
-    </div>
-    <h4>SAFETY PINS BIG BOXY T-SHIRT</h4>
-    <div class="price">279,000đ<del>390,000đ</del></div>
-</div>
-<!-- Product 34 -->
-<div class="product-item">
-<div class="image-container">
-    <img class="default-img"src ="/Website/assets/images/product34.jpg">
-    <img class="hover-img" src ="/Website/assets/images/product34.1.jpg">
-    <div class="quick-view">Quick View</div>
-</div>
-<h4>THE STAR BIG BOXY T-SHIRT</h4>
-<div class="price">309,000đ<del>390,000đ</del></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-        </div>
-    </div>
-    <!-- Pagination -->
-    <div class="pagination">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <span class="arrow">→</span>
-    </div>
-
-
-    <footer class="footer">
-        <!-- Top section of footer -->
-        <div class="footer__top">
-            <div class="footer__container-wide">
-                <div class="footer__row">
-                    <!-- Certificate -->
-                    <div class="footer__certificate footer__col">
-                        <a href="#" target="_blank">
-                            <img src="//theme.hstatic.net/200000677367/1001276449/14/dathongbao.png?v=2486" alt="Bộ công thương">
+                <div class="header-actions">
+                    <div class="icons">
+                        <a href="/Website/log-in.html">
+                            <i class="fas fa-user user-icon"></i>
                         </a>
-                    </div>
-
-                    <!-- Contact information -->
-                    <div class="footer__contact footer__col">
-                        <div class="contact-list">
-                            <p class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span><strong>Địa chỉ:</strong><br> METUB TOWER, số 35/2 Nguyễn Văn Hưởng, Phường Thảo Điền, TP. Thủ Đức, TP. Hồ Chí Minh.</span>
-                            </p>
-
-                            <p class="contact-item">
-                                <i class="fas fa-building"></i>
-                                <span><strong>Công ty:</strong><br> CÔNG TY CỔ PHẦN VIETNAM NEW LIFESTYLE INCUBATION</span>
-                            </p>
-
-                            <p class="contact-item">
-                                <i class="fas fa-file-alt"></i>
-                                <span><strong>MST: </strong> 0316416910</span>
-                            </p>
+                        <div class="cart-wrapper">
+                            <a href="/Website/giohang.html">
+                                <i class="fas fa-shopping-cart cart-icon"></i>
+                            </a>
+                            <span class="cart-count"></span>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="header-bottom responsive-nav">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/Website/trangchu.html" id="homepageLink"
+                                >HOMEPAGE</a
+                            >
+                        </li>
+                        <li class="dropdown">
+                            <a href="/Website/trangchu.html">SHOP</a>
+                        </li>
+                        <li>
+                            <a href="/Website/aboutus.html" id="aboutUsLink"
+                                >ABOUT US</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-bar">
+            <div class="breadcrumb-text">
+                <span id="breadcrumb-home" style="cursor: pointer"
+                    >Trang chủ</span
+                >
+                /
+                <span id="breadcrumb-category" style="cursor: pointer"
+                    >Danh mục</span
+                >
+                / <span>ALL PRODUCTS</span>
+            </div>
+        </div>
+        <!-- Main container -->
+        <div class="container">
+            <!-- Filter section -->
+            <div class="filter-section">
+                <h3>SẮP XẾP</h3>
+                <ul>
+                    <li><a href="#">Sản phẩm bán chạy</a></li>
+                    <li><a href="#">Giá từ thấp đến cao</a></li>
+                    <li><a href="#">Giá từ cao đến thấp</a></li>
+                    <li><a href="#">Sản phẩm mới nhất</a></li>
+                </ul>
+            </div>
 
-                    <!-- Phone -->
-                    <div class="footer__phone footer__col">
-                        <p class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span><strong>Điện thoại:</strong><br> 0877.534.588 (Zalo)</span>
-                        </p> 
+            <!-- Product list -->
+            <div class="product-list">
+                <!-- Product 4 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product4.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product4.3.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
                     </div>
-                    
-                    <!-- Email -->
-                     <div class="footer__email footer__col">
-                        <p class="contact-item">
-                            <i class="far fa-envelope"></i>
-                            <span><strong>Email:</strong>contact@introwear.com</span>
-                        </p>
-                     </div>
-                    
-                    <!-- Social media links -->
-                    <div class="footer__social footer__col">
-                        <ul class="social-list">
-                            <li class="social-item">
-                                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li class="social-item">
-                                <a href="#" target="_blank" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
-                            </li>
-                            <li class="social-item">
-                                <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li class="social-item">
-                                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            </li>
-                        </ul>  
+                    <h4>STAFF BIG BOXY LONG SLEEVE T-SHIRT</h4>
+                    <div class="price">309,000đ <del>550,000đ</del></div>
+                </div>
+                <!-- Product 1 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product1.webp"
+                            alt="Tất trắng"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product1.webp"
+                            alt="Tất trắng góc khác"
+                        />
+                        <div class="quick-view">Quick View</div>
                     </div>
+                    <h4>[KIDS] SET 03 SS LOGO</h4>
+                    <div class="price">99,000đ</div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/quan.webp"
+                            alt="Tất trắng"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/anh hover quan.webp"
+                            alt="Tất trắng góc khác"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>SS LOGO CARGO PANTS</h4>
+                    <div class="price">349,000đ <del>690,000đ</del></div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product3.webp"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product3.1.webp"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>STAFF BIG BOXY LONG SLEEVE T-SHIRT</h4>
+                    <div class="price">309,000đ <del>450,000đ</del></div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product5.png"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product5.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>STAFF BIG BOXY LONG SLEEVE T-SHIRT</h4>
+                    <div class="price">450,000đ <del>520,000đ</del></div>
+                </div>
+                <!-- Product 6 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product6.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product6.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>LOGO BOXY CARDIGAN</h4>
+                    <div class="price">419,000đ <del>750,000đ</del></div>
+                </div>
+                <!-- Product 7 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product7.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product7.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>A RED BUTTON BAGGY PANTS</h4>
+                    <div class="price">550,000đ <del>600,000đ</del></div>
+                </div>
+                <!-- Product 8 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product8.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product8.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>STRIPED BOXY SHIRT</h4>
+                    <div class="price">580,000đ <del>650,000đ</del></div>
+                </div>
+                <!-- Product 9 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product9.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product9.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>CORE BASIC BOXY T-SHIRT</h4>
+                    <div class="price">325,000đ <del>380,000đ</del></div>
+                </div>
+                <!-- Product 10 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product10.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product10.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>"SỔ ĐỎ" RED ENVELOPE</h4>
+                    <div class="price">99,000đ</div>
+                </div>
+                <!-- Product 11 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product11.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product11.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>SS SHOPPER TO TE BAG</h4>
+                    <div class="price">320,000đ</div>
+                </div>
+                <!-- Product 12 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product12.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product12.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>STICKER SOUSTATE SIGNATURE 1.0</h4>
+                    <div class="price">89,000đ</div>
+                </div>
+                <!-- Product 13 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product13.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product13.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>[KIDS] BASIC LOGO SWEATSHORTS</h4>
+                    <div class="price">179,000đ</div>
+                </div>
+                <!-- Product 14 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product14.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product14.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>SS LOGO NECKLACE</h4>
+                    <div class="price">180,000đ</div>
+                </div>
+                <!-- Product 15 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product15.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product15.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>BASIC LOGO SWEATPANTS</h4>
+                    <div class="price">620,000đ</div>
+                </div>
+                <!-- Product 15 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product15a.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product15.1a.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>
+                        [SOUSTATE x HOPEFUL HORIZON] BABY YOU ARE NOT ALONE BIG
+                        BOXY T-SHIRT
+                    </h4>
+                    <div class="price">380,000đ</div>
+                </div>
+                <!-- Product 16 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product16.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product16.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>BLANK OVERSIZE LONG SLEEVE T-SHIRT</h4>
+                    <div class="price">350,000đ</div>
+                </div>
+                <!-- Product 17 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product17.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product17.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>SS OXFORD BOXY SHIRT</h4>
+                    <div class="price">468,000đ<del>580,000đ</del></div>
+                </div>
+                <!-- Product 18 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product18.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product18.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>[KIDS] BASIC LOGO FULLZIP HOODIE</h4>
+                    <div class="price">299,000đ<del>420,000đ</del></div>
+                </div>
+
+                <!-- Product 19 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product19.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product19.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>THE STAR BOXY HOODIE</h4>
+                    <div class="price">579,000đ<del>650,000đ</del></div>
+                </div>
+                <!-- Product 20 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product20.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product20.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>BASIC TYPO BIG BOXY T-SHIRT</h4>
+                    <div class="price">350,000đ</div>
+                </div>
+                <!-- Product 21 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product21.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product21.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>BASIC TYPO BOXY FULLZIP HOODIE</h4>
+                    <div class="price">680,000đ</div>
+                </div>
+                <!-- Product 22 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product22.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="Website/assets/images/product22.1.png"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>[KIDS] BASIC TYPO OVERSIZED T-SHIRT</h4>
+                    <div class="price">169,000đ<del>250,000đ</del></div>
+                </div>
+                <!-- Product 23 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product23.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product23.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>SS NO.2 BIG BOXY SHIRT</h4>
+                    <div class="price">419,000đ<del>450,000đ</del></div>
+                </div>
+                <!-- Product 23 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product23a.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product23a.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>SS LOGO BAGGY PANTS</h4>
+                    <div class="price">599,000đ</div>
+                </div>
+                <!-- Product 24 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product24.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product24.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>BLANK BIG BOXY T-SHIRT</h4>
+                    <div class="price">300,000đ</div>
+                </div>
+                <!-- Product 25 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product25.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product25.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>BLANK OVERSIZE T-SHIRT</h4>
+                    <div class="price">300,000đ</div>
+                </div>
+                <!-- Product 26 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product26.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product26.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>WORD FLEX BIG BOXY T-SHIRT</h4>
+                    <div class="price">279,000đ<del>350,000đ</del></div>
+                </div>
+                <!-- Product 27 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product27.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product27.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>SS LOGO NO.2 BIG BOXY T-SHIRT</h4>
+                    <div class="price">279,000đ<del>350,000đ</del></div>
+                </div>
+                <!-- Product 28 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product28.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product28.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>BIG LOGO BIG BOXY T-SHIRT</h4>
+                    <div class="price">279,000đ<del>350,000đ</del></div>
+                </div>
+                <!-- Product 29 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product29.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product29.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>CARABINERS BIG BOXY T-SHIRT</h4>
+                    <div class="price">279,000đ<del>400,000đ</del></div>
+                </div>
+                <!-- Product 29 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product29a.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product29a.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>GOAT BIG BOXY T-SHIRT</h4>
+                    <div class="price">279,000đ<del>390,000đ</del></div>
+                </div>
+                <!-- Product 30 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product30.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product30.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>MESH JERSEY BIG BOXY T-SHIRT</h4>
+                    <div class="price">259,000đ<del>420,000đ</del></div>
+                </div>
+                <!-- Product 31 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product31.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product31.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>KEEP THE FIRE BIG BOXY T-SHIRT</h4>
+                    <div class="price">279,000đ<del>400,000đ</del></div>
+                </div>
+                <!-- Product 32 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product32.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product32.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>RULING THE SOUL'S FLAME BIG BOXY T-SHIRT</h4>
+                    <div class="price">279,000đ<del>400,000đ</del></div>
+                </div>
+                <!-- Product 33 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product33.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product32.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>SAFETY PINS BIG BOXY T-SHIRT</h4>
+                    <div class="price">279,000đ<del>390,000đ</del></div>
+                </div>
+                <!-- Product 34 -->
+                <div class="product-item">
+                    <div class="image-container">
+                        <img
+                            class="default-img"
+                            src="/Website/assets/images/product34.jpg"
+                        />
+                        <img
+                            class="hover-img"
+                            src="/Website/assets/images/product34.1.jpg"
+                        />
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h4>THE STAR BIG BOXY T-SHIRT</h4>
+                    <div class="price">309,000đ<del>390,000đ</del></div>
                 </div>
             </div>
         </div>
-
-        <!-- Bottom section of footer (copyright) -->
-        <div class="footer__bottom">
-            <!-- Policy links -->
-            <div class="footer__policy">
-                <ul class="policy-list">
-                    <li class="policy-item"><a href="./aboutus.html">Giới thiệu</a></li>
-                    <li class="policy-item"><a href="#">Điều khoản dịch vụ</a></li>
-                    <li class="policy-item"><a href="#">Phương thức thanh toán</a></li>
-                    <li class="policy-item"><a href="#">Chính sách vận chuyển & đổi trả</a></li>
-                    <li class="policy-item"><a href="#">Liên hệ</a></li>
-                    <li class="policy-item"><a href="#">Chính sách thu thập và xử lý dữ liệu cá nhân</a></li>
-                </ul>
-            </div>
-            <div class="footer__container">
-                <p class="footer__copyright">
-                    Copyright © 2025 <a href="#">INTROWEAR</a>. Powered by <a href="#" target="_blank">TEAM INTROWEAR</a> 
-                </p>
-            </div>
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <span class="arrow">→</span>
         </div>
 
-    </footer>
-    <script src="/Website/js/main.js"></script>
- <script>
-  document.getElementById("breadcrumb-home").addEventListener("click", function () {
-    window.location.href = "/Website/trangchu.html";
-  });
-</script>
-<script>
-    document.getElementById("breadcrumb-category").addEventListener("click", function () {
-    window.location.href = "/Website/danhmucsanpham.html";
-  });
-</script>
-</body>
-</html>
+        <footer class="footer">
+            <!-- Top section of footer -->
+            <div class="footer__top">
+                <div class="footer__container-wide">
+                    <div class="footer__row">
+                        <!-- Certificate -->
+                        <div class="footer__certificate footer__col">
+                            <a href="#" target="_blank">
+                                <img
+                                    src="//theme.hstatic.net/200000677367/1001276449/14/dathongbao.png?v=2486"
+                                    alt="Bộ công thương"
+                                />
+                            </a>
+                        </div>
 
+                        <!-- Contact information -->
+                        <div class="footer__contact footer__col">
+                            <div class="contact-list">
+                                <p class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span
+                                        ><strong>Địa chỉ:</strong><br />
+                                        METUB TOWER, số 35/2 Nguyễn Văn Hưởng,
+                                        Phường Thảo Điền, TP. Thủ Đức, TP. Hồ
+                                        Chí Minh.</span
+                                    >
+                                </p>
+
+                                <p class="contact-item">
+                                    <i class="fas fa-building"></i>
+                                    <span
+                                        ><strong>Công ty:</strong><br />
+                                        CÔNG TY CỔ PHẦN VIETNAM NEW LIFESTYLE
+                                        INCUBATION</span
+                                    >
+                                </p>
+
+                                <p class="contact-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span
+                                        ><strong>MST: </strong> 0316416910</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="footer__phone footer__col">
+                            <p class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span
+                                    ><strong>Điện thoại:</strong><br />
+                                    0877.534.588 (Zalo)</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="footer__email footer__col">
+                            <p class="contact-item">
+                                <i class="far fa-envelope"></i>
+                                <span
+                                    ><strong>Email:</strong
+                                    >contact@introwear.com</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- Social media links -->
+                        <div class="footer__social footer__col">
+                            <ul class="social-list">
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Facebook"
+                                        ><i class="fab fa-facebook-f"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Tiktok"
+                                        ><i class="fab fa-tiktok"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="YouTube"
+                                        ><i class="fab fa-youtube"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Instagram"
+                                        ><i class="fab fa-instagram"></i
+                                    ></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom section of footer (copyright) -->
+            <div class="footer__bottom">
+                <!-- Policy links -->
+                <div class="footer__policy">
+                    <ul class="policy-list">
+                        <li class="policy-item">
+                            <a href="./aboutus.html">Giới thiệu</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Điều khoản dịch vụ</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Phương thức thanh toán</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Chính sách vận chuyển & đổi trả</a>
+                        </li>
+                        <li class="policy-item"><a href="#">Liên hệ</a></li>
+                        <li class="policy-item">
+                            <a href="#"
+                                >Chính sách thu thập và xử lý dữ liệu cá nhân</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__container">
+                    <p class="footer__copyright">
+                        Copyright © 2025 <a href="#">INTROWEAR</a>. Powered by
+                        <a href="#" target="_blank">TEAM INTROWEAR</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script src="/Website/js/main.js"></script>
+        <script>
+            document
+                .getElementById("breadcrumb-home")
+                .addEventListener("click", function () {
+                    window.location.href = "/Website/trangchu.html";
+                });
+        </script>
+        <script>
+            document
+                .getElementById("breadcrumb-category")
+                .addEventListener("click", function () {
+                    window.location.href = "/Website/danhmucsanpham.html";
+                });
+        </script>
+    </body>
+</html>
