@@ -10,8 +10,16 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
+         <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css"
+            rel="stylesheet"
+        />
     </head>
-    <body>
+    <div>
         <header class="header-main">
             <div class="header-top">
                 <div class="hamburger-menu">
@@ -90,8 +98,38 @@
                     <li><a href="#">Giá từ cao đến thấp</a></li>
                     <li><a href="#">Sản phẩm mới nhất</a></li>
                 </ul>
+           <div class="price-filter">
+                    <div class="price-filter-header">
+                        <h5>PRICE</h5>
+                        <span class="toggle-icon">
+                            <svg
+                                class="price-filter-icon"
+                                viewBox="0 0 10 6"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g aria-hidden="true" stroke="none" fill-rule="evenodd">
+                                    <path
+                                        d="M5.35668 0.159286C5.16235 -0.053094 4.83769 -0.0530941 4.64287 0.159286L0.147611 5.05963C-0.0492049 5.27473 -0.049205 5.62357 0.147611 5.83813C0.344427 6.05323 0.664108 6.05323 0.860924 5.83813L5 1.32706L9.13858 5.83867C9.33589 6.05378 9.65507 6.05378 9.85239 5.83867C10.0492 5.62357 10.0492 5.27473 9.85239 5.06018L5.35668 0.159286Z"
+                                    />
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="price-filter-content">
+                        <div id="price-slider"></div>
+                        <div class="price-range__info">
+                            <div class="price-range__min-wrapper">
+                                <span class="text-secondary">Min Price: </span>
+                                <span class="price-range__min">$10</span>
+                            </div>
+                            <div class="price-range__max-wrapper">
+                                <span class="text-secondary">Max Price: </span>
+                                <span class="price-range__max">$1000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <!-- Product list -->
             <div class="product-list">
                 <!-- Product 4 -->
@@ -850,7 +888,12 @@
                 </div>
             </div>
         </footer>
+       <!-- Scripts -->
         <script src="/Website/js/main.js"></script>
+        <!-- noUiSlider JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+        <!-- Custom Price Filter JS -->
+        <script src="/Website/assets/js/priceFilter.js"></script>
         <script>
             document
                 .getElementById("breadcrumb-home")
