@@ -13,10 +13,10 @@
     <header>
         <div class="header-left">
             <i class="fas fa-bars"></i>
-            <img src="{{ asset('Admin/asset/images/logo.png') }}" alt="INTROWEAR" />
+            <img src="{{ asset('asset/images/logo.png') }}" alt="INTROWEAR" />
         </div>
         <section class="header-right">
-            <img src="{{ asset('Admin/asset/images/avt.png') }}" alt="avt" />
+            <img src="{{ asset('asset/images/avt.png') }}" alt="avt" />
             <p>ADMIN</p>
         </section>
     </header>
