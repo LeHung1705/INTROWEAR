@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CartController;
@@ -14,3 +16,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Xử lý đơn hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/order',[OrderController::class,'orders'])->name('orders');
+Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
+Route::get('/admin/manage-product',[AdminController::class,'products'])->name('admin.products');
+Route::get('/admin/addproduct',[AdminController::class,'product_add'])->name('admin.product-add');
+Route::post('/admin/store',[AdminController::class,'product_store'])->name('admin.store');
+
+
