@@ -28,40 +28,47 @@
         <div class="container">
             <div class="main">
                 <nav class="sidebar">
-                    <button
+                    <a
+                        href="/Admin/manage-product.html"
                         class="nav-button"
-                        onclick="redirectToManageProductPage()"
+                        style="text-decoration: none"
+                        >MANAGE PRODUCT</a
                     >
-                        MANAGE PRODUCT
-                    </button>
-                    <button class="nav-button" onclick="redirectToOrdersPage()">
-                         ORDERS
-                    </button>
-                    <button
+
+                    <a
+                        href="/Admin/orders.html"
+                        class="nav-button current-button"
+                        style="text-decoration: none"
+                        >ORDERS</a
+                    >
+
+                    <a
+                        href="/Admin/addproduct.html"
                         class="nav-button"
-                        onclick="redirectToAddProductPage()"
+                        style="text-decoration: none"
+                        >ADD PRODUCT</a
                     >
-                        ADD PRODUCT
-                    </button>
-                    <button
+                    <a
+                        href="/Admin/update-product.html"
                         class="nav-button"
-                        onclick="redirectToUpdateProductPage()"
+                        style="text-decoration: none"
+                        >UPDATE PRODUCT</a
                     >
-                        UPDATE PRODUCT
-                    </button>
-                    <button
+                    <a
+                        href="/Admin/create-coupon.html"
                         class="nav-button"
-                        onclick="redirectToCreateCouponPage()"
+                        style="text-decoration: none"
+                        >CREATE COUPON</a
                     >
-                        CREATE COUPON
-                    </button>
                 </nav>
 
                 <div class="content">
                     <!-- Nội dung trang đặt ở đây -->
                     <div class="orders-container">
                         <div class="orders-title">
-                            <span style="font-size: 30px; font-weight: 600;">Orders</span>
+                            <span style="font-size: 30px; font-weight: 600"
+                                >Orders</span
+                            >
                             <div class="breadcrumb-bar">
                                 <a href="#">Dashboard</a>
                                 <span>></span>
@@ -69,57 +76,70 @@
                             </div>
                         </div>
                         <div class="orders-table-container">
-                            <div style="width: 95%;">
+                            <div style="width: 95%">
                                 <div class="search-box">
-                                <input
-                                    type="text"
-                                    placeholder="Search here..."
-                                /><i class="fa-solid fa-magnifying-glass fa-2xs" style="color: #c7e0f5;"></i>
-                            </div>
+                                    <input
+                                        type="text"
+                                        placeholder="Search here..."
+                                    /><i
+                                        class="fa-solid fa-magnifying-glass fa-2xs"
+                                        style="color: #c7e0f5"
+                                    ></i>
+                                </div>
                             </div>
                             <div class="table-viewport">
                                 <table class="orders-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 70px">OrderNo</th>
-                                        <th class="text-center">Name</th>
-                                        <th class="text-center">Phone</th>
-                                        <th class="text-center">Total</th>
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">Order Date</th>
-                                        <th class="text-center">Total Items</th>
-                                        <th class="text-center">
-                                            Delivered On
-                                        </th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td class="text-center">
-                                            Divyansh Kumar
-                                        </td>
-                                        <td class="text-center">1234567891</td>
-                                        <td class="text-center">$208.12</td>
-                                        <td class="text-center">ordered</td>
-                                        <td class="text-center">
-                                            2024-07-11 00:54:14
-                                        </td>
-                                        <td class="text-center">2</td>
-                                        <td></td>
-                                        <td class="text-center">
-                                            <a href="order-details.html">
-                                                <div class="list-icon-function">
-                                                    <div class="item eye">
-                                                        <i class="fa-solid fa-eye"></i>
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 70px">OrderNo</th>
+                                            <th class="text-center">Name</th>
+                                            <th class="text-center">Phone</th>
+                                            <th class="text-center">Total</th>
+                                            <th class="text-center">Status</th>
+                                            <th class="text-center">
+                                                Order Date
+                                            </th>
+                                            <th class="text-center">
+                                                Total Items
+                                            </th>
+                                            <th class="text-center">
+                                                Delivered On
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">
+                                                Divyansh Kumar
+                                            </td>
+                                            <td class="text-center">
+                                                1234567891
+                                            </td>
+                                            <td class="text-center">$208.12</td>
+                                            <td class="text-center">ordered</td>
+                                            <td class="text-center">
+                                                2024-07-11 00:54:14
+                                            </td>
+                                            <td class="text-center">2</td>
+                                            <td></td>
+                                            <td class="text-center">
+                                                <a href="order-details.html">
+                                                    <div
+                                                        class="list-icon-function"
+                                                    >
+                                                        <div class="item eye">
+                                                            <i
+                                                                class="fa-solid fa-eye"
+                                                            ></i>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
