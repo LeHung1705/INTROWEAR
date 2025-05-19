@@ -22,3 +22,7 @@ Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_
 
 //Route đơn hàng
 Route::get('/order',[OrderController::class,'orders'])->name('orders');
+
+
+//Route thanh toán
+Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
