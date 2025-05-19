@@ -37,7 +37,7 @@
               </td>
               <td>
                 <div class="shopping-cart__product-item__detail">
-                  <h4>{{$item->name()}}</h4>
+                  <h4>{{$item->name}}</h4>
                   <ul class="shopping-cart__product-item__options">
                     <li>Color: Yellow</li>
                     <li>Size: L</li>
@@ -49,7 +49,7 @@
               </td>
               <td>
                 <div class="qty-control position-relative">
-                  <input type="number" name="quantity" value="3" min="1" class="qty-control__number text-center">
+                  <input type="number" name="quantity" value="{{$item->qty}}" min="1" class="qty-control__number text-center">
                   <div class="qty-control__reduce">-</div>
                   <div class="qty-control__increase">+</div>
                 </div>
@@ -96,7 +96,7 @@
                 </tr>
                 <tr>
                   <th>Total</th>
-                  <td>{{Cart::instance('cart')->total()}}</td>
+                  <td>{{Cart::instance('cart')->total()}}000VND</td>
                 </tr>
               </tbody>
             </table>
@@ -113,7 +113,7 @@
             <h2>Giỏ hàng của bạn đang trống</h2>
             <br>
             <p>Hãy thêm sản phẩm vào giỏ hàng để bắt đầu mua sắm!</p>
-            {{-- <a href="{{ route('shop.index') }}" style="display: inline-block; padding: 10px 20px; background-color: #17a2b8; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">Tiếp tục mua sắm</a> --}}
+            <a href="{{ route('shop.index') }}" style="display: inline-block; padding: 10px 20px; background-color: #17a2b8; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">Tiếp tục mua sắm</a>
         </div>
       @endif
     </div>
