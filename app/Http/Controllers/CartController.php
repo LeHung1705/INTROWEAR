@@ -24,6 +24,34 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    public function remove($rowId)
+    {
+        Cart::instance('cart')->remove($rowId);
+
+        // Chuyển hướng lại trang giỏ hàng với thông báo thành công
+        return redirect()->back()->with('success', 'Product removed from cart!');
+    }
+
+    public function increase_cart_quantity($rowId)
+    {
+        $product = Cart::instance('cart')->get($rowId);
+        $qty = $product->qty + 1;
+        Cart::instance('cart')->update($rowId, $qty);
+        return redirect()->back();
+    }
+
+    public function decrease_cart_quantity($rowId)
+    {
+        $product = Cart::instance('cart')->get($rowId);
+        $qty = $product->qty - 1;
+        if ($qty > 0) {
+            Cart::instance('cart')->update($rowId, $qty);
+        } else {
+            Cart::instance('cart')->remove($rowId);
+        }
+        return redirect()->back();
+    }
+
     public function place_an_order( Request $request)
     {
          $validatedData = $request->validate([
