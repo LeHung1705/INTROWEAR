@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/manage-product.css') }}" />
+@endpush
 @section('content')
 <div class="container">
             <div class="main">
@@ -33,7 +36,7 @@
                         href="/Admin/create-coupon.html"
                         class="nav-button "
                         style="text-decoration: none"
-                        >CREATE COUPON</a
+                        >COUPON</a
                     >
                 </nav>
 
@@ -70,7 +73,7 @@
                     <td>{{$product->price}}đ</td>
                     <td class="status in-stock">{{$product->status_product}}</td>
                     <td>
-                        <i class="fas fa-pen edit"onclick="redirectToUpdateProductPage()"></i>
+                        <a class="fas fa-pen edit"  href="{{route('admin.update',['id'=>$product->id])}}"></a>
                         <i class="fas fa-trash delete"></i>
                         
                     </td>

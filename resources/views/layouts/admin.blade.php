@@ -10,15 +10,15 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <meta charset="UTF-8" />
-
-    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/addproduct.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/manage-product.css') }}" />
+
+
+
+
 
     @stack("styles")
 </head>
@@ -36,8 +36,8 @@
     </header>
 
     
-       @yield('content')
-     
+       @yield('content') 
+    
     
 
     <!-- FOOTER -->

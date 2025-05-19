@@ -66,10 +66,15 @@
         </div>
        
     </header>
-
+      
+                 <div class="content">
+                    <!-- Nội dung trang đặt ở đây -->
+                    <!-- Nội dung trang đặt ở đây -->
+                
     <!-- MAIN CONTENT -->
     @yield('content')
-
+    
+ </div> 
     <!-- FOOTER -->
     <footer class="footer">
       <!-- Top section of footer -->

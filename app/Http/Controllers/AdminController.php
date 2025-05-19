@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Product;
+use App\Models\Coupon;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -86,4 +87,40 @@ if ($request->hasFile('image')) {
         $constraint->aspectRatio();
     })->save($destinationPath . '/' . $imageName);
 }*/
+public function update_product($id)
+{
+    $product = Product::find($id);
+    return view('admin.update-product',compact('product'));
+}
+public function coupons()
+{
+    $coupons = Coupon::orderBy('end_date','desc')->get();
+    return view('admin.coupon',compact('coupons'));
+}
+public function add_coupon()
+{
+        $coupons = Coupon::orderBy('end_date','desc')->get();
+        return view('admin.coupon-add', compact('coupons'));
+}
+
+public function coupon_store(Request $request)
+{
+    $request->validate([
+        'coupon_code'=>'required',
+        'discount_percentage'=>'required',
+        'description'=>'required',
+        'start_date'=> 'required',
+        'end_date'=> 'required'
+    ]);
+
+    $coupon = new Coupon();
+    $coupon->coupon_code = $request->coupon_code;
+     $coupon->discount_percentage = $request->discount_percentage;
+      $coupon->description = $request->description;
+   $coupon->start_date = $request->start_date;
+    $coupon->end_date = $request->end_date;
+  $coupon->save();
+    return redirect()->route('admin.coupon')->with('status','Thêm mã giảm giá thành công!');
+ 
+}
 }

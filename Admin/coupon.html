@@ -3,13 +3,17 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/Admin/css/manage-product.css" />
         <link rel="stylesheet" href="/Admin/css/main.css" />
+        <link rel="stylesheet" href="/Admin/css/coupon.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Trispace:wght@100;200;300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
-        <title>INTROWEAR - Manage Product</title>
+        <title>INTROWEAR</title>
     </head>
     <body>
         <!-- HEADER -->
@@ -30,7 +34,7 @@
                 <nav class="sidebar">
                     <a
                         href="/Admin/manage-product.html"
-                        class="nav-button current-button"
+                        class="nav-button"
                         style="text-decoration: none"
                         >MANAGE PRODUCT</a
                     >
@@ -56,70 +60,63 @@
                     >
                     <a
                         href="/Admin/create-coupon.html"
-                        class="nav-button"
+                        class="nav-button current-button"
                         style="text-decoration: none"
                         >COUPON</a
                     >
                 </nav>
-
                 <div class="content">
-                    <!-- Nội dung trang đặt ở đây -->
-                    <div class="manage-product">
-                        <h1 class="title">MANAGE PRODUCT</h1>
-
-                        <div class="action-bar">
-                            <button class="btn">
-                                <i class="fas fa-search"></i>Tìm kiếm sản phẩm
-                            </button>
-                            <button class="btn">
-                                <i class="fas fa-plus"></i>Thêm sản phẩm
-                            </button>
-                            <button class="btn">
-                                <i class="fas fa-filter"></i>Tất cả trạng thái
-                            </button>
-                        </div>
-
-                        <table class="product-table">
-                            <thead>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Hình ảnh</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Tình trạng</th>
-                                    <th>Thao tác</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><img src="#" alt="" /></td>
-                                    <td>THE STAR BIG BOXY T-SHIRT</td>
-                                    <td>309.000 đ</td>
-                                    <td class="status in-stock">Còn hàng</td>
-                                    <td>
-                                        <i class="fas fa-pen edit"></i>
-                                        <i class="fas fa-trash delete"></i>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="pagination-wrapper">
-                            <div class="pagination">
-                                <a href="#">‹</a>
-                                <a class="active" href="#">1</a>
-                                <a class="disabled" href="#">2</a>
-                                <a class="disabled" href="#">3</a>
-                                <a class="disabled" href="#">4</a>
-                                <a class="disabled" href="#">›</a>
-                            </div>
+                    <div class="create-coupon-title font-trispace">COUPONS</div>
+                    <div class="wg-table table-all-user">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Code</th>
+                                        <th>Type</th>
+                                        <th>Value</th>
+                                        <th>Cart Value</th>
+                                        <th>Expiry Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>OFF10</td>
+                                        <td>percent</td>
+                                        <td>10.00</td>
+                                        <td>100.00</td>
+                                        <td>2024-07-16</td>
+                                        <td>
+                                            <div class="list-icon-function">
+                                                <a href="#">
+                                                    <div class="item edit">
+                                                        <i
+                                                            class="icon-edit-3"
+                                                        ></i>
+                                                    </div>
+                                                </a>
+                                                <form action="#" method="POST">
+                                                    <div
+                                                        class="item text-danger delete"
+                                                    >
+                                                        <i
+                                                            class="icon-trash-2"
+                                                        ></i>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- FOOTER -->
         <footer class="footer">
             <!-- Top section of footer -->
@@ -183,8 +180,8 @@
                             <p class="contact-item">
                                 <i class="far fa-envelope"></i>
                                 <span
-                                    ><strong>Email:</strong>
-                                    contact@introwear.com</span
+                                    ><strong>Email:</strong
+                                    >contact@introwear.com</span
                                 >
                             </p>
                         </div>

@@ -1,4 +1,9 @@
 @extends('layouts.admin')
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/addproduct.css') }}" />
+@endpush
+
 @section('content')
  <div class="container">
             <div class="main">
@@ -33,7 +38,7 @@
                         href="/Admin/create-coupon.html"
                         class="nav-button "
                         style="text-decoration: none"
-                        >CREATE COUPON</a
+                        >COUPON</a
                     >
                 </nav>
                 <div class="content">
