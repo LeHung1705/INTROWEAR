@@ -65,3 +65,4 @@ Route::get('/dashboard', [OrderController::class, 'index'])->name('dashboard');
 
 //Route thanh toán
 Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+Route::post('/place-an-order', [CartController::class, 'place_an_order'])->name('cart.place.an.order');
