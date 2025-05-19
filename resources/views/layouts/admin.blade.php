@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ config('app.name', 'INTROWEAR') }}</title>
-    <link rel="stylesheet" href="{{ asset('Admin/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('Admin/css/orders.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     @stack('styles')
 </head>
@@ -14,10 +13,10 @@
     <header>
         <div class="header-left">
             <i class="fas fa-bars"></i>
-            <img src="{{ asset('Admin/asset/images/logo.png') }}" alt="INTROWEAR" />
+            <img src="{{ asset('asset/images/logo.png') }}" alt="INTROWEAR" />
         </div>
         <section class="header-right">
-            <img src="{{ asset('Admin/asset/images/avt.png') }}" alt="avt" />
+            <img src="{{ asset('asset/images/avt.png') }}" alt="avt" />
             <p>ADMIN</p>
         </section>
     </header>

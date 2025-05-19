@@ -1,0 +1,104 @@
+.content {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    
+}
+
+#nav-active {
+    background-color: #3399ff;
+}
+
+.breadcrumb-bar a, .breadcrumb-bar span {
+    text-decoration: none;
+    color: #9c9b9b;
+    font-size: 14px;
+}
+
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    gap: 30px;
+}
+
+.orders-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.orders-table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 5px rgb(199, 224, 245);
+    border-radius: 5px;
+
+}
+
+.search-box {
+    border: rgb(199, 224, 245) solid 1px;
+    width: 200px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.search-box input {
+    width: 90%;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+.search-box input:focus {
+    outline: none;
+}
+
+.table-viewport {
+    width: 95%;
+    overflow: hidden;
+}
+
+.orders-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    border: rgb(199, 224, 245) solid 1px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.orders-table th,
+.orders-table td {
+    border: 1px solid rgb(199, 224, 245);
+    padding: 10px;
+    text-align: center;
+}
+
+.orders-table th {
+    background-color: #ffffff;
+    border-bottom: 2px solid #575656;
+}
+
+.orders-table tr {
+    background-color: #f2ecec;
+}
+/* Phân trang */
+.wgp-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
