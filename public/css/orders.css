@@ -94,3 +94,11 @@
 .orders-table tr {
     background-color: #f2ecec;
 }
+/* Phân trang */
+.wgp-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
