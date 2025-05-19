@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ config('app.name', 'INTROWEAR') }}</title>
-    <link rel="stylesheet" href="{{ asset('Admin/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('Admin/css/orders.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     @stack('styles')
 </head>
@@ -14,10 +13,10 @@
     <header>
         <div class="header-left">
             <i class="fas fa-bars"></i>
-            <img src="{{ asset('Admin/asset/images/logo.png') }}" alt="INTROWEAR" />
+            <img src="{{ asset('asset/images/logo.png') }}" alt="INTROWEAR" />
         </div>
         <section class="header-right">
-            <img src="{{ asset('Admin/asset/images/avt.png') }}" alt="avt" />
+            <img src="{{ asset('asset/images/avt.png') }}" alt="avt" />
             <p>ADMIN</p>
         </section>
     </header>
@@ -31,12 +30,19 @@
                 <a href="{{ url('/admin/add-product') }}" class="nav-button" style="text-decoration: none">ADD PRODUCT</a>
                 <a href="{{ url('/admin/update-product') }}" class="nav-button" style="text-decoration: none">UPDATE PRODUCT</a>
                 <a href="{{ url('/admin/create-coupon') }}" class="nav-button" style="text-decoration: none">CREATE COUPON</a>
+                <a href="#" class="nav-button" style="text-decoration: none; font-size : 12px;" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                LOGOUT
+                <form method="POST" action="{{route('logout')}}" id="logout-form" style="display: none;">
+                    @csrf
+                </form>
+</a>
+</li>
             </nav>
             <div class="content">
                 @yield('content')
             </div>
         </div>
-    </div>
+    </div> 
 
     <!-- FOOTER -->
     <footer class="footer">
