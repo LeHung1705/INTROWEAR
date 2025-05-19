@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use Surfsidemedia\Shoppingcart\Facades\Cart; //
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\OrderItem;
+use App\Models\Transaction;
 
 class CartController extends Controller
 {
@@ -65,32 +66,53 @@ class CartController extends Controller
 
     public function place_an_order(Request $request)
     {
+        // Xác thực dữ liệu đầu vào
+        $request->validate([
+            'name' => 'required|max:100',
+            'phone' => 'required|numeric|digits:10',
+            'address' => 'required|max:255',
+        ]);
+
+        // Lấy thông tin người dùng
         $user_id = Auth::user()->id;
-         $validatedData = $request->validate([
-        'name' => 'required|string|max:255',
-        'phone' => 'required|regex:/^[0-9]{10,11}$/',
-        'address' => 'required|string|max:500',
-        // Thêm xác thực payment_method nếu cần
-    ]);
 
-    $order = new Order();
-    $order->user_id = Auth::id() ?? null; 
-    $order->name = $validatedData['name'];
-    $order->phone = $validatedData['phone'];
-    $order->address = $validatedData['address'];
-      //$payment_method 
-    $order->status = 'ordered';
-    $order->total = Session::get('checkout')['total'];//can sua
-    $order->save();
+        // Thiết lập thông tin thanh toán
+        $this->setAmountForCheckout();
 
-    foreach (Cart::instance('cart')->content() as $item) {
-    $orderItem = new OrderItem();
-    $orderItem->product_id = $item->id;
-    $orderItem->order_id = $order->id;
-    $orderItem->price = $item->price;
-    $orderItem->quantity = $item->qty;
-    $orderItem->save();
-}
+        // Tạo đơn hàng
+        $order = new Order();
+        $order->user_id = $user_id;
+        $order->total = floatval(str_replace([',', '.'], '', Session::get('checkout')['total']));
+        $order->name = $request->name;
+        $order->phone = $request->phone;
+        $order->address = $request->address;
+        $order->save();
+
+        // Lưu các sản phẩm trong đơn hàng
+        foreach (Cart::instance('cart')->content() as $item) {
+            $orderItem = new OrderItem();
+            $orderItem->product_id = $item->id;
+            $orderItem->order_id = $order->id;
+            $orderItem->price = $item->price;
+            $orderItem->quantity = $item->qty;
+            $orderItem->save();
+        }
+
+        // Tạo giao dịch thanh toán
+        $transaction = new Transaction();
+        $transaction->user_id = $user_id;
+        $transaction->order_id = $order->id;
+        $transaction->mode = $request->mode ?? 'COD'; // Mặc định là thanh toán khi nhận hàng
+        $transaction->save();
+
+        // Dọn dẹp giỏ hàng và session
+        Cart::instance('cart')->destroy();
+        Session::forget('checkout');
+        Session::forget('coupon');
+        Session::forget('discounts');
+
+        // Chuyển hướng đến trang xác nhận đơn hàng
+        return view('order.confirmation', compact('order'));
     }
 
     public function setAmountForCheckout()
@@ -100,22 +122,22 @@ class CartController extends Controller
             Session::forget('checkout');
             return;
         }    
-        if(session()->has('coupon'))
+        if(Session::has('coupon'))
         {
             Session::put('checkout',[
-                'discount' => session()->get('discounts')['discount'],
-                'subtotal' =>  session()->get('discounts')['subtotal'],
-                'tax' =>  session()->get('discounts')['tax'],
-                'total' =>  session()->get('discounts')['total']
+                'discount' => Session::get('discounts')['discount'],
+                'subtotal' =>  Session::get('discounts')['subtotal'],
+                'tax' =>  Session::get('discounts')['tax'],
+                'total' =>  Session::get('discounts')['total']
             ]);
         }
         else
         {
-            session()->put('checkout',[
+            Session::put('checkout',[
                 'discount' => 0,
                 'subtotal' => Cart::instance('cart')->subtotal(),
                 'tax' => Cart::instance('cart')->tax(),
-                'total' => Cart::instance('cart')->total()
+                'total' => Cart::instance('cart')->total() 
             ]);
         }
     }
