@@ -1,64 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="{{asset('css/main.css') }}" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      href="{{ asset ('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css') }}"
     />
-    <title>INTROWEAR</title>
-  </head>
-  <body>
+   
+    @stack('styles')
+</head>
+ <body>
     <!-- HEADER -->
-    <header class="header-main">
-        <div class="header-top">
-            <div class="hamburger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <div class="logo">
-              <a href="/Website/trangchu.html">
-                <img src="/Website/assets/images/logo.png " alt="INTROWEAR Logo" class="logo-img">
-                <span class="logo-text"></span>
-                </a>
-            </div>
-            
-            <div class="search-bar">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="header-actions">
-                <div class="icons">
-                    <a href="/Website/log-in.html">
-                    <i class="fas fa-user user-icon"></i>
-                </a>
-                    <div class="cart-wrapper">
-                        <a href="/Website/giohang.html">
-                        <i class="fas fa-shopping-cart cart-icon"></i>
-                    </a>
-                        <span class="cart-count"></span>
-                    </div>
-                </div>
-            </div>
-        
-    </div>
-        <div class="header-bottom responsive-nav">
-            <nav>
-                <ul>
-                    <li><a href="/Website/trangchu.html" id="homepageLink">HOMEPAGE</a></li>
-                    <li class="dropdown"><a href="/Website/trangchu.html">SHOP</a></li>
-                    <li><a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a></li>
-                </ul>
-            </nav>
-
-        </div>
-       
+    <header>
+      <div class="header-left">
+        <i class="fas fa-bars"></i>
+        <img src="{{ asset('asset/images/logo.png') }}" alt="INTROWEAR" />
+      </div>
+      <section class="header-right">
+        <img src="{{ asset('asset/images/avt.png') }}" alt="avt" />
+        <p>ADMIN</p>
+      </section>
     </header>
 
-    <!-- NOI DUNG -->
-    <div style="height: 50px"></div>
+    <!-- NAVIGATION -->
+    <div class="container">
+      <div class="main">
+        <nav class="sidebar">
+          <button class="nav-button" onclick="redirectToManageProductPage()">
+            MANAGE PRODUCT
+          </button>
+          <button class="nav-button" onclick="redirectToCSOPage()">
+            CONFIRM STATUS ORDER
+          </button>
+          <button class="nav-button" onclick="redirectToAddProductPage()">
+            ADD PRODUCT
+          </button>
+          <button class="nav-button" onclick="redirectToUpdateProductPage()">
+            UPDATE PRODUCT
+          </button>
+          <button class="nav-button" onclick="redirectToCreateCouponPage()">
+            CREATE COUPON
+          </button>
+        </nav>
+
+        <div class="content">
+          <!-- Nội dung trang đặt ở đây -->
+           @yield('content')
+        </div>
+      </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -156,7 +153,7 @@
         <!-- Policy links -->
         <div class="footer__policy">
           <ul class="policy-list">
-            <li class="policy-item"><a href="./aboutus.html">Giới thiệu</a></li>
+            <li class="policy-item"><a href="{{route('admin.index')}}">Giới thiệu</a></li>
             <li class="policy-item"><a href="#">Điều khoản dịch vụ</a></li>
             <li class="policy-item"><a href="#">Phương thức thanh toán</a></li>
             <li class="policy-item">
@@ -176,6 +173,7 @@
         </div>
       </div>
     </footer>
-    <script src="/Website/js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    @stack('scripts')
   </body>
 </html>
