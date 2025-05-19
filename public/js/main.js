@@ -1,6 +1,7 @@
-function redirectToManageProductPage() {
+function redirectToManageProductPage(){
   window.location.href = "/Admin/manage-product.html";
 }
+
 
 function redirectToOrdersPage() {
   window.location.href = "/Admin/orders.html";
@@ -69,3 +70,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   } 
 });
+

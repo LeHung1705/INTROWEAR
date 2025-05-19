@@ -136,7 +136,6 @@ body {
   align-items: center;
   font-size: 20px;
   cursor: pointer;
-  user-select: none;
 }
 
 .qty-control__number {

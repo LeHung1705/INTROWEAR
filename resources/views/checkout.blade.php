@@ -1,0 +1,191 @@
+@extends('layouts.app')
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('assets/css/payment.css') }}" />
+@endpush
+
+@section('content')
+<form name="checkout-form" action="https://uomo-html.flexkitux.com/Demo3/shop_order_complete.html">
+    <div class="checkout-form">
+      <div class="billing-info__wrapper">
+        <div class="row">
+          <div class="col-6">
+            <h3>SHIPPING DETAILS</h3>
+          </div>
+          <div class="col-6">
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <div class="form-floating my-3">
+              <input type="text" class="form-control" name="name" required="" value={{old('name')}}>
+              <label for="name">Full Name *</label>
+              @error('name') <span class="text-danger">{{$message}}</span> @enderror
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating my-3">
+              <input type="text" class="form-control" name="phone" required="" value={{old('phone')}}>
+              <label for="phone">Phone Number *</label>
+              @error('phone') <span class="text-danger">{{$message}}</span> @enderror
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating my-3">
+              <input type="text" class="form-control" name="zip" required="" value={{old('zip')}}>
+              <label for="zip">Pincode *</label>
+              @error('zip') <span class="text-danger">{{$message}}</span> @enderror
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating mt-3 mb-3">
+              <input type="text" class="form-control" name="state" required="" value={{old('state')}}>
+              <label for="state">State *</label>
+              @error('state') <span class="text-danger">{{$message}}</span> @enderror
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating my-3">
+              <input type="text" class="form-control" name="city" required="" value={{old('city')}}>
+              <label for="city">Town / City *</label>
+              @error('city') <span class="text-danger">{{$message}}</span> @enderror
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating my-3">
+              <input type="text" class="form-control" name="address" required="" value={{old('address')}}>
+              <label for="address">House no, Building Name *</label>
+              @error('address') <span class="text-danger">{{$message}}</span> @enderror
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating my-3">
+              <input type="text" class="form-control" name="locality" required="" value={{old('locality')}}>
+              <label for="locality">Road Name, Area, Colony *</label>
+              @error('locality') <span class="text-danger">{{$message}}</span> @enderror
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-floating my-3">
+              <input type="text" class="form-control" name="landmark" required="" value={{old('landmark')}}>
+              <label for="landmark">Landmark *</label>
+              @error('landmark') <span class="text-danger">{{$message}}</span> @enderror
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkout__totals-wrapper">
+        <div class="sticky-content">
+          <div class="checkout__totals">
+            <h3>Your Order</h3>
+            <table class="checkout-cart-items">
+              <thead>
+                <tr>
+                  <th align="left">PRODUCT</th>
+                  <th align="right">SUBTOTAL</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach(Cart::instance('cart') as $item)
+                <tr>
+                  <td>
+                    {{$item->name}} x {{$item->qty}}
+                  </td>
+                  <td align="right">
+                    {{$item->subtotal()}}VND
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+            @if(Session::has('discounts'))
+            <table class="checkout-totals">
+                <tbody>
+                  <tr>
+                    <th align="left">SUBTOTAL</th>
+                    <td align="right">{{Cart::instance('cart')->subtotal()}}VND</td>
+                  </tr>
+                  <tr>
+                    <th> DISCOUNT {{Session::get('coupon')['code']}}</th>
+                    <td align="right">{{Session::get('discounts')['discount']}}VND</td>
+                  </tr>
+                  <tr>
+                    <th> SUBTOTAL AFTER DISCOUNT</th>
+                    <td align="right">{{Session::get('discounts')['subtotal']}}VND</td>
+                  </tr>
+                  <tr>
+                    <th align="left">SHIPPING</th>
+                    <td align="right">20,000VND</td>
+                  </tr>
+                  <tr>
+                    <th align="left">TOTAL</th>
+                    <td align="right">{{Session::get('discounts')['total']}}VND</td>
+                  </tr>
+                </tbody>
+              </table>
+            @else
+            <table class="checkout-totals">
+              <tbody>
+                <tr>
+                  <th align="left">SUBTOTAL</th>
+                  <td align="right">{{Cart::instance('cart')->subtotal()}}</td>
+                </tr>
+                <tr>
+                  <th align="left">SHIPPING</th>
+                  <td align="right">20,000VND</td>
+                </tr>
+                <tr>
+                  <th align="left">TOTAL</th>
+                  <td align="right">{{number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())) + 20000, 0, ',', '.')}}VND</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="checkout__payment-methods">
+            <div class="payment-methods">
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="bank" checked />
+                  <span>Direct bank transfer</span>
+                  <div class="payment-info">
+                    Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                  </div>
+                </label>
+              
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="check" />
+                  <span>Check payments</span>
+                  <div class="payment-info">
+                    Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui...
+                  </div>
+                </label>
+              
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="cod" />
+                  <span>Cash on delivery</span>
+                  <div class="payment-info">
+                    Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui...
+                  </div>
+                </label>
+              
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="paypal" />
+                  <span>Paypal</span>
+                  <div class="payment-info">
+                    Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui...
+                  </div>
+                </label>
+              </div>
+              
+            <div class="policy-text">
+              Your personal data will be used to process your order, support your experience throughout this
+              website, and for other purposes described in our <a href="terms.html" target="_blank">privacy
+                policy</a>.
+            </div>
+          </div>
+          <button class="btn btn-primary btn-checkout">PLACE ORDER</button>
+        </div>
+      </div>
+    </div>
+  </form>
+@endsection

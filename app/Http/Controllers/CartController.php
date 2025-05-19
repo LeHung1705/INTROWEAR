@@ -6,6 +6,8 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use Surfsidemedia\Shoppingcart\Facades\Cart; //
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+
 
 class CartController extends Controller
 {
@@ -23,6 +25,42 @@ class CartController extends Controller
             $request->price
         )->associate('App\Models\Product');
         return redirect()->back();
+    }
+
+    public function remove($rowId)
+    {
+        Cart::instance('cart')->remove($rowId);
+
+        // Chuyển hướng lại trang giỏ hàng với thông báo thành công
+        return redirect()->back()->with('success', 'Product removed from cart!');
+    }
+
+    public function increase_cart_quantity($rowId)
+    {
+        $product = Cart::instance('cart')->get($rowId);
+        $qty = $product->qty + 1;
+        Cart::instance('cart')->update($rowId, $qty);
+        return redirect()->back();
+    }
+
+    public function decrease_cart_quantity($rowId)
+    {
+        $product = Cart::instance('cart')->get($rowId);
+        $qty = $product->qty - 1;
+        if ($qty > 0) {
+            Cart::instance('cart')->update($rowId, $qty);
+        } else {
+            Cart::instance('cart')->remove($rowId);
+        }
+        return redirect()->back();
+    }
+
+    public function checkout()
+    {
+        if(!Auth::check()){
+            return redirect()->route('login');
+        }
+        return view('checkout');
     }
 
     public function place_an_order( Request $request)

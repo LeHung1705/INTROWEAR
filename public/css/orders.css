@@ -8,9 +8,11 @@
     
 }
 
+
 #nav-active {
     background-color: #3399ff;
 }
+
 
 .breadcrumb-bar a, .breadcrumb-bar span {
     text-decoration: none;
@@ -93,6 +95,9 @@
 
 .orders-table tr {
     background-color: #f2ecec;
+
+}
+
 }
 .page-link {
     font-family: inherit;
@@ -143,3 +148,4 @@
 {
     background-color: red;
 }
+
