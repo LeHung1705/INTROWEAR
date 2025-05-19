@@ -12,6 +12,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Auth::routes();
 
-//Xử lý đơn hàng
+//Xử lý giỏ hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
+
+//Xử lý đơn hàng
 Route::get('/order',[OrderController::class,'orders'])->name('orders');
