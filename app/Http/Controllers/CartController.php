@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\OrderItem;
+use App\Models\Coupon;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Surfsidemedia\Shoppingcart\Facades\Cart; //
 use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\Session ;
 
 class CartController extends Controller
 {
@@ -100,4 +105,46 @@ class CartController extends Controller
         }
         
     }
+    public function apply_coupon_code(Request $request)
+    {
+        $coupon_code=$request->coupon_code;
+        if(isset($coupon_code)){
+            $coupon = Coupon::where('code',$coupon_code)->where('end_day','>=',Carbon::today())->where ('cart_value','<=',Cart::instance('cart')->subtotal())->first();
+            if (!$coupon) {
+                return redirect()->back()->with('error','Invalid coupon code!');
+
+            } 
+            else 
+            {
+                Session::put('coupon',[
+                    'coupon_code'=>$coupon->coupon_code,
+                    'discount_percentage'=>$coupon->discount_percentage
+
+                ]
+                );
+            }
+        }
+        else return  redirect()->back()->with('error','Invalid coupon code!');
+    }
+public function calculatorDiscount()
+{
+  $discount=0;
+  if(Session::has('coupon'))
+  {
+    $discount = (Cart::instance('cart')->subtotal()*Session::get('coupon')['discount_percentage'])/100;
+
+  }
+  $subtotalAfterDiscount = Cart::instance('cart')->subtotal()-$discount;
+  $taxAfterDiscount = ($subtotalAfterDiscount*config('cart.tax'))/100;
+
+  $total=$subtotalAfterDiscount+$taxAfterDiscount;
+  Session::put( 'discounts',[
+    ''=>$discount,
+  ])
+}
+
+
+
+
+
 }
