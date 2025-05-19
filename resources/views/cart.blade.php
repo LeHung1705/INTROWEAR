@@ -32,7 +32,7 @@
             <tr>
               <td>
                 <div class="shopping-cart__product-item">
-                  <img loading="lazy" src="{{asset('uploads/products/thumbnails')}}/{{$item->model->image}}" width="120" height="120" alt="" />
+                  <img loading="lazy" src="{{asset('uploads/products')}}/{{$item->model->image}}" width="120" height="120" alt="" />
                 </div>
               </td>
               <td>
@@ -45,26 +45,34 @@
                 </div>
               </td>
               <td>
-                <span class="shopping-cart__product-price">{{$item->price}}000VND</span>
+                <span class="shopping-cart__product-price">{{$item->price}}VND</span>
               </td>
               <td>
                 <div class="qty-control position-relative">
                   <input type="number" name="quantity" value="{{$item->qty}}" min="1" class="qty-control__number text-center">
-                  <div class="qty-control__reduce">-</div>
-                  <div class="qty-control__increase">+</div>
+                  <form method="POST" action="{{route('cart.qty.decrease', ['rowId'=>$item->rowId])}}">
+                    @csrf
+                    @method('PUT')
+                    <div class="qty-control__reduce">-</div>
+                  </form>
+                  <form method="POST" action="{{route('cart.qty.increase', ['rowId'=>$item->rowId])}}">
+                    @csrf
+                    @method('PUT')
+                    <div class="qty-control__increase">+</div>
+                  </form>
                 </div>
               </td>
               <td>
-                <span class="shopping-cart__subtotal">{{$item->subTotal()}}000VND</span>
+                <span class="shopping-cart__subtotal">{{$item->subTotal()}}VND</span>
               </td>
               <td>
-                <a href="#" class="remove-cart">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="#767676" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z" />
-                    <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
-                  </svg>
+                <a href="{{ route('cart.remove', $item->rowId) }}" class="remove-cart">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="#767676" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z" />
+                        <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
+                    </svg>
                 </a>
-              </td>
+            </td>
             </tr>
             @endforeach
           </tbody>
@@ -86,17 +94,17 @@
               <tbody>
                 <tr>
                   <th>Subtotal</th>
-                  <td>{{Cart::instance('cart')->subtotal()}}000VND</td>
+                  <td>{{Cart::instance('cart')->subtotal()}}VND</td>
                 </tr>
                 <tr>
                   <th>Shipping</th>
                   <td>
-                     20.000VND
+                     20000VND
                   </td>
                 </tr>
                 <tr>
                   <th>Total</th>
-                  <td>{{Cart::instance('cart')->total()}}000VND</td>
+                  <td>{{number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())) + 20000, 0, ',', '.')}}VND</td>
                 </tr>
               </tbody>
             </table>
@@ -113,8 +121,23 @@
             <h2>Giỏ hàng của bạn đang trống</h2>
             <br>
             <p>Hãy thêm sản phẩm vào giỏ hàng để bắt đầu mua sắm!</p>
-            <a href="{{ route('shop.index') }}" style="display: inline-block; padding: 10px 20px; background-color: #17a2b8; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">Tiếp tục mua sắm</a>
+            <br>
+            <a href="{{ route('shop.index') }}" style="display: inline-block; padding: 10px 20px; background-color: black; color: white; text-decoration: none; text-align: center;">TIẾP TỤC MUA SẮM</a>
         </div>
       @endif
     </div>
 @endsection
+
+@push('scripts')
+  <script>
+    $(function(){
+      $(".qty-control__increase").on('click', function(){
+        $(this).closest('form').submit();
+      });
+
+      $(".qty-control__reduce").on('click', function(){
+        $(this).closest('form').submit();
+      });
+    })
+  </script>
+@endpush
