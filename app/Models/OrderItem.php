@@ -8,11 +8,11 @@ class OrderItem extends Model
 {
     public function product()
     {
-        return this->beLongsTo(Product::class);
+        return $this->beLongsTo(Product::class);
     }
      public function order()
     {
-        return this->beLongsTo(Order::class);
+        return $this->beLongsTo(Order::class);
     }
     
 }

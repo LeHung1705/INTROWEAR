@@ -60,7 +60,7 @@
                             <td class="text-center">{{$order->orderItems->count()}}</td>
                             <td>{{$order->delivered_date}}</td>
                             <td class="text-center">
-                                <a href="order-details.html">
+                                <a href="{{ route('order.details', ['order_id' => $order->id]) }}">
                                     <div class="list-icon-function">
                                         <div class="item eye">
                                             <i class="fa-solid fa-eye"></i>
@@ -71,11 +71,13 @@
                         </tr>
                         @endforeach
                                     </tbody>
+                
                                 </table>
-                            </div>
-                <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
+                      <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
                 {{$orders->links('pagination::Bootstrap-5')}}
                                     </div>
+                            </div>
+    
                         </div>
 </div>
 @endsection

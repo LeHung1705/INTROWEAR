@@ -15,7 +15,7 @@ class OrderItemController extends Controller
         $order = Order::find($order_id);
         $orderItems = OrderItem :: where ('order_id', $order_id)->orderBy('id')->paginate(12);
         $transaction = Transaction::where('order_id', $order_id)->first();
-        return view('order-details', compact('order', 'orderItems'));
+        return view('order-details', compact('order', 'orderItems','transaction'));
 
     }
 }

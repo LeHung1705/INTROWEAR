@@ -227,5 +227,37 @@ h5, .order-status-select label {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
 }
+.page-link {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
 
+/* Giao diện chung cho nút phân trang */
+.page-link {
+    padding: 6px 16px;
+    margin:5px 5px 15px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s, border-color 0.2s;
+}
 
+/* Nút bị disable  */
+.page-link:disabled,
+.page-link[disabled],
+.page-link.disabled {
+    color: #aaa;
+    background-color: #eee;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Hover hiệu ứng */
+.page-link:hover {
+    background-color: #e2e2e2;
+    border-color: #bbb;
+}

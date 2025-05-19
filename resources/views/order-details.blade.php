@@ -31,7 +31,7 @@
                             <div class="wg-filter flex-grow">
                                 <h5>Ordered Items</h5>
                             </div>
-                            <a class="tf-button style-1 w208" href="orders.html">Back</a>
+                            <a class="tf-button style-1 w208" href="{{route('orders')}}">Back</a>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered">
@@ -55,7 +55,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">{{$item->price}}</td>
-                                        <td class="text-center">{{$item->quatity}}</td>
+                                        <td class="text-center">{{$item->quantity}}</td>
                                     <td class="text-center">  
                                     <div class="list-icon-function view-icon">
                                         <div class="item eye">
@@ -64,10 +64,14 @@
                                     </div>
                                     </td>
                                     </tr>
+                            @endforeach
                              </tbody>
                             </table>
                         </div>
                     </div>
+                      <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
+                {{$orderItems->links('pagination::Bootstrap-5')}}
+                                    </div>
                     </div>
                 </div>
             </div>

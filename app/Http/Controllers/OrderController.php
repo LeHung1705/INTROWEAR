@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function orders()
 {
-    $orders = Order::orderBy('created_at', 'DESC')->paginate(5);
+    $orders = Order::orderBy('created_at', 'DESC')->paginate(10);
     return view('orders',compact('orders')); //có thể cần sửa
 }
 }
