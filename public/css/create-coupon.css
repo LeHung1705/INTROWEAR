@@ -65,15 +65,16 @@
     width: 30%;
 }
 
-.form-group input {
-    width: 70%;
-    border-color: #ffffff;
-}
+.form-group input,
 .form-group textarea {
     width: 70%;
     border-color: #ffffff;
-    resize: vertical;
-    min-height: 50px;
+}
+textarea {
+    font-size: 14px;
+    width: 70%;
+    border: 2px inset #ffffff;
+    resize: none;
 }
 
 @media (max-width: 768px) {

@@ -59,11 +59,11 @@
                                   required
                                 value={{old('coupon_code')}}
                               
-                            />
+                            >
                         </div>
                         <div class="form-group">
                             <label for="coupon-percent" class="font-trispace"
-                                >% khuyến mãi</label
+                                >% Khuyến mãi</label
                             >
                             <input
                                 type="text"
@@ -72,19 +72,12 @@
                                 required
                                value={{old('discount_percentage')}}
                                 
-                            />
+                            >
                         </div>
                         <div class="form-group">
                             <label for="description" class="font-trispace"
                                 >Mô tả</label>
-                           <textarea
-                               
-                                id="description"
-                                name="description"
-                                required
-                                > 
-                                {{old( 'description')}}
-                            </textarea>
+                           <textarea id="description" name="description"> {{old( 'description')}} </textarea>
                             
                         </div>
                         <div class="form-group">
