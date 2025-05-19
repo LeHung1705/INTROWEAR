@@ -66,6 +66,7 @@ class CartController extends Controller
     $order->name = $validatedData['name'];
     $order->phone = $validatedData['phone'];
     $order->address = $validatedData['address'];
+       //discount neu can
       //$payment_method 
     $order->status = 'ordered';
     $order->total = Session::get('checkout')['total'];
@@ -79,5 +80,15 @@ class CartController extends Controller
     $orderItem->quantity = $item->qty;
     $orderItem->save();
 }
+    }
+   public function order_confirmation()
+    {
+        if (Session::has('order_id')) {
+            $order = Order::find(Session::get('order_id'));
+            if ($order) {
+                return view('order_confirmation', compact('order'));
+            }
+        }
+        
     }
 }
