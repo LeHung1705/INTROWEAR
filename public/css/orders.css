@@ -1,6 +1,6 @@
 .content {
     width: 100%;
-    
+    font-size: 15px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,12 +99,53 @@
 }
 
 }
-/* Phân trang */
-.wgp-pagination {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 20px;
+.page-link {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+.page-link {
+    padding: 6px 16px;
+    margin:5px 5px 15px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.page-link:disabled,
+.page-link[disabled],
+.page-link.disabled {
+    color: #aaa;
+    background-color: #eee;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+
+
+.page-link:hover {
+    background-color: #e2e2e2;
+    border-color: #bbb;
+}
+.badge
+{
+  padding:3px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+.badge.bg-success
+{
+    background-color: yellow;
+}
+.badge.bg-warning
+{
+    background-color: green;
+}
+.badge.bg-danger
+{
+    background-color: red;
 }
 

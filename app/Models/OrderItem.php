@@ -17,11 +17,11 @@ class OrderItem extends Model
 =======
     public function product()
     {
-        return this->beLongsTo(Product::class);
+        return $this->beLongsTo(Product::class);
     }
      public function order()
     {
-        return this->beLongsTo(Order::class);
+        return $this->beLongsTo(Order::class);
     }
     
 >>>>>>> bbbdaf8f1f2f278eecfa3d1633405010e84181c0

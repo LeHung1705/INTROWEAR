@@ -13,7 +13,7 @@
                         <h3>Order Details</h3>
                         <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10" role="navigation">
                             <li>
-                                <a href="#">
+                                <a href="{{route('dashboard')}}">
                                     <div class="text-tiny">Dashboard</div>
                                 </a>
                             </li>
@@ -21,7 +21,9 @@
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                             <li>
+                                 <a href="{{route('order.details', ['order_id' => $order->id])}}">
                                 <div class="text-tiny">Order Items</div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -31,9 +33,14 @@
                             <div class="wg-filter flex-grow">
                                 <h5>Ordered Items</h5>
                             </div>
-                            <a class="tf-button style-1 w208" href="orders.html">Back</a>
+                            <a class="tf-button style-1 w208" href="{{route('orders')}}">Back</a>
                         </div>
                         <div class="table-responsive">
+                        @if (session()->has('status'))
+    <p class="alert alert-success">
+        {{ session()->get('status') }}
+    </p>
+@endif
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
@@ -48,26 +55,31 @@
                                     <tr>
                                         <td class="pname">
                                             <div class="image">
-                                                <img src="/Admin/asset/images/product1.png" alt="{{$item->product->product_name}}" class="image">
+                                                <img src="{{asset('uploads/products')}}/{{$item->product->image}}" alt="{{$item->product->product_name}}" class="image">
                                             </div>
                                             <div class="name">
                                                 <p>{{$item->product->product_name}}</p>
                                             </div>
                                         </td>
                                         <td class="text-center">{{$item->price}}</td>
-                                        <td class="text-center">{{$item->quatity}}</td>
+                                        <td class="text-center">{{$item->quantity}}</td>
                                     <td class="text-center">  
-                                    <div class="list-icon-function view-icon">
-                                        <div class="item eye">
-                                         <i class="fas fa-eye"></i>
+                                          <div class="list-icon-function view-icon">
+                                             <div class="item eye">
+                                             <i class="fas fa-eye"></i>
+                                            </div>
                                          </div>
-                                    </div>
+                                        </a>
                                     </td>
                                     </tr>
+                            @endforeach
                              </tbody>
                             </table>
                         </div>
                     </div>
+                      <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
+                {{$orderItems->links('pagination::Bootstrap-5')}}
+                                    </div>
                     </div>
                 </div>
             </div>
@@ -75,15 +87,20 @@
         <div class="update-order-status-container">
             <div class="order-status-select">
                 <label for="orderStatus">Update Order Status:</label>
-                <select id="orderStatus">
-                    <option>Ordered</option>
-                    <option>Processing</option>
-                    <option>Shipped</option>
-                    <option>Delivered</option>
-                    <option>Cancelled</option>
+            <form action="{{route('order.status.update')}}" method="POST">
+                   @csrf
+                   @method('PUT')
+                    <input type="hidden" name="order_id" value="{{ $order->id }}" />
+                <div class="select">
+                <select id="orderStatus" name ="order_status" >
+                    <option value ="ordered" {{ $order->status == 'ordered' ? 'selected' : '' }}>Ordered</option>
+                    <option value ="delivered" {{ $order->status == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                    <option value ="canceled" {{ $order->status == 'canceled' ? 'selected' : '' }}>Canceled</option>
                 </select>
+                </div>
+             <button type ="submit" class="update-status-button">Update Status</button>
+                </form>
             </div>
-            <button class="update-status-button">Update Status</button>
         
         </div>
     </div>
