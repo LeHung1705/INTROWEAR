@@ -226,3 +226,30 @@
     display: none; /* Ẩn hoàn toàn filter section */
 }
 }
+
+.add-to-cart {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .image-container:hover .add-to-cart {
+    opacity: 1;
+  }
+
+  .quick-view a {
+    text-decoration: none;
+    color: white;
+  }

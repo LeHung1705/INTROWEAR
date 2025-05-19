@@ -40,11 +40,19 @@
                     class="default-img"
                     src="{{ asset('uploads/products')}}/{{$product->image}}"
                 />
-                <img
-                    class="hover-img"
-                    src="assets/images/product4.3.jpg"
-                />
-                <div class="quick-view">Quick View</div>
+                <div class="quick-view"><a href="#">Quick View</a></div>
+                @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
+                <a href="{{ route('cart.index') }}" class="add-to-cart">Go to cart</a>
+                @else
+                <form name="addtocart-form" method="post" action="{{route('cart.add')}}">
+                    @csrf
+                    <input type="hidden" name="id" value="{{$product->id}}">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="name" value="{{$product->product_name}}">
+                    <input type="hidden" name="price" value="{{$product->price_sale == '' ? $product->price : $product->price_sale}}">
+                    <button type="submit" class="add-to-cart">Add to cart</button>
+                </form>
+                @endif
             </div>
             <h4>{{$product->product_name}}</h4>
             <div class="price">{{$product->price_sale}} <del>{{$product->price}}</del></div>
