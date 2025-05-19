@@ -17,7 +17,7 @@
 
 .create-coupon-title {
     font-size: 30px;
-    font-weight: 800;
+    font-weight: bold;
     margin-top: 60px;
 }
 
@@ -52,27 +52,38 @@
     background-color: #555;
 }
 
-.form-group {
-    width: 98%;
-    height: 30px;
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     gap: 10px;
+    width: 80%;
+    height: auto;
+    padding: 30px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
-.form-group label {
+.table th,
+.table td {
+    padding: 14px 18px;
+    text-align: center;
+    border: 1px solid #ddd;
     font-size: 14px;
-    width: 30%;
 }
-.form-group input {
-    width: 70%;
-    border-color: #ffffff;
+
+.table thead {
+    background-color: #f8f9fa;
+    font-weight: 600;
 }
-.form-group textarea {
-    font-size: 14px;
-    width: 70%;
-    border: 2px inset #ffffff;
-    resize: none;
+
+.table tr:hover {
+    background-color: #f1f1f1;
 }
 
 @media (max-width: 768px) {
@@ -82,8 +93,7 @@
     .form-group label {
         font-size: 14px;
     }
-    .form-group input,
-    .form-group textarea {
+    .form-group input {
         width: 80%;
     }
 }

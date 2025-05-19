@@ -1,20 +1,42 @@
 .content {
     padding: 2rem;
     flex: 1;
-  }
+
+}
+
   .add-product-form {
+
     background-color: #e6e6e6;
     padding: 2rem;
     border-radius: 5px;
     max-width: 500px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+
+}
+
   .add-product-form h2 {
+
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
     text-transform: uppercase;
+
+    font-family: "Trispace", sans-serif;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-family: "Trispace", sans-serif;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+
     font-family: 'Trispace', sans-serif;
   }
   .form-group {
@@ -28,6 +50,7 @@
   }
   .form-group input,
   .form-group textarea {
+
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -35,6 +58,19 @@
     font-size: 1rem;
     background-color: #d3d3d3;
     box-sizing: border-box;
+
+    font-family: "Trispace", sans-serif;
+}
+.form-group textarea {
+    resize: vertical;
+    height: 80px;
+}
+.form-group input[readonly] {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}
+.form-group button {
+
     font-family: 'Trispace', sans-serif;
   }
   .form-group textarea {
@@ -46,6 +82,7 @@
     cursor: not-allowed;
   }
   .form-group button {
+
     width: 100%;
     padding: 0.75rem;
     background-color: #333;
@@ -55,6 +92,70 @@
     font-size: 1rem;
     cursor: pointer;
     margin-top: 1rem;
+
+    font-family: "Trispace", sans-serif;
+}
+.form-group button:hover {
+    background-color: #555;
+}
+#imgpreview {
+    width: 100%;
+    text-align: center;
+}
+#imgpreview img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+#galUpload {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+.gallery-preview {
+    max-width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        display: none;
+    }
+    .content {
+        padding: 1rem;
+    }
+    .add-product-form {
+        padding: 1rem;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .item.up-load {
+        padding: 0.75rem;
+        min-height: 100px;
+    }
+    .icon {
+        font-size: 1.2rem;
+    }
+    .body-text {
+        font-size: 0.8rem;
+    }
+    .gallery-preview {
+        max-width: 80px;
+    }
+}
+=======
     font-family: 'Trispace', sans-serif;
   }
   .form-group button:hover {
@@ -118,3 +219,4 @@
     max-width: 80px;
   }
 }
+

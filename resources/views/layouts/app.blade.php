@@ -45,9 +45,9 @@
                     <div class="cart-wrapper">
                         <a href="{{route('cart.index')}}">
                         <i class="fas fa-shopping-cart cart-icon">
-                          @if(Cart::instance('cart')->content()->count() > 0)
+                          {{-- @if(Cart::instance('cart')->content()->count() > 0)
                           <sub>({{Cart::instance('cart')->content()->count()}})</sub>
-                          @endif
+                          @endif --}}
                         </i>
                     </a>
                         <span class="cart-count"></span>
@@ -87,10 +87,15 @@
         </div>
        
     </header>
-
+      
+                 <div class="content">
+                    <!-- Nội dung trang đặt ở đây -->
+                    <!-- Nội dung trang đặt ở đây -->
+                
     <!-- MAIN CONTENT -->
     @yield('content')
-
+    
+ </div> 
     <!-- FOOTER -->
     <footer class="footer">
       <!-- Top section of footer -->
@@ -207,8 +212,10 @@
         </div>
       </div>
     </footer>
+
     <script src="{{ asset('assets/js/main.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     @stack('scripts')
   </body>
 </html>
