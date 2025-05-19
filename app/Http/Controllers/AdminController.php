@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Product;
+use App\Models\Order;
 use App\Models\Coupon;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -12,15 +13,26 @@ use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request  as HttpRequest;;
 
 
 class AdminController extends Controller
 {
+   
+        
     public function index()
     {
-        return view('admin.index');
+        $orderedCount = Order::where('status','ordered')->count();
+        $deliveredCount = Order::where('status','delivered')->count();
+        $canceledCount = Order::where('status','canceled')->count();
+        $orderedTotal = Order::where('status', 'ordered')->sum('total');
+        $deliveredTotal = Order::where('status', 'delivered')->sum('total');
+        $canceledTotal = Order::where('status', 'canceled')->sum('total');
+        $totalAmount =  $orderedTotal + $deliveredTotal + $canceledTotal;
+        $totalAmount = number_format($totalAmount, 2, '.', '');
+        return view('admin/dashboard', compact('canceledTotal','deliveredTotal','orderedTotal','orderedCount', 'deliveredCount', 'canceledCount','totalAmount'));
     }
+   
 
    
     public function products()
