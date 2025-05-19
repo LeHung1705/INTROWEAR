@@ -13,7 +13,7 @@
                         <h3>Order Details</h3>
                         <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10" role="navigation">
                             <li>
-                                <a href="#">
+                                <a href="{{route('dashboard')}}">
                                     <div class="text-tiny">Dashboard</div>
                                 </a>
                             </li>
@@ -21,7 +21,9 @@
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                             <li>
+                                 <a href="{{route('order.details', ['order_id' => $order->id])}}">
                                 <div class="text-tiny">Order Items</div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -53,7 +55,7 @@
                                     <tr>
                                         <td class="pname">
                                             <div class="image">
-                                                <img src="/Admin/asset/images/product1.png" alt="{{$item->product->product_name}}" class="image">
+                                                <img src="{{asset('uploads/products')}}/{{$item->product->image}}" alt="{{$item->product->product_name}}" class="image">
                                             </div>
                                             <div class="name">
                                                 <p>{{$item->product->product_name}}</p>
@@ -62,11 +64,12 @@
                                         <td class="text-center">{{$item->price}}</td>
                                         <td class="text-center">{{$item->quantity}}</td>
                                     <td class="text-center">  
-                                    <div class="list-icon-function view-icon">
-                                        <div class="item eye">
-                                         <i class="fas fa-eye"></i>
+                                          <div class="list-icon-function view-icon">
+                                             <div class="item eye">
+                                             <i class="fas fa-eye"></i>
+                                            </div>
                                          </div>
-                                    </div>
+                                        </a>
                                     </td>
                                     </tr>
                             @endforeach

@@ -25,10 +25,10 @@
     <div class="container">
         <div class="main">
             <nav class="sidebar">
+                <a href="{{ url('/dashboard') }}" class="nav-button" style="text-decoration: none">DASHBOARD</a>
                 <a href="{{ url('/admin/manage-product') }}" class="nav-button" style="text-decoration: none">MANAGE PRODUCT</a>
-                <a href="{{ url('/admin/orders') }}" class="nav-button" style="text-decoration: none">ORDERS</a>
+                <a href="{{ url('order') }}" class="nav-button" style="text-decoration: none">ORDERS</a>
                 <a href="{{ url('/admin/add-product') }}" class="nav-button" style="text-decoration: none">ADD PRODUCT</a>
-                <a href="{{ url('/admin/update-product') }}" class="nav-button" style="text-decoration: none">UPDATE PRODUCT</a>
                 <a href="{{ url('/admin/create-coupon') }}" class="nav-button" style="text-decoration: none">CREATE COUPON</a>
             </nav>
             <div class="content">

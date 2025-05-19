@@ -41,7 +41,7 @@ class CartController extends Controller
     $order->address = $validatedData['address'];
       //$payment_method 
     $order->status = 'ordered';
-    $order->total = Session::get('checkout')['total'];
+    $order->total = Session::get('checkout')['total'];//can sua
     $order->save();
 
     foreach (Cart::instance('cart')->content() as $item) {

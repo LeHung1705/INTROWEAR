@@ -10,9 +10,9 @@
                                 >Orders</span
                             >
                             <div class="breadcrumb-bar">
-                                <a href="#">Dashboard</a>
+                                <a href="{{route('dashboard')}}">Dashboard</a>
                                 <span>></span>
-                                <a href="#">Orders</a>
+                                <a href="{{route('orders')}}">Orders</a>
                             </div>
                         </div>
                         <div class="orders-table-container">
@@ -92,4 +92,5 @@
     
                         </div>
 </div>
+
 @endsection
