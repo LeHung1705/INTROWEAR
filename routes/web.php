@@ -17,3 +17,4 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/order-confirmation', [CartController::class, 'order_confirmation'])->name('cart.order.confirmation');
 Route::get('/order',[OrderController::class,'orders'])->name('orders');
 Route::get('/order/{order_id}/details' ,[OrderItemController::class,'order_details'])->name('order.details');
+Route::put('/order/update-status',[OrderItemController::class,'update_order_status'])->name('order.status.update');

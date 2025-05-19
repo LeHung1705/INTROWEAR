@@ -200,6 +200,7 @@ h3 {
 }
 
 .update-status-button {
+  margin: 20px 0px;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
@@ -220,7 +221,7 @@ h5, .order-status-select label {
   color: #333;
 }
 .order-items-box {
-  border: 2px solid #f9f9ff; /* Đường viền xanh */
+  border: 2px solid #f9f9ff; 
   border-radius: 8px;
   padding: 20px;
   background-color: #ffffff;
@@ -233,7 +234,6 @@ h5, .order-status-select label {
     font-weight: inherit;
 }
 
-/* Giao diện chung cho nút phân trang */
 .page-link {
     padding: 6px 16px;
     margin:5px 5px 15px 5px;
@@ -246,7 +246,6 @@ h5, .order-status-select label {
     transition: background-color 0.2s, border-color 0.2s;
 }
 
-/* Nút bị disable  */
 .page-link:disabled,
 .page-link[disabled],
 .page-link.disabled {
@@ -256,7 +255,6 @@ h5, .order-status-select label {
     cursor: not-allowed;
 }
 
-/* Hover hiệu ứng */
 .page-link:hover {
     background-color: #e2e2e2;
     border-color: #bbb;

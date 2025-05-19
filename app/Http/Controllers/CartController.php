@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Surfsidemedia\Shoppingcart\Facades\Cart; //
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -26,7 +27,6 @@ class CartController extends Controller
     $order->name = $validatedData['name'];
     $order->phone = $validatedData['phone'];
     $order->address = $validatedData['address'];
-       //discount neu can
       //$payment_method 
     $order->status = 'ordered';
     $order->total = Session::get('checkout')['total'];

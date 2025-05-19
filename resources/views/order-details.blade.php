@@ -34,6 +34,11 @@
                             <a class="tf-button style-1 w208" href="{{route('orders')}}">Back</a>
                         </div>
                         <div class="table-responsive">
+                        @if (session()->has('status'))
+    <p class="alert alert-success">
+        {{ session()->get('status') }}
+    </p>
+@endif
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
@@ -79,15 +84,20 @@
         <div class="update-order-status-container">
             <div class="order-status-select">
                 <label for="orderStatus">Update Order Status:</label>
-                <select id="orderStatus">
-                    <option>Ordered</option>
-                    <option>Processing</option>
-                    <option>Shipped</option>
-                    <option>Delivered</option>
-                    <option>Cancelled</option>
+            <form action="{{route('order.status.update')}}" method="POST">
+                   @csrf
+                   @method('PUT')
+                    <input type="hidden" name="order_id" value="{{ $order->id }}" />
+                <div class="select">
+                <select id="orderStatus" name ="order_status" >
+                    <option value ="ordered" {{ $order->status == 'ordered' ? 'selected' : '' }}>Ordered</option>
+                    <option value ="delivered" {{ $order->status == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                    <option value ="canceled" {{ $order->status == 'canceled' ? 'selected' : '' }}>Canceled</option>
                 </select>
+                </div>
+             <button type ="submit" class="update-status-button">Update Status</button>
+                </form>
             </div>
-            <button class="update-status-button">Update Status</button>
         
         </div>
     </div>

@@ -1,6 +1,6 @@
 .content {
     width: 100%;
-    
+    font-size: 15px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,8 +99,6 @@
     font-size: inherit;
     font-weight: inherit;
 }
-
-/* Giao diện chung cho nút phân trang */
 .page-link {
     padding: 6px 16px;
     margin:5px 5px 15px 5px;
@@ -113,7 +111,6 @@
     transition: background-color 0.2s, border-color 0.2s;
 }
 
-/* Nút bị disable  */
 .page-link:disabled,
 .page-link[disabled],
 .page-link.disabled {
@@ -123,8 +120,26 @@
     cursor: not-allowed;
 }
 
-/* Hover hiệu ứng */
+
 .page-link:hover {
     background-color: #e2e2e2;
     border-color: #bbb;
+}
+.badge
+{
+  padding:3px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+.badge.bg-success
+{
+    background-color: yellow;
+}
+.badge.bg-warning
+{
+    background-color: green;
+}
+.badge.bg-danger
+{
+    background-color: red;
 }
