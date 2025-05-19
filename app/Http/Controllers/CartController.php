@@ -63,8 +63,9 @@ class CartController extends Controller
         return view('checkout');
     }
 
-    public function place_an_order( Request $request)
+    public function place_an_order(Request $request)
     {
+        $user_id = Auth::user()->id;
          $validatedData = $request->validate([
         'name' => 'required|string|max:255',
         'phone' => 'required|regex:/^[0-9]{10,11}$/',
@@ -91,6 +92,34 @@ class CartController extends Controller
     $orderItem->save();
 }
     }
+
+    public function setAmountForCheckout()
+    { 
+        if(!Cart::instance('cart')->count() > 0)
+        {
+            Session::forget('checkout');
+            return;
+        }    
+        if(session()->has('coupon'))
+        {
+            Session::put('checkout',[
+                'discount' => session()->get('discounts')['discount'],
+                'subtotal' =>  session()->get('discounts')['subtotal'],
+                'tax' =>  session()->get('discounts')['tax'],
+                'total' =>  session()->get('discounts')['total']
+            ]);
+        }
+        else
+        {
+            session()->put('checkout',[
+                'discount' => 0,
+                'subtotal' => Cart::instance('cart')->subtotal(),
+                'tax' => Cart::instance('cart')->tax(),
+                'total' => Cart::instance('cart')->total()
+            ]);
+        }
+    }
+
    public function order_confirmation()
     {
         if (Session::has('order_id')) {
