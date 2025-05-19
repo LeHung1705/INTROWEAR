@@ -1,14 +1,10 @@
-function redirectToManageProductPage() {
+function redirectToManageProductPage(){
   window.location.href = "/Admin/manage-product.html";
 }
 
-<<<<<<< HEAD
-function redirectToCSOPage() {
-  window.location.href = "/Admin/cso.html";
-=======
+
 function redirectToOrdersPage() {
   window.location.href = "/Admin/orders.html";
->>>>>>> 1bcd532d9f2dfad1259b36354a26f425417056fe
 }
 
 function redirectToAddProductPage() {
@@ -74,3 +70,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   } 
 });
+
