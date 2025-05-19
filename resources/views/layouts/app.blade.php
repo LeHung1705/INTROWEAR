@@ -9,7 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="stylesheet" href="{{ asset('assets/css/register.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css')}}" />
     <link rel="stylesheet" href="{{ asset('assets/css/trangchu.css')}}" />
     <link
@@ -45,9 +44,9 @@
                     <div class="cart-wrapper">
                         <a href="{{route('cart.index')}}">
                         <i class="fas fa-shopping-cart cart-icon">
-                          {{-- @if(Cart::instance('cart')->content()->count() > 0)
+                          @if(Cart::instance('cart')->content()->count() > 0)
                           <sub>({{Cart::instance('cart')->content()->count()}})</sub>
-                          @endif --}}
+                          @endif
                         </i>
                     </a>
                         <span class="cart-count"></span>
