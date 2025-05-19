@@ -1,222 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Admin/css/main.css">
-    <link rel="stylesheet" href="/Admin/css/update-product.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>INTROWEAR - Update Product</title>
-</head>
-<body>
-    <!-- HEADER -->
-    <header>
-        <div class="header-left">
-          <i class="fas fa-bars"></i>
-          <img
-            src="/Admin/asset/images/logo.png"
-            alt="INTROWEAR"
-          />
-        </div>
-        <section class="header-right">
-          <img src="/Admin/asset/images/avt.png" alt="avt" />
-          <p>ADMIN</p>
-        </section>
-      </header>
-
-    <!-- NAVIGATION -->
-    <div class="container">
-        <div class="main">
-            <nav class="sidebar">
-                <button class="nav-button" onclick="redirectToManageProductPage()">
-                  MANAGE PRODUCT
-                </button>
-                <button class="nav-button" onclick="redirectToCSOPage()">
-                  CONFIRM STATUS ORDER
-                </button>
-                <button class="nav-button" onclick="redirectToAddProductPage()">
-                  ADD PRODUCT
-                </button>
-                <button class="nav-button current-button" onclick="redirectToUpdateProductPage()">
-                  UPDATE PRODUCT
-                </button>
-                <button class="nav-button" onclick="redirectToCreateCouponPage()">
-                  CREATE COUPON
-                </button>
-              </nav>
-    
-            <div class="content">
-            <!-- Nội dung trang đặt ở đây -->
-             <div class="update-product">
-                <h1 class="update-title">UPDATE PRODUCT</h1>
-
-                <div class="update-form">
-                    <div class="product-image">
-                        <img src="https://product.hstatic.net/200000677367/product/7_ao_dai_do_32723ab387944e908365f43c98cdd94d_master.jpg" alt="Product image">
-                        <p>THE STAR BIG BOXY T-SHIRT</p>
-                    </div>
-                    
-                    <div class="form-fields">
-                        <div class="form-group">
-                        <label for="product-name">Tên sản phẩm:</label>
-                        <input type="text" id="product-name">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="original-price">Giá gốc:</label>
-                        <input type="text" id="original-price">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="image-link">Link hình ảnh:</label>
-                        <input type="file" id="image-link">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="sale-price">Giá khuyến mãi:</label>
-                        <input type="text" id="sale-price">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="detail">Thông tin chi tiết:</label>
-                        <textarea id="detail"></textarea>
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="sale-percent">Phần trăm khuyến mãi:</label>
-                        <input type="text" id="sale-percent">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="category">Danh mục:</label>
-                        <input type="text" id="category">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="start-date">Ngày bắt đầu khuyến mãi:</label>
-                        <input type="date" id="start-date">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="quantity">Số lượng sản phẩm trong kho:</label>
-                        <input type="text" id="quantity">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="end-date">Ngày kết thúc khuyến mãi:</label>
-                        <input type="date" id="end-date">
-                        </div>
-                
-                        <div class="form-group">
-                        <label for="status">Tình trạng sản phẩm:</label>
-                        <select id="status">
-                            <option>Khả dụng</option>
-                            <option>Hết hàng</option>
-                            <option>Ngừng kinh doanh</option>
-                        </select>
-                        </div>
-                        
-                        <div class="button-wrapper">
-                            <button class="save-update">LƯU THAY ĐỔI</button>
-                        </div>
-                    </div>
-                </div>
-             </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/Admin/css/main.css" />
+        <link rel="stylesheet" href="/Admin/css/update-product.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <title>INTROWEAR - Update Product</title>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="header-left">
+                <i class="fas fa-bars"></i>
+                <img src="/Admin/asset/images/logo.png" alt="INTROWEAR" />
             </div>
-            
-        </div>
-    </div>
-    
-    <!-- FOOTER -->
-    <footer class="footer">
-        <!-- Top section of footer -->
-        <div class="footer__top">
-            <div class="footer__container-wide">
-                <div class="footer__row">
-                    <!-- Certificate -->
-                    <div class="footer__certificate footer__col">
-                        <a href="#" target="_blank">
-                            <img src="//theme.hstatic.net/200000677367/1001276449/14/dathongbao.png?v=2486" alt="Bộ công thương">
-                        </a>
-                    </div>
+            <section class="header-right">
+                <img src="/Admin/asset/images/avt.png" alt="avt" />
+                <p>ADMIN</p>
+            </section>
+        </header>
 
-                    <!-- Contact information -->
-                    <div class="footer__contact footer__col">
-                        <div class="contact-list">
-                            <p class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span><strong>Địa chỉ:</strong><br> METUB TOWER, số 35/2 Nguyễn Văn Hưởng, Phường Thảo Điền, TP. Thủ Đức, TP. Hồ Chí Minh.</span>
-                            </p>
+        <!-- NAVIGATION -->
+        <div class="container">
+            <div class="main">
+                <nav class="sidebar">
+                    <a
+                        href="/Admin/manage-product.html"
+                        class="nav-button"
+                        style="text-decoration: none"
+                        >MANAGE PRODUCT</a
+                    >
 
-                            <p class="contact-item">
-                                <i class="fas fa-building"></i>
-                                <span><strong>Công ty:</strong><br> CÔNG TY CỔ PHẦN VIETNAM NEW LIFESTYLE INCUBATION</span>
-                            </p>
+                    <a
+                        href="/Admin/orders.html"
+                        class="nav-button"
+                        style="text-decoration: none"
+                        >ORDERS</a
+                    >
 
-                            <p class="contact-item">
-                                <i class="fas fa-file-alt"></i>
-                                <span><strong>MST: </strong> 0316416910</span>
-                            </p>
+                    <a
+                        href="/Admin/addproduct.html"
+                        class="nav-button"
+                        style="text-decoration: none"
+                        >ADD PRODUCT</a
+                    >
+                    <a
+                        href="/Admin/update-product.html"
+                        class="nav-button current-button"
+                        style="text-decoration: none"
+                        >UPDATE PRODUCT</a
+                    >
+                    <a
+                        href="/Admin/create-coupon.html"
+                        class="nav-button"
+                        style="text-decoration: none"
+                        >CREATE COUPON</a
+                    >
+                </nav>
+
+                <div class="content">
+                    <!-- Nội dung trang đặt ở đây -->
+                    <div class="update-product">
+                        <h1 class="update-title">UPDATE PRODUCT</h1>
+
+                        <div class="update-form">
+                            <div class="product-image">
+                                <img
+                                    src="https://product.hstatic.net/200000677367/product/7_ao_dai_do_32723ab387944e908365f43c98cdd94d_master.jpg"
+                                    alt="Product image"
+                                />
+                                <p>THE STAR BIG BOXY T-SHIRT</p>
+                            </div>
+
+                            <div class="form-fields">
+                                <div class="form-group">
+                                    <label for="product-name"
+                                        >Tên sản phẩm:</label
+                                    >
+                                    <input type="text" id="product-name" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="original-price">Giá gốc:</label>
+                                    <input type="text" id="original-price" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="image-link"
+                                        >Link hình ảnh:</label
+                                    >
+                                    <input type="file" id="image-link" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sale-price"
+                                        >Giá khuyến mãi:</label
+                                    >
+                                    <input type="text" id="sale-price" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="detail"
+                                        >Thông tin chi tiết:</label
+                                    >
+                                    <textarea id="detail"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sale-percent"
+                                        >Phần trăm khuyến mãi:</label
+                                    >
+                                    <input type="text" id="sale-percent" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="category">Danh mục:</label>
+                                    <input type="text" id="category" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="start-date"
+                                        >Ngày bắt đầu khuyến mãi:</label
+                                    >
+                                    <input type="date" id="start-date" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="quantity"
+                                        >Số lượng sản phẩm trong kho:</label
+                                    >
+                                    <input type="text" id="quantity" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="end-date"
+                                        >Ngày kết thúc khuyến mãi:</label
+                                    >
+                                    <input type="date" id="end-date" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="status"
+                                        >Tình trạng sản phẩm:</label
+                                    >
+                                    <select id="status">
+                                        <option>Khả dụng</option>
+                                        <option>Hết hàng</option>
+                                        <option>Ngừng kinh doanh</option>
+                                    </select>
+                                </div>
+
+                                <div class="button-wrapper">
+                                    <button class="save-update">
+                                        LƯU THAY ĐỔI
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Phone -->
-                    <div class="footer__phone footer__col">
-                        <p class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span><strong>Điện thoại:</strong><br> 0877.534.588 (Zalo)</span>
-                        </p> 
-                    </div>
-                    
-                    <!-- Email -->
-                     <div class="footer__email footer__col">
-                        <p class="contact-item">
-                            <i class="far fa-envelope"></i>
-                            <span><strong>Email:</strong> contact@introwear.com</span>
-                        </p>
-                     </div>
-                    
-                    <!-- Social media links -->
-                    <div class="footer__social footer__col">
-                        <ul class="social-list">
-                            <li class="social-item">
-                                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li class="social-item">
-                                <a href="#" target="_blank" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
-                            </li>
-                            <li class="social-item">
-                                <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li class="social-item">
-                                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            </li>
-                        </ul>  
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom section of footer (copyright) -->
-        <div class="footer__bottom">
-            <!-- Policy links -->
-            <div class="footer__policy">
-                <ul class="policy-list">
-                    <li class="policy-item"><a href="/Website/aboutus.html">Giới thiệu</a></li>
-                    <li class="policy-item"><a href="#">Điều khoản dịch vụ</a></li>
-                    <li class="policy-item"><a href="#">Phương thức thanh toán</a></li>
-                    <li class="policy-item"><a href="#">Chính sách vận chuyển & đổi trả</a></li>
-                    <li class="policy-item"><a href="#">Liên hệ</a></li>
-                    <li class="policy-item"><a href="#">Chính sách thu thập và xử lý dữ liệu cá nhân</a></li>
-                </ul>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <!-- Top section of footer -->
+            <div class="footer__top">
+                <div class="footer__container-wide">
+                    <div class="footer__row">
+                        <!-- Certificate -->
+                        <div class="footer__certificate footer__col">
+                            <a href="#" target="_blank">
+                                <img
+                                    src="//theme.hstatic.net/200000677367/1001276449/14/dathongbao.png?v=2486"
+                                    alt="Bộ công thương"
+                                />
+                            </a>
+                        </div>
+
+                        <!-- Contact information -->
+                        <div class="footer__contact footer__col">
+                            <div class="contact-list">
+                                <p class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span
+                                        ><strong>Địa chỉ:</strong><br />
+                                        METUB TOWER, số 35/2 Nguyễn Văn Hưởng,
+                                        Phường Thảo Điền, TP. Thủ Đức, TP. Hồ
+                                        Chí Minh.</span
+                                    >
+                                </p>
+
+                                <p class="contact-item">
+                                    <i class="fas fa-building"></i>
+                                    <span
+                                        ><strong>Công ty:</strong><br />
+                                        CÔNG TY CỔ PHẦN VIETNAM NEW LIFESTYLE
+                                        INCUBATION</span
+                                    >
+                                </p>
+
+                                <p class="contact-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span
+                                        ><strong>MST: </strong> 0316416910</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="footer__phone footer__col">
+                            <p class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span
+                                    ><strong>Điện thoại:</strong><br />
+                                    0877.534.588 (Zalo)</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="footer__email footer__col">
+                            <p class="contact-item">
+                                <i class="far fa-envelope"></i>
+                                <span
+                                    ><strong>Email:</strong>
+                                    contact@introwear.com</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- Social media links -->
+                        <div class="footer__social footer__col">
+                            <ul class="social-list">
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Facebook"
+                                        ><i class="fab fa-facebook-f"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Tiktok"
+                                        ><i class="fab fa-tiktok"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="YouTube"
+                                        ><i class="fab fa-youtube"></i
+                                    ></a>
+                                </li>
+                                <li class="social-item">
+                                    <a
+                                        href="#"
+                                        target="_blank"
+                                        aria-label="Instagram"
+                                        ><i class="fab fa-instagram"></i
+                                    ></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="footer__container">
-                <p class="footer__copyright">
-                    Copyright © 2025 <a href="#">INTROWEAR</a>. Powered by <a href="#" target="_blank">TEAM INTROWEAR</a> 
-                </p>
+
+            <!-- Bottom section of footer (copyright) -->
+            <div class="footer__bottom">
+                <!-- Policy links -->
+                <div class="footer__policy">
+                    <ul class="policy-list">
+                        <li class="policy-item">
+                            <a href="/Website/aboutus.html">Giới thiệu</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Điều khoản dịch vụ</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Phương thức thanh toán</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="#">Chính sách vận chuyển & đổi trả</a>
+                        </li>
+                        <li class="policy-item"><a href="#">Liên hệ</a></li>
+                        <li class="policy-item">
+                            <a href="#"
+                                >Chính sách thu thập và xử lý dữ liệu cá nhân</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__container">
+                    <p class="footer__copyright">
+                        Copyright © 2025 <a href="#">INTROWEAR</a>. Powered by
+                        <a href="#" target="_blank">TEAM INTROWEAR</a>
+                    </p>
+                </div>
             </div>
-        </div>
-    </footer>
-    <script src="/Admin/js/main.js"></script>
-</body>
+        </footer>
+        <script src="/Admin/js/main.js"></script>
+    </body>
 </html>

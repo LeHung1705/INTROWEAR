@@ -1,23 +1,19 @@
-
 /* Breadcrumb */
 .breadcrumb-bar-container {
     width: 100%;
     background-color: #f3f3f3;
-
-  }
-  .breadcrumb-bar {
+}
+.breadcrumb-bar {
     width: 100%;
     background-color: #f3f3f3;
     padding: 12px 20px;
-    
-  }
-  
-  .breadcrumb-text {
+}
+.breadcrumb-text {
     font-size: 0.9rem;
     color: #999;
     font-family: sans-serif;
     padding-left: 140px;
-  }
+}
 
 /* Main layout */
 .container {
@@ -33,8 +29,9 @@
     background-color: #fff;
     padding: 15px;
     border: 1px solid #ddd;
-    height:200px;
     margin-top: 25px;
+    overflow: auto;
+    height:500px;
 }
 
 .filter-section h3 {
@@ -45,6 +42,7 @@
 
 .filter-section ul {
     list-style: none;
+    padding: 0;
 }
 
 .filter-section ul li {
@@ -57,6 +55,104 @@
     font-size: 14px;
 }
 
+/* Price Filter Section */
+.price-filter {
+    margin-top: 20px;
+}
+
+.price-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.price-filter-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.price-filter-icon {
+    width: 10px;
+    height: 6px;
+    fill: #333;
+    transition: transform 0.3s ease;
+}
+
+.price-filter.collapsed .price-filter-icon {
+    transform: rotate(180deg);
+}
+
+.price-filter-content {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.price-filter.collapsed .price-filter-content {
+    display: none;
+}
+
+.price-range-slider-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+             .noUi-target {
+                background: #ccc !important;
+                border-radius: 2px;
+                border: none;
+                height: 4px; /* Tăng chiều cao lên 4px cho cân đối */
+            }
+
+            /* Style the connect bar (màu xám khi kéo) */
+            .noUi-connect {
+                background: #000 !important; /* Màu xám cho phần giữa */
+                border-radius: 2px;
+                height: 4px; /* Đồng bộ với track */
+            }
+
+            /* Style the handles (hình tròn trắng với viền đen) */
+            .noUi-handle .price-filter{
+                position: relative;
+                background: #fff;
+                border: 2px solid #000;
+                border-radius: 50%;
+                width: 16x; /* Tăng kích thước lên 16px */
+                height: 16px;
+                top: -6px !important; /* Căn giữa handle trên thanh slider */
+                box-shadow: none;
+                cursor: pointer;
+            }
+
+            /* Ẩn các phần tử mặc định của handle */
+            .noUi-handle::before,
+            .noUi-handle::after {
+                display: none;
+            }
+            .price-filter .noUi-handle::before,
+.price-filter .noUi-handle::after {
+    display: none;
+}
+
+            /* Style cho giá trị hiển thị */
+            .price-range__info {
+                font-size: 14px;
+                color: #333;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 8px;
+            }
+
+            .price-range__min,
+            .price-range__max {
+                font-weight: normal;
+                color: #333;
+            }
 /* Product list */
 .product-list {
     flex: 1;
@@ -70,7 +166,7 @@
     background-color: #fff;
     padding: 15px;
     text-align: center;
-    border: none; /* Bỏ viền */
+    border: none;
     overflow: hidden;
 }
 
@@ -79,6 +175,7 @@
     width: 100%;
     height: 200px;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .product-item .default-img,
@@ -156,6 +253,8 @@
     height: 15px;
     border-radius: 50%;
 }
+
+
 /* Pagination */
 .pagination {
     display: flex;
@@ -182,36 +281,4 @@
 .pagination .arrow {
     font-size: 20px;
     color: #000;
-}
-@media (max-width: 768px) {
-
-.product-list {
-    grid-template-columns: repeat(2, 1fr); /* Thay đổi số cột thành 2 */
-}
-
-/* Có thể cần điều chỉnh thêm khoảng cách giữa các sản phẩm */
-.product-list {
-    gap: 10px; /* Giảm khoảng cách nếu cần */
-}
-
-.product-item {
-    /* Có thể cần điều chỉnh padding hoặc margin của mỗi sản phẩm */
-    padding: 10px;
-}
-
-.product-item .image-container {
-    height: 150px; /* Điều chỉnh chiều cao ảnh cho phù hợp */
-    margin-bottom: 5px;
-}
-
-.product-item h4 {
-    font-size: 12px; /* Điều chỉnh kích thước chữ tiêu đề */
-}
-
-.product-item .price {
-    font-size: 12px; /* Điều chỉnh kích thước chữ giá */
-}
-.filter-section {
-    display: none; /* Ẩn hoàn toàn filter section */
-}
 }

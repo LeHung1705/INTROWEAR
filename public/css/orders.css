@@ -8,6 +8,13 @@
     
 }
 
+<<<<<<< HEAD
+=======
+#nav-active {
+    background-color: #3399ff;
+}
+
+>>>>>>> 1bcd532d9f2dfad1259b36354a26f425417056fe
 .breadcrumb-bar a, .breadcrumb-bar span {
     text-decoration: none;
     color: #9c9b9b;
@@ -89,4 +96,16 @@
 
 .orders-table tr {
     background-color: #f2ecec;
+<<<<<<< HEAD
 }
+=======
+}
+/* Phân trang */
+.wgp-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+>>>>>>> 1bcd532d9f2dfad1259b36354a26f425417056fe

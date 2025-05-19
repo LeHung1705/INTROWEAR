@@ -12,6 +12,18 @@ class CartController extends Controller
         $items = Cart::instance('cart')->content();
         return view('cart', compact('items'));
     }
+
+    public function add_to_cart(Request $request)
+    {
+        Cart::instance('cart')->add(
+            $request->id,
+            $request->name,
+            $request->quantity,
+            $request->price
+        )->associate('App\Models\Product');
+        return redirect()->back();
+    }
+
     public function place_an_order( Request $request)
     {
          $validatedData = $request->validate([
@@ -26,6 +38,7 @@ class CartController extends Controller
     $order->name = $validatedData['name'];
     $order->phone = $validatedData['phone'];
     $order->address = $validatedData['address'];
+       //discount neu can
       //$payment_method 
     $order->status = 'ordered';
     $order->total = Session::get('checkout')['total'];
@@ -39,5 +52,15 @@ class CartController extends Controller
     $orderItem->quantity = $item->qty;
     $orderItem->save();
 }
+    }
+   public function order_confirmation()
+    {
+        if (Session::has('order_id')) {
+            $order = Order::find(Session::get('order_id'));
+            if ($order) {
+                return view('order_confirmation', compact('order'));
+            }
+        }
+        
     }
 }
