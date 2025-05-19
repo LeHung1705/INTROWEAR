@@ -35,7 +35,6 @@
     border-radius: 10px;
 }
 
-.create-coupon-form textarea,
 .create-coupon-form input[type="submit"] {
     margin: 20px auto 0;
     padding: 10px 30px;
