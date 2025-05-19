@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\AuthAdmin;
 use App\Http\Controllers\OrderController; // Import controller-K
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\OrderItemController;// Import controller-K
 
 use App\Http\Controllers\ShopController;
@@ -13,6 +17,22 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //Route shop
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Auth::routes();
+
+
+
+
+//Login
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/account-dashboard',[UserController::class, 'index'])->name('user.index');
+});
+
+Route::middleware(['auth', AuthAdmin::class])->group(function() {
+    Route::get('/admin', [AdminController::class,'index'])->name('admin.index');
+});
+
+// Register
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 //Route giỏ hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
