@@ -14,12 +14,14 @@ use App\Http\Controllers\OrderItemController;// Import controller-K
 use App\Http\Controllers\ShopController;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
-//Route shop
+//Xử lý shop
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Auth::routes();
 
 
-
+//Xử lý đơn hàng
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/order',[OrderController::class,'orders'])->name('orders');
 
 //Login
 
@@ -33,19 +35,13 @@ Route::middleware(['auth', AuthAdmin::class])->group(function() {
 
 // Register
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
-
-//Route giỏ hàng
+//Xử lý giỏ hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
-Route::get('/cart/remove/{rowId}', [CartController::class, 'remove'])->name('cart.remove');
-Route::put('/cart/increase-quantity/{rowId}', [CartController::class, 'increase_cart_quantity'])->name('cart.qty.increase');
-Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_cart_quantity'])->name('cart.qty.decrease');
-
 
 //Xử lý đơn hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/order-confirmation', [CartController::class, 'order_confirmation'])->name('cart.order.confirmation');
 Route::get('/order',[OrderController::class,'orders'])->name('orders');
 Route::get('/order/{order_id}/details' ,[OrderItemController::class,'order_details'])->name('order.details');
-
 
