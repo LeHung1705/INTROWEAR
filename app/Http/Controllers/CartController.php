@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Surfsidemedia\Shoppingcart\Facades\Cart; //
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -50,6 +51,14 @@ class CartController extends Controller
             Cart::instance('cart')->remove($rowId);
         }
         return redirect()->back();
+    }
+
+    public function checkout()
+    {
+        if(!Auth::check()){
+            return redirect()->route('login');
+        }
+        return view('checkout');
     }
 
     public function place_an_order( Request $request)

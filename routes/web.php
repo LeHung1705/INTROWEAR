@@ -45,3 +45,5 @@ Route::get('/order-confirmation', [CartController::class, 'order_confirmation'])
 Route::get('/order',[OrderController::class,'orders'])->name('orders');
 Route::get('/order/{order_id}/details' ,[OrderItemController::class,'order_details'])->name('order.details');
 
+//Route thanh toán
+Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
