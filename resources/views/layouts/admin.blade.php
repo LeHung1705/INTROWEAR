@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <meta charset="UTF-8" />
+
         <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;600&display=swap" rel="stylesheet">
 
      <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
@@ -21,10 +22,12 @@
 
    
 @stack("styles")
+
 </head>
 <body>
     <!-- HEADER -->
     <header>
+
       <div class="header-left">
         <i class="fas fa-bars"></i>
         <img src="{{asset('assets/images/logo.png')}}" alt="INTROWEAR" />
@@ -39,6 +42,7 @@
        @yield('content') 
     
     
+
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -156,8 +160,10 @@
         </div>
       </div>
     </footer>
+
 <script src="{{ asset('assets/js/main.js')}}"></script>
      @stack("scripts")
   </body>
  
 </html>
+

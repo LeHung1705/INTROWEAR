@@ -7,9 +7,9 @@ use App\Models\Product;
 
 class ShopController extends Controller
 {
-    public function index()
-    {
-        $products = Product::orderBy('created_at', 'desc')->paginate(12);
-        return view('shop.index', compact('products'));
+    public function index(){
+        $products = Product::orderBy('id', 'desc')->paginate(12);
+        return view('shop', compact('products'));
+
     }
 }

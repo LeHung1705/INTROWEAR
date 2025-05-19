@@ -9,6 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="stylesheet" href="{{ asset('assets/css/register.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css')}}" />
     <link rel="stylesheet" href="{{ asset('assets/css/trangchu.css')}}" />
     <link
@@ -25,7 +26,7 @@
                 <i class="fas fa-bars"></i>
             </div>
             <div class="logo">
-              <a href="/Website/trangchu.html">
+              <a href="{{route('home.index')}}">
                 <img src="{{ asset('/assets/images/logo.png')}} " alt="INTROWEAR Logo" class="logo-img">
                 <span class="logo-text"></span>
                 </a>
@@ -35,9 +36,10 @@
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" placeholder="Search">
             </div>
+          @guest
             <div class="header-actions">
                 <div class="icons">
-                    <a href="/Website/log-in.html">
+                    <a href="{{route('login')}}" >
                     <i class="fas fa-user user-icon"></i>
                 </a>
                     <div class="cart-wrapper">
@@ -52,13 +54,32 @@
                     </div>
                 </div>
             </div>
-        
+          @else 
+            <div class="header-actions">
+                <div class="icons">
+                    <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.index') : route('user.index')}}">
+                    <span class="pr-6px">{{Auth::user()->name}}</span>
+                    <i class="fas fa-user user-icon"></i>
+                </a>
+                    <div class="cart-wrapper">
+                        <a href="{{route('cart.index')}}">
+                        <i class="fas fa-shopping-cart cart-icon">
+                          @if(Cart::instance('cart')->content()->count() > 0)
+                          <sub>({{Cart::instance('cart')->content()->count()}})</sub>
+                          @endif
+                        </i>
+                    </a>
+                        <span class="cart-count"></span>
+                    </div>
+                </div>
+            </div>
+          @endguest
     </div>
         <div class="header-bottom responsive-nav">
             <nav>
                 <ul>
-                    <li><a href="/Website/trangchu.html" id="homepageLink">HOMEPAGE</a></li>
-                    <li class="dropdown"><a href="/Website/trangchu.html">SHOP</a></li>
+                    <li><a href="{{route('home.index')}}" id="homepageLink">HOMEPAGE</a></li>
+                    <li class="dropdown"><a href="{{route('shop.index')}}">SHOP</a></li>
                     <li><a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a></li>
                 </ul>
             </nav>
@@ -191,7 +212,10 @@
         </div>
       </div>
     </footer>
-    <script src="{{ asset('js/main.js')}}"></script>
+
+    <script src="{{ asset('assets/js/main.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     @stack('scripts')
   </body>
 </html>

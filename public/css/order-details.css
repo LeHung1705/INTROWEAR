@@ -149,13 +149,6 @@ h3 {
   height: 30px;
   margin-right: 10px;
 }
-.table .name a {
-  color: #000000;
-  text-decoration: none;
-}
-.table .name a:hover {
-  text-decoration: underline;
-}
 
 .table .text-center {
   text-align: center;

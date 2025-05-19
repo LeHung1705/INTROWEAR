@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+
 use App\Models\Product;
 use App\Models\Coupon;
 use Illuminate\Http\Request;
@@ -11,6 +12,8 @@ use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 
+use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
@@ -18,6 +21,7 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
+
    
     public function products()
     {
@@ -123,4 +127,5 @@ public function coupon_store(Request $request)
     return redirect()->route('admin.coupon')->with('status','Thêm mã giảm giá thành công!');
  
 }
+
 }
