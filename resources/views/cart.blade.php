@@ -95,15 +95,18 @@
               <tbody>
                 <tr>
                   <th>Subtotal</th>
- <td>{{number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())) + 20000, 0, ',', '.')}}VND</td>                </tr>
+                  <td>{{ number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())), 0, '.', ',') }}VND</td>                
+                </tr>
                 <tr>
                   <th>Shipping</th>
                   <td>
-                     20000VND
+                     20,000VND
                   </td>
                 </tr>
                 <tr>
                   <th>Total</th>
+                  <td>{{ number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())) + 20000, 0, '.', ',') }}VND
+                  </td>
                 </tr>
               </tbody>
             </table>
