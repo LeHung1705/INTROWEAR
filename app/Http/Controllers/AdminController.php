@@ -12,13 +12,6 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> cf48530603335966059a026368cbf84b3d32bd9f
 class AdminController extends Controller
 {
    
