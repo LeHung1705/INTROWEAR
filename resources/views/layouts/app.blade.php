@@ -56,7 +56,7 @@
           @else 
             <div class="header-actions">
                 <div class="icons">
-                    <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.index') : route('user.index')}}">
+                    <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.dashboard') : route('user.index')}}">
                     <span class="pr-6px">{{Auth::user()->name}}</span>
                     <i class="fas fa-user user-icon"></i>
                 </a>
