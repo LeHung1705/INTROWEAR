@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Coupon;
+
+
 use Illuminate\Http\Request;
-use Surfsidemedia\Shoppingcart\Facades\Cart; //
+use Surfsidemedia\Shoppingcart\Facades\Cart; 
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\OrderItem;
 use App\Models\Transaction;
+use Carbon\Carbon;
 
 class CartController extends Controller
 {
@@ -82,7 +86,7 @@ class CartController extends Controller
         // Tạo đơn hàng
         $order = new Order();
         $order->user_id = $user_id;
-        $order->total = Session::get('checkout')['total'];
+        $order->total = Session::get('checkout')['total']+20000;
         $order->name = $request->name;
         $order->phone = $request->phone;
         $order->address = $request->address;
@@ -152,4 +156,49 @@ class CartController extends Controller
         }
         
     }
+    public function apply_coupon_code(Request $request)
+    {
+        $coupon_code=$request->coupon_code;
+        if(isset($coupon_code)){
+            $coupon = Coupon::where('code',$coupon_code)->where('end_day','>=',Carbon::today())->where ('cart_value','<=',Cart::instance('cart')->subtotal())->first();
+            if (!$coupon) {
+                return redirect()->back()->with('error','Invalid coupon code!');
+
+            } 
+            else 
+            {
+                Session::put('coupon',[
+                    'coupon_code'=>$coupon->coupon_code,
+                    'discount_percentage'=>$coupon->discount_percentage
+
+                ]
+                );
+                $this->calculatorDiscount();
+                return redirect()->back()->with('success','Coupon has been applied');
+                
+            }
+        }
+        else return  redirect()->back()->with('error','Invalid coupon code!');
+    }
+public function calculatorDiscount()
+{
+  $discount=0;
+  if(Session::has('coupon'))
+  {
+    $discount = (Cart::instance('cart')->subtotal()*Session::get('coupon')['discount_percentage'])/100;
+
+  }
+  $subtotalAfterDiscount = Cart::instance('cart')->subtotal()-$discount;
+  $taxAfterDiscount = ($subtotalAfterDiscount*config('cart.tax'))/100;
+
+  $total=$subtotalAfterDiscount+$taxAfterDiscount;
+ Session::put('discounts', [
+    'discount' => number_format(floatval($discount), 0, ',', '.') . 'VNĐ',
+    'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.') . 'VNĐ',
+    'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') . 'VNĐ',
+    'total' => number_format(floatval($total), 0, ',', '.') . 'VNĐ'
+
+]);
+
+}
 }

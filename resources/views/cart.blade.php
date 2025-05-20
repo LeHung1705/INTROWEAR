@@ -78,8 +78,9 @@
           </tbody>
         </table>
         <div class="cart-table-footer">
-          <form action="#" class="position-relative bg-body">
-            <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code">
+          <form action="{{route('cart.coupon.apply')}} " enctype="multipart/form-data" method="post" class="position-relative bg-body">
+          @csrf
+            <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value="@if(Session::has('coupon')) {{Session::get('coupon')['coupon_code']}} Applied! @endif">
             <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
               value="APPLY COUPON">
           </form>
@@ -94,17 +95,18 @@
               <tbody>
                 <tr>
                   <th>Subtotal</th>
-                  <td>{{Cart::instance('cart')->subtotal()}}VND</td>
+                  <td>{{ number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())), 0, '.', ',') }}VND</td>                
                 </tr>
                 <tr>
                   <th>Shipping</th>
                   <td>
-                     20000VND
+                     20,000VND
                   </td>
                 </tr>
                 <tr>
                   <th>Total</th>
-                  <td>{{number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())) + 20000, 0, ',', '.')}}VND</td>
+                  <td>{{ number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())) + 20000, 0, '.', ',') }}VND
+                  </td>
                 </tr>
               </tbody>
             </table>
