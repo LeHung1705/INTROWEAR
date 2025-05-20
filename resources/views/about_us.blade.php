@@ -50,7 +50,7 @@
       <!-- Final Intro Section -->
       <section class="intro-final">
         <img
-          src="/Website/assets/images/logo_trangchu.png"
+          src="{{asset('assets/images/logo.png')}}"
           alt="IntroWear Logo"
           class="intro-logo"
         />
