@@ -15,6 +15,7 @@ return new class extends Migration
            $table->id();
            $table->bigInteger('user_id')->unsigned();
            $table->bigInteger('total');
+           $table->string('name');
            $table->string('phone');
            $table->text('address');
            $table->enum('payment_method',['cod','card','paypal']);

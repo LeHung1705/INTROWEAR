@@ -82,7 +82,7 @@ class CartController extends Controller
         // Tạo đơn hàng
         $order = new Order();
         $order->user_id = $user_id;
-        $order->total = floatval(str_replace([',', '.'], '', Session::get('checkout')['total']));
+        $order->total = Session::get('checkout')['total'];
         $order->name = $request->name;
         $order->phone = $request->phone;
         $order->address = $request->address;
@@ -112,7 +112,7 @@ class CartController extends Controller
         Session::forget('discounts');
 
         // Chuyển hướng đến trang xác nhận đơn hàng
-        return view('order.confirmation', compact('order'));
+        return view('order_confirmation', compact('order'));
     }
 
     public function setAmountForCheckout()
