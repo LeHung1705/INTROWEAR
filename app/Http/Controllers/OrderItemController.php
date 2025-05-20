@@ -16,7 +16,7 @@ class OrderItemController extends Controller
         $order = Order::find($order_id);
         $orderItems = OrderItem :: where ('order_id', $order_id)->orderBy('id')->paginate(5);
         $transaction = Transaction::where('order_id', $order_id)->first();
-        return view('order-details', compact('order', 'orderItems','transaction'));
+        return view('admin/order-details', compact('order', 'orderItems','transaction'));
 
     }
   public function update_order_status(Request $request)
@@ -37,7 +37,7 @@ class OrderItemController extends Controller
 
     $order->save();
 
-    return redirect()->route('orders')->with('status', 'Status changed successfully!');
+    return redirect()->route('admin.orders')->with('status', 'Status changed successfully!');
 }
 }
 

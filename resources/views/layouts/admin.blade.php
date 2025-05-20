@@ -26,25 +26,57 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header>
-
-      <div class="header-left">
-        <i class="fas fa-bars"></i>
-        <img src="{{asset('assets/images/logo.png')}}" alt="INTROWEAR" />
-      </div>
-      <section class="header-right">
-        <img src="{{asset('asset/images/avt.png')}}" alt="avt" />
-        <p>ADMIN</p>
-      </section>
-    </header>
+    <header class="header-main">
+        <div class="header-top">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+              <a href="{{route('home.index')}}">
+                <img src="{{ asset('/assets/images/logo.png')}} " alt="INTROWEAR Logo" class="logo-img">
+                <span class="logo-text"></span>
+                </a>
+            </div>
+      
+          @guest
+            <div class="header-actions">
+                <div class="icons">
+                    <a href="{{route('login')}}" >
+                    <i class="fas fa-user user-icon"></i>
+                </a>
+                    <div class="cart-wrapper">
+                        <a href="{{route('cart.index')}}">
+                        <i class="fas fa-shopping-cart cart-icon">
+                          {{-- @if(Cart::instance('cart')->content()->count() > 0)
+                          <sub>({{Cart::instance('cart')->content()->count()}})</sub>
+                          @endif --}}
+                        </i>
+                    </a>
+                        <span class="cart-count"></span>
+                    </div>
+                </div>
+            </div>
+          @else 
+            <div class="header-actions">
+                <div class="icons">
+                    <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.index') : route('user.index')}}">
+                    <span class="pr-6px">{{Auth::user()->name}}</span>
+                    <i class="fas fa-user user-icon"></i>
+                </a>
+                        <span class="cart-count"></span>
+                    </div>
+                </div>
+            </div>
+          @endguest
+    </div>
 
     <!-- NAVIGATION -->
     <div class="container">
         <div class="main">
             <nav class="sidebar">
-                <a href="{{ url('/dashboard') }}" class="nav-button" style="text-decoration: none">DASHBOARD</a>
+                <a href="{{ url('/admin/dashboard') }}" class="nav-button" style="text-decoration: none">DASHBOARD</a>
                 <a href="{{ url('/admin/manage-product') }}" class="nav-button" style="text-decoration: none">MANAGE PRODUCT</a>
-                <a href="{{ url('order') }}" class="nav-button" style="text-decoration: none">ORDERS</a>
+                <a href="{{ url('/admin/order') }}" class="nav-button" style="text-decoration: none">ORDERS</a>
                 <a href="{{ url('/admin/add-product') }}" class="nav-button" style="text-decoration: none">ADD PRODUCT</a>
                 <a href="{{ url('/admin/create-coupon') }}" class="nav-button" style="text-decoration: none">CREATE COUPON</a>
             </nav>
