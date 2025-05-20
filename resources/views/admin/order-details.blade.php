@@ -13,7 +13,7 @@
                         <h3>Order Details</h3>
                         <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10" role="navigation">
                             <li>
-                                <a href="{{route('dashboard')}}">
+                                <a href="{{route('admin.dashboard')}}">
                                     <div class="text-tiny">Dashboard</div>
                                 </a>
                             </li>
@@ -21,7 +21,7 @@
                                 <i class="fas fa-chevron-right"></i>
                             </li>
                             <li>
-                                 <a href="{{route('order.details', ['order_id' => $order->id])}}">
+                                 <a href="{{route('admin.order.details', ['order_id' => $order->id])}}">
                                 <div class="text-tiny">Order Items</div>
                                 </a>
                             </li>
@@ -33,7 +33,7 @@
                             <div class="wg-filter flex-grow">
                                 <h5>Ordered Items</h5>
                             </div>
-                            <a class="tf-button style-1 w208" href="{{route('orders')}}">Back</a>
+                            <a class="tf-button style-1 w208" href="{{route('admin.orders')}}">Back</a>
                         </div>
                         <div class="table-responsive">
                         @if (session()->has('status'))
@@ -87,7 +87,7 @@
         <div class="update-order-status-container">
             <div class="order-status-select">
                 <label for="orderStatus">Update Order Status:</label>
-            <form action="{{route('order.status.update')}}" method="POST">
+            <form action="{{route('admin.order.status.update')}}" method="POST">
                    @csrf
                    @method('PUT')
                     <input type="hidden" name="order_id" value="{{ $order->id }}" />
