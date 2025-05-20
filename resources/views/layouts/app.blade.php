@@ -79,7 +79,7 @@
                 <ul>
                     <li><a href="{{route('home.index')}}" id="homepageLink">HOMEPAGE</a></li>
                     <li class="dropdown"><a href="{{route('shop.index')}}">SHOP</a></li>
-                    <li><a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a></li>
+                    <li><a href="{{route('aboutus.index')}}" id="aboutUsLink">ABOUT US</a></li>
                 </ul>
             </nav>
 
