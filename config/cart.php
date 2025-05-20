@@ -55,13 +55,14 @@ return [
     */
 
     'format' => [
+    
+    'decimals' => 0, // không hiện .00 nữa
 
-        'decimals' => 2,
+    'decimal_point' => '',
 
-        'decimal_point' => '.',
+    'thousand_seperator' => '' // không có dấu ,
+    
+    ]
 
-        'thousand_seperator' => ','
-
-    ],
 
 ];

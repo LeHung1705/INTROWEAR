@@ -10,9 +10,9 @@
                                 >Orders</span
                             >
                             <div class="breadcrumb-bar">
-                                <a href="{{route('dashboard')}}">Dashboard</a>
+                                <a href="{{route('admin.dashboard')}}">Dashboard</a>
                                 <span>></span>
-                                <a href="{{route('orders')}}">Orders</a>
+                                <a href="{{route('admin.orders')}}">Orders</a>
                             </div>
                         </div>
                         <div class="orders-table-container">
@@ -72,7 +72,7 @@
                             <td>{{$order->delivered_date}}</td>
                             <td>{{$order->canceled_date}}</td>
                             <td class="text-center">
-                                <a href="{{ route('order.details', ['order_id' => $order->id]) }}">
+                                <a href="{{ route('admin.order.details', ['order_id' => $order->id]) }}">
                                     <div class="list-icon-function">
                                         <div class="item eye">
                                             <i class="fa-solid fa-eye"></i>
