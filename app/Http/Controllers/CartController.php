@@ -86,7 +86,7 @@ class CartController extends Controller
         // Tạo đơn hàng
         $order = new Order();
         $order->user_id = $user_id;
-        $order->total = Session::get('checkout')['total'];
+        $order->total = Session::get('checkout')['total']+20000;
         $order->name = $request->name;
         $order->phone = $request->phone;
         $order->address = $request->address;

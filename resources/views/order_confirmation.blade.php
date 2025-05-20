@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("layouts.app")
 @push('styles')
     <link rel="stylesheet" href="{{ asset('assets/css/order-confirmation.css') }}">
 @endpush
