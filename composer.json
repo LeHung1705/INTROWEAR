@@ -9,7 +9,7 @@
         "php": "^8.2",
         "intervention/image": "^3.11",
         "laravel/framework": "^12.0",
-        "laravel/sanctum": "*",
+        "laravel/sanctum": "^4.1",
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "^4.6",
         "surfsidemedia/shoppingcart": "^2.0"
