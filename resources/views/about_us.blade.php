@@ -1,6 +1,6 @@
-     @extends('layouts.app')
+    @extends('layouts.app')
   @push('styles')
-  <link rel="stylesheet" href="{{ asset('assets/css/about_us.css') }}" />
+  <link rel="stylesheet" href="{{ asset('assets/css/aboutus.css') }}" />
 @endpush
 
 @section('content')
@@ -12,13 +12,13 @@
 
       <!-- Logo chữ INTROWEAR -->
       <img
-        src="/Website/assets/images/logo_chu.png"
+        src="{{asset('assets/images/logo.png')}}"
         alt="INTROWEAR Text Logo"
         class="intro-text-logo"
       />
       <!-- Banner ảnh Matching -->
       <img
-        src="/Website/assets/images/banner_trangchu.png"
+        src="{{asset('assets/images/banner_trangchu.png')}}"
         alt="INTROWEAR Banner"
         class="banner"
       />
