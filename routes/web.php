@@ -15,6 +15,7 @@ use App\Http\Controllers\ShopController;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 //Xử lý shop
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
+Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus.index');
 Auth::routes();
 
 

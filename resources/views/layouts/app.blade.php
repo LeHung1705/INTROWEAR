@@ -56,7 +56,7 @@
           @else 
             <div class="header-actions">
                 <div class="icons">
-                    <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.index') : route('user.index')}}">
+                    <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.dashboard') : route('user.index')}}">
                     <span class="pr-6px">{{Auth::user()->name}}</span>
                     <i class="fas fa-user user-icon"></i>
                 </a>
@@ -79,7 +79,7 @@
                 <ul>
                     <li><a href="{{route('home.index')}}" id="homepageLink">HOMEPAGE</a></li>
                     <li class="dropdown"><a href="{{route('shop.index')}}">SHOP</a></li>
-                    <li><a href="/Website/aboutus.html" id="aboutUsLink">ABOUT US</a></li>
+                    <li><a href="{{route('aboutus.index')}}" id="aboutUsLink">ABOUT US</a></li>
                 </ul>
             </nav>
 
