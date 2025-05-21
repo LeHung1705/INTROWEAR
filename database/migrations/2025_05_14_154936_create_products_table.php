@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('category_id');
             $table->string('color');
             $table->string('size');
-            $table->decimal('price', 15, 2);
-            $table->decimal('price_sale', 15, 2)->nullable();
+            $table->bigInteger('price');
+            $table->bigInteger('price_sale')->nullable();
             $table->string('description');
             $table->integer('stock_quantity');
             $table->enum('status_product',['Còn hàng','Hết hàng']);

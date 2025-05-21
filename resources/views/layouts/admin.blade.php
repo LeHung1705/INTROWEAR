@@ -44,7 +44,7 @@
                 <span class="logo-text"></span>
                 </a>
             </div>
-     
+
           @guest
             <div class="header-actions">
                 <div class="icons">
@@ -63,7 +63,9 @@
                     </div>
                 </div>
             </div>
-          @else
+
+          @else 
+
             <div class="header-actions">
                 <div class="icons">
                     <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.index') : route('user.index')}}">
@@ -76,6 +78,7 @@
             </div>
           @endguest
     </div>
+
 
 
     <!-- NAVIGATION -->
@@ -99,7 +102,6 @@
             </div>
         </div>
     </div>
-
 
 
 
