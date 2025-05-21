@@ -17,15 +17,7 @@
                         </div>
                         <div class="orders-table-container">
                             <div style="width: 95%">
-                                <div class="search-box">
-                                    <input
-                                        type="text"
-                                        placeholder="Search here..."
-                                    /><i
-                                        class="fa-solid fa-magnifying-glass fa-2xs"
-                                        style="color: #c7e0f5"
-                                    ></i>
-                                </div>
+                            
                             </div>
                             <div class="table-viewport">
                                 <table class="orders-table">
