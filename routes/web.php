@@ -16,8 +16,12 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //Xử lý shop
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus.index');
+
+Route::get('/product/{id}', [ShopController::class, 'details'])->name('shop.product.details');
 Auth::routes();
 
+//Tìm kiếm sản phẩm
+Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
 
 //Xử lý đơn hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
@@ -74,3 +78,5 @@ Route::get('/order-confirmation', [CartController::class, 'order_confirmation'])
 //Route thanh toán
 Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 Route::post('/place-an-order', [CartController::class, 'place_an_order'])->name('cart.place.an.order');
+
+

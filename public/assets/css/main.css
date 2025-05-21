@@ -261,3 +261,97 @@
             display: block; 
         }
     }
+
+/* Định dạng header */
+
+
+.search-bar {
+    position: relative;
+    display: inline-block;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+#search-input {
+    padding: 0px 10px 0px 25px;
+    width: 200px;
+    font-size: 14px;
+    outline: none;
+}
+
+#search-input:focus {
+    border-color: #007bff;
+}
+
+/* Định dạng dropdown kết quả tìm kiếm */
+#box-content-search {
+    position: absolute;
+    top: 60px; /* Đặt ngay dưới header */
+    left: 76%;
+    transform: translateX(-50%); /* Căn giữa theo ô tìm kiếm */
+    width: 300px; /* Chiều rộng phù hợp */
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+#box-content-search .product-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: background-color 0.2s ease;
+}
+
+#box-content-search .product-item:hover {
+    background-color: #f8f8f8;
+}
+
+#box-content-search .image {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+#box-content-search .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #f0f0f0;
+}
+
+#box-content-search .name {
+    flex-grow: 1;
+}
+
+#box-content-search .name a {
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#box-content-search .name a:hover {
+    color: #007bff;
+}
+
+#box-content-search .divider {
+    border-top: 1px solid #e0e0e0;
+    margin: 5px 15px;
+}
+
+#box-content-search li {
+    list-style: none;
+}
