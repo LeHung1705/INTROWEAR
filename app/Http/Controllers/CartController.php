@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Models\Coupon;
-
 
 use Illuminate\Http\Request;
 use Surfsidemedia\Shoppingcart\Facades\Cart; 
@@ -13,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\OrderItem;
 use App\Models\Transaction;
 use Carbon\Carbon;
+
+use Illuminate\Support\Facades\Session ;
 
 class CartController extends Controller
 {
@@ -175,9 +175,11 @@ class CartController extends Controller
 
                 ]
                 );
+
                 $this->calculatorDiscount();
                 return redirect()->back()->with('success','Coupon has been applied');
                 
+
             }
         }
         else return  redirect()->back()->with('error','Invalid coupon code!');
@@ -195,12 +197,17 @@ public function calculatorDiscount()
 
   $total=$subtotalAfterDiscount+$taxAfterDiscount;
  Session::put('discounts', [
-    'discount' => number_format(floatval($discount), 0, ',', '.') . 'VNĐ',
-    'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.') . 'VNĐ',
-    'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') . 'VNĐ',
-    'total' => number_format(floatval($total), 0, ',', '.') . 'VNĐ'
+
+    'discount' => number_format(floatval($discount), 0, ',', '.') ,
+    'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.'),
+    'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') ,
+    'total' => number_format(floatval($total), 0, ',', '.') 
 
 ]);
 
 }
-}
+
+
+
+
+

@@ -3,45 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/create-coupon.css') }}" />
 @endpush
 @section('content')
-<div class="container">
-            <div class="main">
-                <nav class="sidebar">
-                    <a
-                        href="{{route('admin.products')}}"
-                        class="nav-button"
-                        style="text-decoration: none"
-                        >MANAGE PRODUCT</a
-                    >
 
-                    <a
-                        href="/Admin/orders.html"
-                        class="nav-button"
-                        style="text-decoration: none"
-                        >ORDERS</a
-                    >
-
-                    <a
-                        href="{{route('admin.product-add')}}"
-                        class="nav-button"
-                        style="text-decoration: none"
-                        >ADD PRODUCT</a
-                    >
-                    <a
-                        href="/Admin/orders.html"
-                        class="nav-button"
-                        style="text-decoration: none"
-                        >UPDATE PRODUCT</a
-                    >
-                    <a
-                        href="{{route('admin.coupon')}}"
-                        class="nav-button current-button"
-                        style="text-decoration: none"
-                        >COUPON</a
-                    >
-                </nav>
-
-               
-                <div class="content">
                     <!-- Nội dung trang đặt ở đây -->
                     <div class="create-coupon-title font-trispace">
                         CREATE COUPON
@@ -113,7 +75,5 @@
                             class="submit-button font-trispace"
                         />
                     </form>
-                </div>
-            </div>
-        </div>
+               
 @endsection
