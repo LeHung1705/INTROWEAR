@@ -193,17 +193,12 @@ public function calculatorDiscount()
 
   $total=$subtotalAfterDiscount+$taxAfterDiscount;
  Session::put('discounts', [
-<<<<<<< Updated upstream
-    'discount' => number_format(floatval($discount), 0, ',', '.') . 'VNĐ',
-    'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.') . 'VNĐ',
-    'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') . 'VNĐ',
-    'total' => number_format(floatval($total), 0, ',', '.') . 'VNĐ'
-=======
+
     'discount' => number_format(floatval($discount), 0, ',', '.') . '₫',
     'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.') . '₫',
     'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') . '₫',
     'total' => number_format(floatval($total), 0, ',', '.') . '₫'
->>>>>>> Stashed changes
+
 
 ]);
 
