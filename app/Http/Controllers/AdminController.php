@@ -135,6 +135,9 @@ public function edit_product(Request $request)
     $image = $request->file('image');
     $imageName = time() . '_' . $image->getClientOriginalName();
     $image->move(public_path('uploads'), $imageName); // Lưu trực tiếp vào public/uploads
+     if ($product->image && file_exists(public_path('uploads/' . $product->image))) {
+            unlink(public_path('uploads/' . $product->image));
+        }
     $product->image = $imageName;
 }
     $product->save();

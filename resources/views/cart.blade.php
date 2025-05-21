@@ -97,7 +97,19 @@
               <tbody>
                 <tr>
                   <th>Subtotal</th>
- <td>{{number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())) + 20000, 0, ',', '.')}}VND</td>                </tr>
+                  <td>{{ Cart::instance('cart')->subtotal()}}VND</td>                </tr>
+
+               <tr>
+                  <th>Discount {{Session::get('coupon')['coupon_code']}}</th>
+                  <td>
+                    {{Session::get('discounts')['discount']}}VND </td>
+              </tr>
+               <tr>
+                  <th>Subtotal After Discount</th>
+                  <td>
+                     {{Session::get('discounts')['subtotal']}}VND
+                  </td>
+              </tr>
                 <tr>
                   <th>Shipping</th>
                   <td>
@@ -105,7 +117,10 @@
                   </td>
                 </tr>
                 <tr>
-                  <th>Total</th>
+                    <th>Total</th>
+                   <td>
+                     {{ number_format(Session::get('discounts')['total'] + 20000, 0, ',', '.') }}VND
+                  </td>
                 </tr>
               </tbody>
             </table>
