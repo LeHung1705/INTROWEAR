@@ -76,7 +76,7 @@ class CartController extends Controller
             'name' => 'required|max:100',
             'phone' => 'required|numeric|digits:10',
             'address' => 'required|max:255',
-            'mode' => 'required',
+            'mode' => 'required|in:cod,card,paypal',
         ]);
 
         // Lấy thông tin người dùng
@@ -105,6 +105,7 @@ class CartController extends Controller
         $order->name = $request->name;
         $order->phone = $request->phone;
         $order->address = $request->address;
+        $order->payment_method = $request->mode;
         $order->save();
 
         // Lưu các sản phẩm trong đơn hàng

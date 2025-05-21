@@ -78,7 +78,7 @@ class AdminController extends Controller
 if ($request->hasFile('image')) {
     $image = $request->file('image');
     $imageName = time() . '_' . $image->getClientOriginalName();
-    $image->move(public_path('uploads'), $imageName); // Lưu trực tiếp vào public/uploads
+    $image->move(public_path('uploads/products'), $imageName); // Lưu trực tiếp vào public/uploads
     $product->image = $imageName;
 }
     $product->save();

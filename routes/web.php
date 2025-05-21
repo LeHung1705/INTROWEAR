@@ -17,8 +17,13 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //Xử lý shop
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus.index');
-Auth::routes();
 
+Route::get('/product/{id}', [ShopController::class, 'details'])->name('shop.product.details');
+Auth::routes();
+Route::get('/shop/{id}', [ShopController::class,'product_details'])->name('shop.product.details');
+
+//Tìm kiếm sản phẩm
+Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
 
 //Xử lý đơn hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
@@ -70,7 +75,7 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 //Xử lý giỏ hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
+Route::get('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
 Route::get('/cart/remove/{rowId}', [CartController::class, 'remove'])->name('cart.remove');
 Route::put('/cart/increase-quantity/{rowId}', [CartController::class, 'increase_cart_quantity'])->name('cart.qty.increase');
 Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_cart_quantity'])->name('cart.qty.decrease');
@@ -85,3 +90,4 @@ Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkou
 Route::post('/place-an-order', [CartController::class, 'place_an_order'])->name('cart.place.an.order');
 Route::post('/vnpay-payment', [CartController::class, 'vnpay_payment'])->name('cart.vnpay.payment');
 Route::get('/vnpay-callback', [CartController::class, 'vnpay_callback'])->name('cart.vnpay.callback');
+

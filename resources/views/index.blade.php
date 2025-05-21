@@ -165,7 +165,7 @@
       </div>
       <div class="register">
         <p>Đăng ký thành viên IntroWear</p>
-        <button type="button" class="btn-register" onclick="redirectToRegisterPage()">ĐĂNG KÝ TÀI KHOẢN</button>
+        <a href="{{route('register')}}" class="btn-register">ĐĂNG KÝ TÀI KHOẢN</a>
       </div>
     </section>
     </main>

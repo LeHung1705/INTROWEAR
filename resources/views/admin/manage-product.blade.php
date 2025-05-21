@@ -68,7 +68,7 @@
                 
                     <tr>
                     <td>{{$product->id}}</td>
-                    <td><img src="{{asset('uploads')}}/{{$product->image}}" alt="{{$product->product_name}}"></td>
+                    <td><img src="{{asset('uploads/products')}}/{{$product->image}}" alt="{{$product->product_name}}"></td>
                     <td>{{$product->product_name}}</td>
                     <td>{{$product->price}}đ</td>
                     <td class="status in-stock">{{$product->status_product}}</td>
@@ -91,7 +91,6 @@
                     @endforeach
                 </tbody>
                 </table>
-          
                 {{-- <div class="pagination-wrapper">
                     <div class="pagination">
                       <a href="#">‹</a>
