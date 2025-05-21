@@ -9,9 +9,10 @@
                     <!-- Nội dung trang đặt ở đây -->
                     <div class="update-product">
                         <h1 class="update-title">UPDATE PRODUCT</h1>
-                <form  enctype="multipart/form-data" method='post' action="">
+                <form  enctype="multipart/form-data" method='post' action="{{route('admin.edit')}}">
                         @csrf
-                        <input type="hidden" name="id" value="$product->id">
+                        @method('PUT')
+                        <input type="hidden" name="id" value="{{$product->id}}">
                         <div class="update-form">
                              <div id="product-image">
                                 <img
@@ -20,7 +21,7 @@
                                     alt="Product image"
                                     style="height: 270px; width: 270px;"
                                 />
-                                <p>{{$product->product_name}}</p>
+                                <p style="text-align: center;">{{$product->product_name}}</p>
                             </div>
 
                             <div class="form-fields">
@@ -29,33 +30,33 @@
                                     <label for="product-name"
                                         >Tên sản phẩm:</label
                                     >
-                                    <input type="text" id="product-name" value="{{$product->product_name}}" />
+                                    <input type="text" id="product-name" name="product_name" value="{{$product->product_name}}" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="original-price">Giá gốc:</label>
-                                    <input type="text" id="original-price"   value="{{$product->price}}"/>
+                                    <input type="text" id="original-price" name="price"   value="{{$product->price}}"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="image-link"
                                         >Link hình ảnh:</label
                                     >
-                                    <input type="file" id="image-link" value="{{$product->image}}"/>
+                                    <input type="file" id="image-link" name="image" value="{{$product->image}}"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="sale-price"
                                         >Giá khuyến mãi:</label
                                     >
-                                    <input type="text" id="sale-price" value="{{$product->price_sale}}" />
+                                    <input type="text" id="sale-price" name="price_sale" value="{{$product->price_sale}}" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="detail"
                                         >Thông tin chi tiết:</label
                                     >
-                                    <textarea id="detail" >{{$product->description}}</textarea>
+                                    <textarea id="detail" name="description" >{{$product->description}}</textarea>
                                 </div>
 
                                  {{-- <div class="form-group">
@@ -67,34 +68,34 @@
 
                                 <div class="form-group">
                                     <label for="category">Danh mục:</label>
-                                    <input type="text" id="category" value="{{$product->category_id}}" />
+                                    <input type="text" id="category" name="category_id" value="{{$product->category_id}}" />
                                 </div>
                                 <div class="form-group">
                                     <label for="color"
                                         >Màu sắc:</label
                                     >
-                                    <input type="text" id="color"  value="{{$product->color}}"/>
+                                    <input type="text" id="color" name="color"  value="{{$product->color}}"/>
                                 </div>  
 
                                 <div class="form-group">
                                     <label for="quantity"
                                         >Số lượng sản phẩm trong kho:</label
                                     >
-                                    <input type="text" id="quantity" value="{{$product->stock_quantity}}" />
+                                    <input type="text" id="quantity" name="stock_quantity" value="{{$product->stock_quantity}}" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="size"
                                         >Kích thước:</label
                                     >
-                                    <input type="text" id="size" value="{{$product->size}}"  />
+                                    <input type="text" id="size" name="size" value="{{$product->size}}"  />
                                 </div> 
 
                                 <div class="form-group">
                                     <label for="status"
                                         >Tình trạng sản phẩm:</label
                                     >
-                                    <select id="status" >
+                                    <select id="status" name="status_product">
                                         <option value="Còn hàng"{{$product->status_product=="Còn hàng"?"selected":""}}>Còn hàng</option>
                                         <option value="Hết hàng"{{$product->status_product=="Hết hàng"?"selected":""}}>Hết hàng</option>
                                        

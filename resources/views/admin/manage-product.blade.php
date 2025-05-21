@@ -45,7 +45,7 @@
 
                 <div class="action-bar">
                 <button class="btn"><i class="fas fa-search"></i>Tìm kiếm sản phẩm</button>
-                <button class="btn"><i class="fas fa-plus"></i>Thêm sản phẩm</button>
+                <a href="{{route('admin.product-add')}}"  class="btn"><i class="fas fa-plus"></i>Thêm sản phẩm </a>                
                 <button class="btn"><i class="fas fa-filter"></i>Tất cả trạng thái</button>
                 </div>
           @if (Session::has('status'))
@@ -73,8 +73,15 @@
                     <td>{{$product->price}}đ</td>
                     <td class="status in-stock">{{$product->status_product}}</td>
                     <td>
-                        <a class="fas fa-pen edit"  href="{{route('admin.update',['id'=>$product->id])}}"></a>
-                        <i class="fas fa-trash delete"></i>
+                        <div class="action-icons">
+                          <a class="fas fa-pen edit" href="{{ route('admin.update', ['id' => $product->id]) }}"></a>
+
+                        <form action="{{ route('admin.delete', ['id' => $product->id]) }}" method="POST" style="display: inline;">
+                        @csrf
+                         @method('DELETE')
+                         <button type="submit" class="fas fa-trash delete" style="border: none; background: none; cursor: pointer;"></button>
+                         </form>
+    </div>
                         
                     </td>
                     </tr>

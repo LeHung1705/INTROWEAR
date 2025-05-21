@@ -121,7 +121,7 @@ public function edit_product(Request $request)
         'stock_quantity'=>'required',
         'status_product'=>'nullable',
 
-       'image'=>'required|mimes:png,jpg,jpeg|max:2048'
+       'image'=>'mimes:png,jpg,jpeg|max:2048'
     ]);
     $product = Product::find($request->id);
     $product->product_name = $request->product_name;
@@ -149,7 +149,18 @@ public function edit_product(Request $request)
  
 }
 
+//Xóa sản phẩm 
+public function delete_product($id)
+{
+  $product=Product::find($id);
+  if ($product->image && file_exists(public_path('uploads/' . $product->image))) {
+            unlink(public_path('uploads/' . $product->image));
+        }
+    $product->delete();
+    return redirect()->route('admin.products')->with('status','Xóa sản phẩm thành công!');
+ 
 
+}
 
 public function coupons()
 {
