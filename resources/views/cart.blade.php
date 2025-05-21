@@ -78,9 +78,15 @@
           </tbody>
         </table>
         <div class="cart-table-footer">
+<<<<<<< Updated upstream
           <form action="{{route('cart.coupon.apply')}} " enctype="multipart/form-data" method="post" class="position-relative bg-body">
           @csrf
             <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value="@if(Session::has('coupon')) {{Session::get('coupon')['coupon_code']}} Applied!">
+=======
+          <form action="{{route('cart.coupon.apply')}}" class="position-relative bg-body">
+          @csrf
+            <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code">
+>>>>>>> Stashed changes
             <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
               value="APPLY COUPON">
           </form>
