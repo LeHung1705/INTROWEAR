@@ -88,5 +88,6 @@ Route::get('/order-confirmation', [CartController::class, 'order_confirmation'])
 //Route thanh toán
 Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 Route::post('/place-an-order', [CartController::class, 'place_an_order'])->name('cart.place.an.order');
-
+Route::post('/vnpay-payment', [CartController::class, 'vnpay_payment'])->name('cart.vnpay.payment');
+Route::get('/vnpay-callback', [CartController::class, 'vnpay_callback'])->name('cart.vnpay.callback');
 
