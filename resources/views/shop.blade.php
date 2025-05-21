@@ -45,7 +45,9 @@
                     class="default-img"
                     src="{{ asset('uploads/products')}}/{{$product->image}}"
                 />
-                <div class="quick-view"><a href="#">Quick View</a></div>
+               
+                <a  class="quick-view" style="text-decoration: none;" href="{{route('shop.product.details',['id'=>$product->id])}}">Quick View</a>
+               
                 @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
                 <a href="{{ route('cart.index') }}" class="add-to-cart">Go to cart</a>
                 @else
@@ -60,7 +62,7 @@
                 @endif
             </div>
             <h4>{{$product->product_name}}</h4>
-            <div class="price">{{$product->price_sale}} <del>{{$product->price}}</del></div>
+            <div class="price">{{number_format($product->price_sale,0,',',',')}}₫ <del>{{number_format($product->price,0,',',',')}}₫</del></div>
         </div>
         @endforeach
     </div>
