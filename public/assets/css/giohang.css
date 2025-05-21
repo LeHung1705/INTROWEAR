@@ -31,6 +31,7 @@ body {
 .cart-container {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   padding: 40px;
   gap: 40px;
   background-color: #fff;

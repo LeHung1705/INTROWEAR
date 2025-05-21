@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Coupon;
 
-
 use Illuminate\Http\Request;
 use Surfsidemedia\Shoppingcart\Facades\Cart; 
 use Illuminate\Support\Facades\Session;
@@ -13,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\OrderItem;
 use App\Models\Transaction;
 use Carbon\Carbon;
+
+
 
 class CartController extends Controller
 {
@@ -75,6 +76,7 @@ class CartController extends Controller
             'name' => 'required|max:100',
             'phone' => 'required|numeric|digits:10',
             'address' => 'required|max:255',
+            'mode' => 'required|in:cod,card,paypal',
         ]);
 
         // Lấy thông tin người dùng
@@ -90,6 +92,7 @@ class CartController extends Controller
         $order->name = $request->name;
         $order->phone = $request->phone;
         $order->address = $request->address;
+        $order->payment_method = $request->mode;
         $order->save();
 
         // Lưu các sản phẩm trong đơn hàng
@@ -106,7 +109,7 @@ class CartController extends Controller
         $transaction = new Transaction();
         $transaction->user_id = $user_id;
         $transaction->order_id = $order->id;
-        $transaction->mode = $request->mode ?? 'COD'; // Mặc định là thanh toán khi nhận hàng
+        $transaction->mode = $request->mode;
         $transaction->save();
 
         // Dọn dẹp giỏ hàng và session
@@ -173,9 +176,11 @@ class CartController extends Controller
 
                 ]
                 );
+
                 $this->calculatorDiscount();
                 return redirect()->back()->with('success','Coupon has been applied');
                 
+
             }
         }
         else return  redirect()->back()->with('error','Invalid coupon code!');
@@ -193,12 +198,18 @@ public function calculatorDiscount()
 
   $total=$subtotalAfterDiscount+$taxAfterDiscount;
  Session::put('discounts', [
-    'discount' => number_format(floatval($discount), 0, ',', '.') . 'VNĐ',
-    'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.') . 'VNĐ',
-    'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') . 'VNĐ',
-    'total' => number_format(floatval($total), 0, ',', '.') . 'VNĐ'
+
+    'discount' => number_format(floatval($discount), 0, ',', '.') ,
+    'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.'),
+    'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') ,
+    'total' => number_format(floatval($total), 0, ',', '.') 
 
 ]);
 
 }
 }
+
+
+
+
+

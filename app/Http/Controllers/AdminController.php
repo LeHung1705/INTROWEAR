@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
+
 class AdminController extends Controller
 {
    
@@ -33,7 +34,7 @@ class AdminController extends Controller
    
     public function products()
     {
-        $products=Product::all();
+        $products=Product::orderBy('created_at', 'DESC')->paginate(10);;
         return view('admin.manage-product',compact('products'));    }
     public function product_add()
     { $products = Product::all();
@@ -43,7 +44,7 @@ class AdminController extends Controller
 {
     $request->validate([
         'product_name'=>'required',
-        'category_id'=>'nullable',
+        'category_id'=>'required',
         'color'=>'required',
         'size'=>'required',
         'price'=>'required',
@@ -51,7 +52,7 @@ class AdminController extends Controller
         'description'=>'required',
         'stock_quantity'=>'required',
         'status_product'=>'nullable',
-       'supplier_id'=>'nullable',
+       'supplier_id'=>'required',
        'image'=>'required|mimes:png,jpg,jpeg|max:2048'
     ]);
 
@@ -99,11 +100,68 @@ if ($request->hasFile('image')) {
         $constraint->aspectRatio();
     })->save($destinationPath . '/' . $imageName);
 }*/
+
+// Cập nhật sản phẩm
 public function update_product($id)
 {
     $product = Product::find($id);
     return view('admin.update-product',compact('product'));
 }
+
+
+public function edit_product(Request $request)
+{ $request->validate([
+        'product_name'=>'required',
+        'category_id'=>'nullable',
+        'color'=>'required',
+        'size'=>'required',
+        'price'=>'required',
+        'price_sale'=>'required',
+        'description'=>'required',
+        'stock_quantity'=>'required',
+        'status_product'=>'nullable',
+
+       'image'=>'mimes:png,jpg,jpeg|max:2048'
+    ]);
+    $product = Product::find($request->id);
+    $product->product_name = $request->product_name;
+    $product->category_id = $request->category_id;
+    $product->color = $request->color;
+    $product->size = $request->size;
+    $product->price = $request->price;
+    $product->price_sale = $request->price_sale;
+    $product->description = $request->description;
+    $product->stock_quantity = $request->stock_quantity;
+    $product->status_product = $request->status_product;
+    $product->supplier_id = $request->supplier_id;
+
+    if ($request->hasFile('image')) {
+    $image = $request->file('image');
+    $imageName = time() . '_' . $image->getClientOriginalName();
+    $image->move(public_path('uploads'), $imageName); // Lưu trực tiếp vào public/uploads
+     if ($product->image && file_exists(public_path('uploads/' . $product->image))) {
+            unlink(public_path('uploads/' . $product->image));
+        }
+    $product->image = $imageName;
+}
+    $product->save();
+    return redirect()->route('admin.products')->with('status','Cập nhật sản phẩm thành công!');
+ 
+}
+
+//Xóa sản phẩm 
+public function delete_product($id)
+{
+  $product=Product::find($id);
+  if ($product->image && file_exists(public_path('uploads/' . $product->image))) {
+            unlink(public_path('uploads/' . $product->image));
+        }
+    $product->delete();
+    return redirect()->route('admin.products')->with('status','Xóa sản phẩm thành công!');
+ 
+
+}
+
 public function coupons()
 {
     $coupons = Coupon::orderBy('end_date','desc')->get();
