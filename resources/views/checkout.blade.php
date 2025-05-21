@@ -128,7 +128,7 @@
         <div class="checkout__payment-methods">
           <div class="payment-methods">
               <label class="payment-option">
-                <input type="radio" name="mode" value="cart" id="mode1" />
+                <input type="radio" name="mode" value="card" id="mode1" />
                 <span>Credit Card</span>
               </label>
             
@@ -138,8 +138,8 @@
               </label>
             
               <label class="payment-option">
-                <input type="radio" name="mode" value="momo" id="mode3"/>
-                <span>Momo</span>
+                <input type="radio" name="mode" value="vnpay" id="mode3"/>
+                <span>VNPAY</span>
               </label>
           </div>
             

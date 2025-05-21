@@ -76,6 +76,7 @@ class CartController extends Controller
             'name' => 'required|max:100',
             'phone' => 'required|numeric|digits:10',
             'address' => 'required|max:255',
+            'mode' => 'required',
         ]);
 
         // Lấy thông tin người dùng
@@ -84,6 +85,19 @@ class CartController extends Controller
         // Thiết lập thông tin thanh toán
         $this->setAmountForCheckout();
 
+        // Xử lý thanh toán VNPay nếu được chọn
+        if ($request->mode == 'vnpay') {
+            // Lưu thông tin đơn hàng vào session để sử dụng sau khi thanh toán
+            Session::put('order_data', [
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'address' => $request->address,
+            ]);
+            
+            return $this->vnpay_payment();
+        }
+
+        // Xử lý các phương thức thanh toán khác (cod, cart)
         // Tạo đơn hàng
         $order = new Order();
         $order->user_id = $user_id;
@@ -107,7 +121,7 @@ class CartController extends Controller
         $transaction = new Transaction();
         $transaction->user_id = $user_id;
         $transaction->order_id = $order->id;
-        $transaction->mode = $request->mode ?? 'COD'; // Mặc định là thanh toán khi nhận hàng
+        $transaction->mode = $request->mode; // Phương thức thanh toán
         $transaction->save();
 
         // Dọn dẹp giỏ hàng và session
@@ -116,8 +130,11 @@ class CartController extends Controller
         Session::forget('coupon');
         Session::forget('discounts');
 
+        // Lưu order_id vào session để hiển thị trang xác nhận
+        Session::put('order_id', $order->id);
+
         // Chuyển hướng đến trang xác nhận đơn hàng
-        return view('order_confirmation', compact('order'));
+        return redirect()->route('cart.order.confirmation');
     }
 
     public function setAmountForCheckout()
@@ -147,7 +164,7 @@ class CartController extends Controller
         }
     }
 
-   public function order_confirmation()
+    public function order_confirmation()
     {
         if (Session::has('order_id')) {
             $order = Order::find(Session::get('order_id'));
@@ -156,7 +173,9 @@ class CartController extends Controller
             }
         }
         
+        return redirect()->route('cart.index')->with('error', 'Order not found!');
     }
+    
     public function apply_coupon_code(Request $request)
     {
         $coupon_code=$request->coupon_code;
@@ -183,31 +202,138 @@ class CartController extends Controller
         }
         else return  redirect()->back()->with('error','Invalid coupon code!');
     }
-public function calculatorDiscount()
-{
-  $discount=0;
-  if(Session::has('coupon'))
-  {
-    $discount = (Cart::instance('cart')->subtotal()*Session::get('coupon')['discount_percentage'])/100;
+    
+    public function calculatorDiscount()
+    {
+        $discount=0;
+        if(Session::has('coupon'))
+        {
+            $discount = (Cart::instance('cart')->subtotal()*Session::get('coupon')['discount_percentage'])/100;
 
-  }
-  $subtotalAfterDiscount = Cart::instance('cart')->subtotal()-$discount;
-  $taxAfterDiscount = ($subtotalAfterDiscount*config('cart.tax'))/100;
+        }
+        $subtotalAfterDiscount = Cart::instance('cart')->subtotal()-$discount;
+        $taxAfterDiscount = ($subtotalAfterDiscount*config('cart.tax'))/100;
 
-  $total=$subtotalAfterDiscount+$taxAfterDiscount;
- Session::put('discounts', [
+        $total=$subtotalAfterDiscount+$taxAfterDiscount;
+        Session::put('discounts', [
+            'discount' => number_format(floatval($discount), 0, ',', '.') ,
+            'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.'),
+            'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') ,
+            'total' => number_format(floatval($total), 0, ',', '.') 
+        ]);
+    }
 
-    'discount' => number_format(floatval($discount), 0, ',', '.') ,
-    'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.'),
-    'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') ,
-    'total' => number_format(floatval($total), 0, ',', '.') 
+    public function vnpay_payment()
+    {
+        $code_cart = rand(00, 9999);
+        $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+        $vnp_Returnurl = route('cart.vnpay.callback');
+        $vnp_TmnCode = "1VYBIYQP"; //Mã website tại VNPAY 
+        $vnp_HashSecret = "NOH6MBGNLQL9O9OMMFMZ2AX8NIEP50W1"; //Chuỗi bí mật
 
-]);
+        // Lấy tổng tiền từ session
+        $total = 0;
+        if (Session::has('discounts')) {
+            $total = (float) str_replace(['.',','], '', Session::get('discounts')['total']);
+        } else {
+            $total = (float) str_replace(',', '', Cart::instance('cart')->subtotal()) + 20000;
+        }
 
+        $vnp_TxnRef = $code_cart; //Mã đơn hàng
+        $vnp_OrderInfo = 'Thanh toán đơn hàng';
+        $vnp_OrderType = 'billpayment';
+        $vnp_Amount = $total * 100;
+        $vnp_Locale = 'vn';
+        $vnp_IpAddr = request()->ip();
+        $inputData = array(
+            "vnp_Version" => "2.1.0",
+            "vnp_TmnCode" => $vnp_TmnCode,
+            "vnp_Amount" => $vnp_Amount,
+            "vnp_Command" => "pay",
+            "vnp_CreateDate" => date('YmdHis'),
+            "vnp_CurrCode" => "VND",
+            "vnp_IpAddr" => $vnp_IpAddr,
+            "vnp_Locale" => $vnp_Locale,
+            "vnp_OrderInfo" => $vnp_OrderInfo,
+            "vnp_OrderType" => $vnp_OrderType,
+            "vnp_ReturnUrl" => $vnp_Returnurl,
+            "vnp_TxnRef" => $vnp_TxnRef,
+        );
+
+        ksort($inputData);
+        $query = "";
+        $i = 0;
+        $hashdata = "";
+        foreach ($inputData as $key => $value) {
+            if ($i == 1) {
+                $hashdata .= '&' . urlencode($key) . "=" . urlencode($value);
+            } else {
+                $hashdata .= urlencode($key) . "=" . urlencode($value);
+                $i = 1;
+            }
+            $query .= urlencode($key) . "=" . urlencode($value) . '&';
+        }
+        $vnp_Url = $vnp_Url . "?" . $query;
+        if (isset($vnp_HashSecret)) {
+            $vnpSecureHash =   hash_hmac('sha512', $hashdata, $vnp_HashSecret); //  
+            $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
+        }
+
+        // Chuyển hướng đến trang thanh toán VNPay
+        return redirect($vnp_Url);
+    }
+
+    public function vnpay_callback(Request $request)
+    {
+        // Kiểm tra trạng thái thanh toán
+        if ($request->vnp_ResponseCode == '00') {
+            // Thanh toán thành công
+            $user_id = Auth::user()->id;
+
+            // Lấy thông tin đơn hàng từ session
+            $orderData = Session::get('order_data');
+
+            // Tạo đơn hàng
+            $order = new Order();
+            $order->user_id = $user_id;
+            $order->total = Session::get('checkout')['total']+20000;
+            $order->name = $orderData['name'];
+            $order->phone = $orderData['phone'];
+            $order->address = $orderData['address'];
+            $order->save();
+
+            // Lưu các sản phẩm trong đơn hàng
+            foreach (Cart::instance('cart')->content() as $item) {
+                $orderItem = new OrderItem();
+                $orderItem->product_id = $item->id;
+                $orderItem->order_id = $order->id;
+                $orderItem->price = $item->price;
+                $orderItem->quantity = $item->qty;
+                $orderItem->save();
+            }
+
+            // Tạo giao dịch thanh toán
+            $transaction = new Transaction();
+            $transaction->user_id = $user_id;
+            $transaction->order_id = $order->id;
+            $transaction->mode = 'paypal';
+            // $transaction->status = 'paid';
+            $transaction->save();
+
+            // Dọn dẹp giỏ hàng và session
+            Cart::instance('cart')->destroy();
+            Session::forget('checkout');
+            Session::forget('coupon');
+            Session::forget('discounts');
+            Session::forget('order_data');
+
+            // Lưu order_id vào session để hiển thị trang xác nhận
+            Session::put('order_id', $order->id);
+
+            return redirect()->route('cart.order.confirmation')->with('success', 'Payment successful!');
+        } else {
+            // Thanh toán thất bại
+            return redirect()->route('cart.checkout')->with('error', 'Payment failed. Please try again!');
+        }
+    }
 }
-}
-
-
-
-
-
