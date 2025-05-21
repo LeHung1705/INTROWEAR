@@ -91,7 +91,6 @@
                     @endforeach
                 </tbody>
                 </table>
-          
                 {{-- <div class="pagination-wrapper">
                     <div class="pagination">
                       <a href="#">‹</a>

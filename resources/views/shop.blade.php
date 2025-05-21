@@ -7,14 +7,19 @@
 @section('content')
 <div class="breadcrumb-bar">
     <div class="breadcrumb-text">
+        <a href="{{route('home.index')}}" class="subnav">
         <span id="breadcrumb-home" style="cursor: pointer"
             >Trang chủ</span
         >
+        </a>
         /
         <span id="breadcrumb-category" style="cursor: pointer"
-            >Danh mục</span
-        >
-        / <span>ALL PRODUCTS</span>
+            >Danh mục</span>
+
+        / 
+         <a href="{{route('shop.index')}}" class="subnav">
+            <span>ALL PRODUCTS</span>
+          </a>
     </div>
 </div>
 <!-- Main container -->
