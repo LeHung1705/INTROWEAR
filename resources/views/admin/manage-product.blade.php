@@ -84,18 +84,7 @@
                     @endforeach
                 </tbody>
                 </table>
-          
-                <div class="pagination-wrapper">
-                    <div class="pagination">
-                      <a href="#">‹</a>
-                      <a class="active" href="#">1</a>
-                      <a class="disabled" href="#">2</a>
-                      <a class="disabled" href="#">3</a>
-                      <a class="disabled" href="#">4</a>
-                      <a class="disabled" href="#">›</a>
-                    </div>
-                  </div>
-          </div>
+        
            </div>
        
         
