@@ -17,7 +17,19 @@
                         </div>
                         <div class="orders-table-container">
                             <div style="width: 95%">
-                            
+                            <div class="search-box">
+    <form action="{{ route('admin.orders') }}" method="GET">
+        <input
+            type="text"
+            name="search"
+            placeholder="Tìm kiếm theo tên..."
+            value="{{ request('search') }}"
+        />
+        <button type="submit" style="background: none; border: none; cursor: pointer;">
+            Search
+        </button>
+    </form>
+</div>
                             </div>
                             <div class="table-viewport">
                                 <table class="orders-table">
