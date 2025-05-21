@@ -75,6 +75,7 @@ class CartController extends Controller
             'name' => 'required|max:100',
             'phone' => 'required|numeric|digits:10',
             'address' => 'required|max:255',
+            'mode' => 'required|in:cod,card,paypal',
         ]);
 
         // Lấy thông tin người dùng
@@ -90,6 +91,7 @@ class CartController extends Controller
         $order->name = $request->name;
         $order->phone = $request->phone;
         $order->address = $request->address;
+        $order->payment_method = $request->mode;
         $order->save();
 
         // Lưu các sản phẩm trong đơn hàng
@@ -106,7 +108,7 @@ class CartController extends Controller
         $transaction = new Transaction();
         $transaction->user_id = $user_id;
         $transaction->order_id = $order->id;
-        $transaction->mode = $request->mode ?? 'COD'; // Mặc định là thanh toán khi nhận hàng
+        $transaction->mode = $request->mode;
         $transaction->save();
 
         // Dọn dẹp giỏ hàng và session
