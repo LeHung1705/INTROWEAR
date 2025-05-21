@@ -5,46 +5,7 @@
  @section('content')
  
 
- <div class="container">
-            <div class="main">
-                <nav class="sidebar">
-                    <a
-                        href="{{route('admin.products')}}"
-                        class="nav-button"
-                        style="text-decoration: none"
-                        >MANAGE PRODUCT</a
-                    >
-
-                    <a
-                        href="/Admin/orders.html"
-                        class="nav-button"
-                        style="text-decoration: none"
-                        >ORDERS</a
-                    >
-
-                    <a
-                        href="{{route('admin.product-add')}}"
-                        class="nav-button"
-                        style="text-decoration: none"
-                        >ADD PRODUCT</a
-                    >
-                    <a
-                        href="/Admin/update-product.html"
-                        class="nav-button"
-                        style="text-decoration: none"
-                        >UPDATE PRODUCT</a
-                    >
-                    <a
-                        href="{{route('admin.coupon')}}"
-                        class="nav-button current-button"
-                        style="text-decoration: none"
-                        >COUPON</a
-                    >
-                </nav>
-
-                
-                          
-                      <div class="content">
+ 
                     <!-- Nội dung trang đặt ở đây -->
 
                      <div class="addnew">
@@ -83,7 +44,5 @@
                                       @endforeach
                                 </tbody>
                             </table> 
-                    </div>
-            </div>
-        </div>
+                    
 @endsection

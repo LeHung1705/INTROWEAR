@@ -3,9 +3,9 @@
     <link rel="stylesheet" href="{{ asset('css/manage-product.css') }}" />
 @endpush
 @section('content')
-<div class="container">
-            <div class="main">
-              <nav class="sidebar">
+
+          
+              {{-- <nav class="sidebar">
                     <a
                         href="{{route('admin.products')}}"
                         class="nav-button current-button"
@@ -38,7 +38,7 @@
                         style="text-decoration: none"
                         >COUPON</a
                     >
-                </nav>
+                </nav> --}}
 
           <div class="manage-product">
                 <h1 class="title">MANAGE PRODUCT</h1>
@@ -97,7 +97,7 @@
                   </div>
           </div>
            </div>
-            </div>
-             </div>
+       
+        
             
 @endsection

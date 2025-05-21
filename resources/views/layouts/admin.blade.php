@@ -4,24 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     <title>{{ config('app.name', 'Laravel') }}</title>
+
 
     <meta charset="UTF-8" />
 
+
         <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;600&display=swap" rel="stylesheet">
+
 
      <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      
+     
     />
+
 
    
 @stack("styles")
+
 
 </head>
 <body>
@@ -37,7 +44,7 @@
                 <span class="logo-text"></span>
                 </a>
             </div>
-      
+
           @guest
             <div class="header-actions">
                 <div class="icons">
@@ -56,7 +63,9 @@
                     </div>
                 </div>
             </div>
+
           @else 
+
             <div class="header-actions">
                 <div class="icons">
                     <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.index') : route('user.index')}}">
@@ -69,6 +78,8 @@
             </div>
           @endguest
     </div>
+
+
 
     <!-- NAVIGATION -->
     <div class="container">
@@ -93,6 +104,7 @@
     </div>
 
 
+
     <!-- FOOTER -->
     <footer class="footer">
       <!-- Top section of footer -->
@@ -109,6 +121,7 @@
               </a>
             </div>
 
+
             <!-- Contact information -->
             <div class="footer__contact footer__col">
               <div class="contact-list">
@@ -121,6 +134,7 @@
                   >
                 </p>
 
+
                 <p class="contact-item">
                   <i class="fas fa-building"></i>
                   <span
@@ -129,12 +143,14 @@
                   >
                 </p>
 
+
                 <p class="contact-item">
                   <i class="fas fa-file-alt"></i>
                   <span><strong>MST: </strong> 0316416910</span>
                 </p>
               </div>
             </div>
+
 
             <!-- Phone -->
             <div class="footer__phone footer__col">
@@ -147,6 +163,7 @@
               </p>
             </div>
 
+
             <!-- Email -->
             <div class="footer__email footer__col">
               <p class="contact-item">
@@ -154,6 +171,7 @@
                 <span><strong>Email:</strong> contact@introwear.com</span>
               </p>
             </div>
+
 
             <!-- Social media links -->
             <div class="footer__social footer__col">
@@ -184,6 +202,7 @@
         </div>
       </div>
 
+
       <!-- Bottom section of footer (copyright) -->
       <div class="footer__bottom">
         <!-- Policy links -->
@@ -210,9 +229,14 @@
       </div>
     </footer>
 
+
 <script src="{{ asset('assets/js/main.js')}}"></script>
      @stack("scripts")
   </body>
  
 </html>
+
+
+
+
 

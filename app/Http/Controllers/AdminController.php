@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
+
 class AdminController extends Controller
 {
    
@@ -99,11 +100,14 @@ if ($request->hasFile('image')) {
         $constraint->aspectRatio();
     })->save($destinationPath . '/' . $imageName);
 }*/
+
+// Cập nhật sản phẩm
 public function update_product($id)
 {
     $product = Product::find($id);
     return view('admin.update-product',compact('product'));
 }
+
 
 public function edit_product(Request $request)
 { $request->validate([

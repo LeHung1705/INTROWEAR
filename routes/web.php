@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+
 use App\Http\Middleware\AuthAdmin;
 use App\Http\Controllers\OrderController; // Import controller-K
 use App\Http\Controllers\Auth\RegisterController;
@@ -36,6 +37,7 @@ Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
 Route::get('/admin/manage-product',[AdminController::class,'products'])->name('admin.products');
 Route::get('/admin/addproduct',[AdminController::class,'product_add'])->name('admin.product-add');
 Route::post('/admin/store',[AdminController::class,'product_store'])->name('admin.store');
+//update sản phẩm
 Route::get('/admin/{id}/update',[AdminController::class,'update_product'])->name('admin.update');
 
 
