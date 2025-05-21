@@ -138,11 +138,6 @@ public function calculatorDiscount()
   $taxAfterDiscount = ($subtotalAfterDiscount*config('cart.tax'))/100;
 
   $total=$subtotalAfterDiscount+$taxAfterDiscount;
-<<<<<<< Updated upstream
-  Session::put( 'discounts',[
-    ''=>$discount,
-  ])
-=======
  Session::put('discounts', [
     'discount' => number_format(floatval($discount), 0, ',', '.') ,
     'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.'),
@@ -151,7 +146,6 @@ public function calculatorDiscount()
 
 ]);
 
->>>>>>> Stashed changes
 }
 
 

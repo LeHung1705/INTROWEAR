@@ -84,17 +84,12 @@
           </tbody>
         </table>
         <div class="cart-table-footer">
-<<<<<<< Updated upstream
-          <form action="#" class="position-relative bg-body">
-            <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code">
-            <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
-              value="APPLY COUPON">
-=======
+
           <form action="{{route('cart.coupon.apply')}} " enctype="multipart/form-data" method="post" class="position-relative bg-body">
           @csrf
             <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value=" @if(Session::has('coupon')) {{Session::get('coupon')['coupon_code']}} Applied! @endif ">
             <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">
->>>>>>> Stashed changes
+
           </form>
           <button class="btn btn-light">UPDATE CART</button>
         </div>
@@ -114,10 +109,8 @@
               <tbody>
                 <tr>
                   <th>Subtotal</th>
-<<<<<<< Updated upstream
-                  <td>{{Cart::instance('cart')->subtotal()}}VND</td>
-                </tr>
-=======
+
+
                   <td>{{ Cart::instance('cart')->subtotal()}}VND</td>                </tr>
 
                <tr>
@@ -131,7 +124,7 @@
                      {{Session::get('discounts')['subtotal']}}VND
                   </td>
               </tr>
->>>>>>> Stashed changes
+
                 <tr>
                   <th>Shipping</th>
                   <td>
@@ -139,15 +132,12 @@
                   </td>
                 </tr>
                 <tr>
-<<<<<<< Updated upstream
-                  <th>Total</th>
-                  <td>{{number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())) + 20000, 0, ',', '.')}}VND</td>
-=======
+
                     <th>Total</th>
                    <td>
                      {{ number_format(Session::get('discounts')['total'] + 20000, 0, ',', '.') }}VND
                   </td>
->>>>>>> Stashed changes
+
                 </tr>
               </tbody>
             </table>

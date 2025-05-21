@@ -4,46 +4,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     <title>{{ config('app.name', 'Laravel') }}</title>
+
 
     <meta charset="UTF-8" />
 
+
         <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;600&display=swap" rel="stylesheet">
+
 
      <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      
+     
     />
+
 
    
 @stack("styles")
 
+
 </head>
 <body>
     <!-- HEADER -->
-<<<<<<< Updated upstream
-    <header>
-
-      <div class="header-left">
-        <i class="fas fa-bars"></i>
-        <img src="{{asset('assets/images/logo.png')}}" alt="INTROWEAR" />
-      </div>
-      <section class="header-right">
-        <img src="{{asset('asset/images/avt.png')}}" alt="avt" />
-        <p>ADMIN</p>
-      </section>
-    </header>
-
-    
-       @yield('content') 
-    
-    
-=======
     <header class="header-main">
         <div class="header-top">
             <div class="hamburger-menu">
@@ -55,7 +44,7 @@
                 <span class="logo-text"></span>
                 </a>
             </div>
-      
+     
           @guest
             <div class="header-actions">
                 <div class="icons">
@@ -65,16 +54,16 @@
                     <div class="cart-wrapper">
                         <a href="{{route('cart.index')}}">
                         <i class="fas fa-shopping-cart cart-icon">
-                           @if(Cart::instance('cart')->content()->count() > 0)
+                          {{-- @if(Cart::instance('cart')->content()->count() > 0)
                           <sub>({{Cart::instance('cart')->content()->count()}})</sub>
-                          @endif 
+                          @endif --}}
                         </i>
                     </a>
                         <span class="cart-count"></span>
                     </div>
                 </div>
             </div>
-          @else 
+          @else
             <div class="header-actions">
                 <div class="icons">
                     <a style = "text-decoration :none; color : black;"href="{{ Auth::user()->utype=='ADM' ? route('admin.index') : route('user.index')}}">
@@ -88,22 +77,30 @@
           @endguest
     </div>
 
+
     <!-- NAVIGATION -->
-     <div class="container">
+    <div class="container">
         <div class="main">
             <nav class="sidebar">
                 <a href="{{ url('/admin/dashboard') }}" class="nav-button" style="text-decoration: none">DASHBOARD</a>
-                <a href="{{route('admin.products')}}" class="nav-button" style="text-decoration: none">MANAGE PRODUCT</a>
+                <a href="{{ url('/admin/manage-product') }}" class="nav-button" style="text-decoration: none">MANAGE PRODUCT</a>
                 <a href="{{ url('/admin/order') }}" class="nav-button" style="text-decoration: none">ORDERS</a>
-                <a href="{{route('admin.product-add')}}" class="nav-button" style="text-decoration: none">ADD PRODUCT</a>
-                <a href="{{route('admin.coupon')}}" class="nav-button" style="text-decoration: none">COUPON</a>
+                <a href="{{ url('/admin/add-product') }}" class="nav-button" style="text-decoration: none">ADD PRODUCT</a>
+                <a href="{{ url('/admin/create-coupon') }}" class="nav-button" style="text-decoration: none">CREATE COUPON</a>
+                <button class="nav-button" style="font-size: 12px; padding : 20px;" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                LOGOUT
+                </button>
+                <form method="POST" action="{{route('logout')}}" id="logout-form" style="display: none;">
+                    @csrf
+                </form>
             </nav>
             <div class="content">
                 @yield('content')
             </div>
         </div>
-    </div> 
->>>>>>> Stashed changes
+    </div>
+
+
 
 
     <!-- FOOTER -->
@@ -122,6 +119,7 @@
               </a>
             </div>
 
+
             <!-- Contact information -->
             <div class="footer__contact footer__col">
               <div class="contact-list">
@@ -134,6 +132,7 @@
                   >
                 </p>
 
+
                 <p class="contact-item">
                   <i class="fas fa-building"></i>
                   <span
@@ -142,12 +141,14 @@
                   >
                 </p>
 
+
                 <p class="contact-item">
                   <i class="fas fa-file-alt"></i>
                   <span><strong>MST: </strong> 0316416910</span>
                 </p>
               </div>
             </div>
+
 
             <!-- Phone -->
             <div class="footer__phone footer__col">
@@ -160,6 +161,7 @@
               </p>
             </div>
 
+
             <!-- Email -->
             <div class="footer__email footer__col">
               <p class="contact-item">
@@ -167,6 +169,7 @@
                 <span><strong>Email:</strong> contact@introwear.com</span>
               </p>
             </div>
+
 
             <!-- Social media links -->
             <div class="footer__social footer__col">
@@ -197,6 +200,7 @@
         </div>
       </div>
 
+
       <!-- Bottom section of footer (copyright) -->
       <div class="footer__bottom">
         <!-- Policy links -->
@@ -223,9 +227,14 @@
       </div>
     </footer>
 
+
 <script src="{{ asset('assets/js/main.js')}}"></script>
      @stack("scripts")
   </body>
  
 </html>
+
+
+
+
 
