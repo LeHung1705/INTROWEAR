@@ -89,11 +89,15 @@ if ($request->hasFile('image')) {
         $constraint->aspectRatio();
     })->save($destinationPath . '/' . $imageName);
 }*/
+
+// Cập nhật sản phẩm
 public function update_product($id)
 {
     $product = Product::find($id);
     return view('admin.update-product',compact('product'));
 }
+
+//Tạo coupon
 public function coupons()
 {
     $coupons = Coupon::orderBy('end_date','desc')->get();
