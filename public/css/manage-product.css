@@ -34,7 +34,7 @@
     font-size: 14px;
 }
 .btn:hover {
-    background-color: rgb(140, 156, 226);
+    background-color: rgba(212, 138, 148, 0.934);
 }
 .btn i {
     padding-right: 5px;

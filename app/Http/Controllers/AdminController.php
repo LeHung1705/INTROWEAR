@@ -34,7 +34,7 @@ class AdminController extends Controller
    
     public function products()
     {
-        $products=Product::all();
+        $products=Product::orderBy('created_at', 'DESC')->paginate(10);;
         return view('admin.manage-product',compact('products'));    }
     public function product_add()
     { $products = Product::all();
@@ -51,7 +51,7 @@ class AdminController extends Controller
         'price_sale'=>'required',
         'description'=>'required',
         'stock_quantity'=>'required',
-        'status_product'=>'required',
+        'status_product'=>'nullable',
        'supplier_id'=>'required',
        'image'=>'required|mimes:png,jpg,jpeg|max:2048'
     ]);

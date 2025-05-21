@@ -92,7 +92,7 @@
                 </tbody>
                 </table>
           
-                <div class="pagination-wrapper">
+                {{-- <div class="pagination-wrapper">
                     <div class="pagination">
                       <a href="#">‹</a>
                       <a class="active" href="#">1</a>
@@ -101,7 +101,11 @@
                       <a class="disabled" href="#">4</a>
                       <a class="disabled" href="#">›</a>
                     </div>
-                  </div>
+                  </div> --}}
+
+                  <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
+                {{$products->links('pagination::Bootstrap-5')}}
+                                    </div>
           </div>
            </div>
        

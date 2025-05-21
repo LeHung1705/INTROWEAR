@@ -21,7 +21,7 @@
                                     alt="Product image"
                                     style="height: 270px; width: 270px;"
                                 />
-                                <p style="text-align: center;">{{$product->product_name}}</p>
+                                <p style=" margin-top: 10px; font-weight: bold; text-align: center;">{{$product->product_name}}</p>
                             </div>
 
                             <div class="form-fields">
