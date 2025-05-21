@@ -42,10 +42,11 @@
     padding: 5px;
 }
 
-.product-image p {
+/* .product-image p {
     margin-top: 10px;
     font-weight: bold;
-}
+    text-align: center;
+} */
 
 .save-update {
     background-color: #9e9e9e;
