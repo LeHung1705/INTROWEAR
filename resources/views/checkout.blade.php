@@ -59,7 +59,7 @@
                   {{$item->name}} x {{$item->qty}}
                 </td>
                 <td align="right">
-                  {{$item->subtotal()}}VND
+                  {{ number_format(floatval(str_replace(',', '', $item->subtotal())), 0, '.', ',') }}VND
                 </td>
               </tr>
               @endforeach
@@ -70,32 +70,33 @@
               <tbody>
                 <tr>
                   <th align="left">SUBTOTAL</th>
-                  <td align="right">{{Cart::instance('cart')->subtotal()}}VND</td>
+                  <td align="right">{{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, '.', ',') }}VND</td>
                 </tr>
                 <tr>
-                  <th> DISCOUNT {{Session::get('coupon')['code']}}</th>
-                  <td align="right">{{Session::get('discounts')['discount']}}VND</td>
+                  <th>DISCOUNT {{ Session::get('coupon')['code'] }}</th>
+                  <td align="right">{{ number_format(Session::get('discounts')['discount'], 0, '.', ',') }}VND</td>
                 </tr>
                 <tr>
-                  <th> SUBTOTAL AFTER DISCOUNT</th>
-                  <td align="right">{{Session::get('discounts')['subtotal']}}VND</td>
+                  <th>SUBTOTAL AFTER DISCOUNT</th>
+                  <td align="right">{{ number_format(Session::get('discounts')['subtotal'], 0, '.', ',') }}VND</td>
                 </tr>
                 <tr>
                   <th align="left">SHIPPING</th>
-                  <td align="right">20,000VND</td>
+                  <td align="right">{{ number_format(20000, 0, '.', ',') }}VND</td>
                 </tr>
                 <tr>
                   <th align="left">TOTAL</th>
-                  <td align="right">{{Session::get('discounts')['total']}}VND</td>
+                  <td align="right">{{ number_format(Session::get('discounts')['total'], 0, '.', ',') }}VND</td>
                 </tr>
-              </tbody>
+              </tbody>            
             </table>
           @else
           <table class="checkout-totals">
             <tbody>
               <tr>
                 <th align="left">SUBTOTAL</th>
-                <td align="right">{{Cart::instance('cart')->subtotal()}}</td>
+                <td align="right">{{ number_format(floatval(str_replace(',', '', Cart::instance('cart')->subtotal())), 0, '.', ',') }}VND
+                </td>
               </tr>
               <tr>
                 <th align="left">SHIPPING</th>

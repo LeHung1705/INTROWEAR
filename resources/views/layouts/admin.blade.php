@@ -79,6 +79,12 @@
                 <a href="{{ url('/admin/order') }}" class="nav-button" style="text-decoration: none">ORDERS</a>
                 <a href="{{ url('/admin/add-product') }}" class="nav-button" style="text-decoration: none">ADD PRODUCT</a>
                 <a href="{{ url('/admin/create-coupon') }}" class="nav-button" style="text-decoration: none">CREATE COUPON</a>
+                <button class="nav-button" style="font-size: 12px; padding : 20px;" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                LOGOUT
+                </button>
+                <form method="POST" action="{{route('logout')}}" id="logout-form" style="display: none;">
+                    @csrf
+                </form>
             </nav>
             <div class="content">
                 @yield('content')
