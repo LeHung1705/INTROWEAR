@@ -18,6 +18,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus.index');
 Auth::routes();
+Route::get('/shop/{id}', [ShopController::class,'product_details'])->name('shop.product.details');
 
 
 //Xử lý đơn hàng
@@ -70,7 +71,7 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 //Xử lý giỏ hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
+Route::get('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
 Route::get('/cart/remove/{rowId}', [CartController::class, 'remove'])->name('cart.remove');
 Route::put('/cart/increase-quantity/{rowId}', [CartController::class, 'increase_cart_quantity'])->name('cart.qty.increase');
 Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_cart_quantity'])->name('cart.qty.decrease');
