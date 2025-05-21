@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Coupon;
 
 use Illuminate\Http\Request;
 use Surfsidemedia\Shoppingcart\Facades\Cart; 
@@ -12,7 +13,7 @@ use App\Models\OrderItem;
 use App\Models\Transaction;
 use Carbon\Carbon;
 
-use Illuminate\Support\Facades\Session ;
+
 
 class CartController extends Controller
 {
@@ -203,6 +204,7 @@ public function calculatorDiscount()
 
 ]);
 
+}
 }
 
 
