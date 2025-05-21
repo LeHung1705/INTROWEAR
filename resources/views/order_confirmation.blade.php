@@ -41,7 +41,6 @@
                 <tr>
                   <th>TOTAL</th>
                   <td>{{ number_format(floatval(str_replace(',', '', $order->total)), 0, ',', '.') }}VND
-                    VND
                   </td>
                 </tr>
               </tbody>
