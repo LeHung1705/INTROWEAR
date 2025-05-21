@@ -86,10 +86,10 @@
         <div class="main">
             <nav class="sidebar">
                 <a href="{{ url('/admin/dashboard') }}" class="nav-button" style="text-decoration: none">DASHBOARD</a>
-                <a href="{{ url('/admin/manage-product') }}" class="nav-button" style="text-decoration: none">MANAGE PRODUCT</a>
+                <a href="{{route('admin.products')}}" class="nav-button" style="text-decoration: none">MANAGE PRODUCT</a>
                 <a href="{{ url('/admin/order') }}" class="nav-button" style="text-decoration: none">ORDERS</a>
-                <a href="{{ url('/admin/add-product') }}" class="nav-button" style="text-decoration: none">ADD PRODUCT</a>
-                <a href="{{ url('/admin/create-coupon') }}" class="nav-button" style="text-decoration: none">CREATE COUPON</a>
+                <a href="{{ route('admin.product-add') }}" class="nav-button" style="text-decoration: none">ADD PRODUCT</a>
+                <a href="{{ route('admin.coupon') }}" class="nav-button" style="text-decoration: none">COUPON</a>
                 <button class="nav-button" style="font-size: 12px; padding : 20px;" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 LOGOUT
                 </button>

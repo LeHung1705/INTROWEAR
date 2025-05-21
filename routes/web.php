@@ -39,8 +39,9 @@ Route::get('/admin/addproduct',[AdminController::class,'product_add'])->name('ad
 Route::post('/admin/store',[AdminController::class,'product_store'])->name('admin.store');
 //update sản phẩm
 Route::get('/admin/{id}/update',[AdminController::class,'update_product'])->name('admin.update');
-
-
+Route::put('/admin/edit',[AdminController::class,'edit_product'])->name('admin.edit');
+//Xóa sản phẩm
+Route::delete('/admin/{id}/delete',[AdminController::class,'delete_product'])->name('admin.delete');
 
 //Admin tạo coupon
 
