@@ -408,8 +408,9 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
+    color: #010101;
 }
 
 .product-watched-item-price {
