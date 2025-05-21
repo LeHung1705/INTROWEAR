@@ -20,7 +20,23 @@ $rproducts = Product::where('category_id', $product->category_id)
     ->where('id', '!=', $product->id)
     ->take(4)
     ->get();
-            return view('details', compact('product','rproducts'));
+     $viewed = session()->get('viewed_products', []);
+
+    if (!in_array($id, $viewed)) {
+        $viewed[] = $id;
+
+        // Giới hạn danh sách đã xem tối đa 20 sản phẩm
+        if (count($viewed) > 20) {
+            array_shift($viewed); // bỏ sản phẩm cũ nhất
+        }
+
+        session(['viewed_products' => $viewed]);
+    }
+    $viewedProducts = Product::whereIn('id', array_reverse($viewed))
+        ->where('id', '!=', $product->id)
+        ->take(4)
+        ->get();
+            return view('details', compact('product','rproducts', 'viewedProducts'));
 
     }
 

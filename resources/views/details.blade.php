@@ -311,7 +311,7 @@
               <span
                 id="product-suggest-item-cost-1"
                 style="font-size: 12px; color: black; font-weight: 200"
-                >{{number_format($product->price_sale,0,',',',')}}₫</span
+                >{{number_format($rproduct->price_sale,0,',',',')}}₫</span
               ><span
                 id="product-suggest-item-actual-cost-1"
                 style="
@@ -320,7 +320,7 @@
                   font-weight: 200;
                   text-decoration: line-through;
                 "
-                >{{number_format($product->price,0,',',',')}}₫</span
+                >{{number_format($rproduct->price,0,',',',')}}₫</span
               >
             
           </div>
@@ -394,15 +394,16 @@
       <div class="product-watched-container">
         <div class="product-watched-title">Sản phẩm đã xem</div>
         <div class="product-watched">
+        @foreach ($viewedProducts as $vproduct )
           <div class="product-watched-item">
-            <img id="product-watched-item-img-1" src="/Website/assets/images/img-1.webp" alt="ex" width="100%" />
-            <div class="product-watched-item-name">"ÁO DÀI" BOXY LONG-SLEEVE T-SHIRT</div>
+            <img id="product-watched-item-img-1" src="{{asset('uploads/products')}}/{{$vproduct->image}}" alt="ex" width="100%" />
+            <div class="product-watched-item-name">{{$vproduct->product_name}}</div>
             <div class="product-watched-item-price">
-              <span id="product-watched-item-cost-1" style="font-size: 12px; color: black; font-weight: 200">384,000₫</span>
-              <span id="product-watched-item-actual-cost-1" style="font-size: 12px; color: #979797; font-weight: 200; text-decoration: line-through;">550,000₫</span>
+              <span id="product-watched-item-cost-1" style="font-size: 12px; color: black; font-weight: 200">{{number_format($vproduct->price_sale,0,',',',')}}₫</span>
+              <span id="product-watched-item-actual-cost-1" style="font-size: 12px; color: #979797; font-weight: 200; text-decoration: line-through;">{{number_format($vproduct->price_sale,0,',',',')}}₫</span>
             </div>
           </div>
-          <div class="product-watched-item">
+          {{-- <div class="product-watched-item">
             <img id="product-watched-item-img-2" src="" alt="ex" width="100%" />
             <div class="product-watched-item-name"></div>
             <div class="product-watched-item-price">
@@ -425,7 +426,8 @@
               <span id="product-watched-item-cost-4" style="font-size: 12px; color: black; font-weight: 200"></span>
               <span id="product-watched-item-actual-cost-4" style="font-size: 12px; color: #979797; font-weight: 200; text-decoration: line-through;"></span>
             </div>
-          </div>
+          </div> --}}
+           @endforeach
         </div>
       </div>
 @endsection
