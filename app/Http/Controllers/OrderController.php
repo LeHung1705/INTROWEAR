@@ -16,7 +16,7 @@ class OrderController extends Controller
         // Nếu có giá trị tìm kiếm, chỉ lấy các đơn hàng có tên người dùng chứa giá trị tìm kiếm
         $query->where('name', 'like', '%' . $search . '%');
     }
-    $orders = $query->orderBy('created_at', 'DESC')->paginate(6);
+ $orders = $query->orderBy('created_at', 'DESC')->paginate(6)->appends(['search' => $search]);
     return view('admin.orders', compact('orders', 'search')); 
 }
 }
