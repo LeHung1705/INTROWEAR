@@ -28,10 +28,19 @@ class CartController extends Controller
             $request->id,
             $request->name,
             $request->quantity,
-            $request->price
+            $request->price,
+            [
+            'color' => $request->color,
+            'size' => $request->size
+        ]
+
+
         )->associate('App\Models\Product');
+         
         return redirect()->back();
+       
     }
+    
 
     public function remove($rowId)
     {
@@ -134,7 +143,7 @@ class CartController extends Controller
             Session::put('checkout',[
                 'discount' => Session::get('discounts')['discount'],
                 'subtotal' =>  Session::get('discounts')['subtotal'],
-                'tax' =>  Session::get('discounts')['tax'],
+                'tax' =>  0,
                 'total' =>  Session::get('discounts')['total']
             ]);
         }
@@ -163,7 +172,7 @@ class CartController extends Controller
     {
         $coupon_code=$request->coupon_code;
         if(isset($coupon_code)){
-            $coupon = Coupon::where('code',$coupon_code)->where('end_day','>=',Carbon::today())->where ('cart_value','<=',Cart::instance('cart')->subtotal())->first();
+            $coupon = Coupon::where('coupon_code',$coupon_code)->where('end_date','>=',Carbon::today())->first();
             if (!$coupon) {
                 return redirect()->back()->with('error','Invalid coupon code!');
 
@@ -187,26 +196,28 @@ class CartController extends Controller
     }
 public function calculatorDiscount()
 {
-  $discount=0;
-  if(Session::has('coupon'))
-  {
-    $discount = (Cart::instance('cart')->subtotal()*Session::get('coupon')['discount_percentage'])/100;
+    // Lấy subtotal dưới dạng số float chính xác
+    $subtotal = floatval(str_replace('.', '', Cart::instance('cart')->subtotal(0, '', '')));
 
-  }
-  $subtotalAfterDiscount = Cart::instance('cart')->subtotal()-$discount;
-  $taxAfterDiscount = ($subtotalAfterDiscount*config('cart.tax'))/100;
+    $discount = 0;
+    if (Session::has('coupon')) {
+        $discountPercentage = Session::get('coupon')['discount_percentage'];
+        $discount =floatval (($subtotal * $discountPercentage) / 100);
+    }
 
-  $total=$subtotalAfterDiscount+$taxAfterDiscount;
- Session::put('discounts', [
+    $subtotalAfterDiscount = $subtotal - $discount;
+   
 
-    'discount' => number_format(floatval($discount), 0, ',', '.') ,
-    'subtotal' => number_format(floatval($subtotalAfterDiscount), 0, ',', '.'),
-    'tax' => number_format(floatval($taxAfterDiscount), 0, ',', '.') ,
-    'total' => number_format(floatval($total), 0, ',', '.') 
+    // Lưu vào session cả giá trị raw và format
+    Session::put('discounts', [
+       
 
-]);
-
+        'discount' => $discount,
+        'subtotal' => $subtotalAfterDiscount,
+        'total' => $subtotalAfterDiscount
+    ]);
 }
+
 }
 
 

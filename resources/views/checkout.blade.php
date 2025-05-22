@@ -75,13 +75,13 @@
                 </td>
               </tr>
               <tr>
-                <th>DISCOUNT {{ Session::get('coupon')['code'] }}</th>
+                <th align="left">DISCOUNT {{ Session::get('coupon')['coupon_code'] }}</th>
                 <td align="right">
                   {{ number_format(Session::get('discounts')['discount'], 0, ',', '.') }}VND
                 </td>
               </tr>
               <tr>
-                <th>SUBTOTAL AFTER DISCOUNT</th>
+                <th align="left">SUBTOTAL AFTER DISCOUNT</th>
                 <td align="right">
                   {{ number_format(Session::get('discounts')['subtotal'], 0, ',', '.') }}VND
                 </td>
@@ -95,7 +95,7 @@
               <tr>
                 <th align="left">TOTAL</th>
                 <td align="right">
-                  {{ number_format(Session::get('discounts')['total'], 0, ',', '.') }}VND
+                  {{ number_format(Session::get('discounts')['total']+20000, 0, ',', '.') }}VND
                 </td>
               </tr>
             </tbody>            

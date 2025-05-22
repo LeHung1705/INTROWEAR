@@ -45,13 +45,13 @@
                 <div class="shopping-cart__product-item__detail">
                   <h4>{{$item->name}}</h4>
                   <ul class="shopping-cart__product-item__options">
-                    <li>Color: Yellow</li>
-                    <li>Size: L</li>
+                    <li>Color: {{ $item->options->color}}</li>
+                    <li>Size: {{ $item->options->size }}</li>
                   </ul>
                 </div>
               </td>
               <td>
-                <span class="shopping-cart__product-price">{{$item->price}}VND</span>
+                <span class="shopping-cart__product-price">{{number_format($item->price,0,',',',')}}VND</span>
               </td>
               <td>
                 <div class="qty-control position-relative">
@@ -69,7 +69,7 @@
                 </div>
               </td>
               <td>
-                <span class="shopping-cart__subtotal">{{$item->subTotal()}}VND</span>
+                <span class="shopping-cart__subtotal">{{number_format($item->subTotal(),0,',',',')}}VND</span>
               </td>
               <td>
                 <a href="{{ route('cart.remove', $item->rowId) }}" class="remove-cart">
@@ -96,60 +96,63 @@
           <button class="btn btn-light">UPDATE CART</button>
           </div>
         </div>
-        <div>
-        @if(Session::has('success'))
-          <p class="text-success">{{Session::get('success')}}</p>
-        @elseif (Session::has('error'))
-          <p class="text-danger">{{Session::get('error')}}</p>
-        @endif
-        </div>
+        
       <div class="shopping-cart__totals-wrapper">
         <div class="sticky-content">
           <div class="shopping-cart__totals">
             <h3>Cart Totals</h3>
             @if(Session::has('discounts'))
-            <table class="cart-totals">
-              <tbody>
-                <tr>
-                  <th>Subtotal</th>
-                  <td>{{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, ',', '.') }}VND</td>
-                </tr>
-                <tr>
-                  <th>Discount {{ Session::get('coupon')['coupon_code'] }}</th>
-                  <td>{{ number_format(Session::get('discounts')['discount'], 0, ',', '.') }}VND</td>
-                </tr>
-                <tr>
-                  <th>Subtotal After Discount</th>
-                  <td>{{ number_format(Session::get('discounts')['subtotal'], 0, ',', '.') }}VND</td>
-                </tr>
-                <tr>
-                  <th>Shipping</th>
-                  <td>{{ number_format(20000, 0, ',', '.') }}VND</td>
-                </tr>
-                <tr>
-                  <th>Total</th>
-                  <td>{{ number_format(Session::get('discounts')['total'] + 20000, 0, ',', '.') }}VND</td>
-                </tr>
-              </tbody>
-            </table>
+  <table class="cart-totals">
+    <tbody>
+      <tr>
+        <th>Subtotal</th>
+        <td>{{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, ',', ',') }} VND</td>
+      </tr>
+      <tr>
+        <th>Discount {{ Session::get('coupon')['coupon_code'] }}</th>
+        <td>{{ number_format((float) Session::get('discounts')['discount'], 0,',', ',') }} VND</td>
+      </tr>
+      <tr>
+        <th>Subtotal After Discount</th>
+        <td>{{ number_format((float) Session::get('discounts')['subtotal'], 0,',', ',') }} VND</td>
+      </tr>
+      <tr>
+        <th>Shipping</th>
+        <td>{{ number_format(20000, 0, ',', ',') }} VND</td>
+      </tr>
+      <tr>
+        <th>Total</th>
+<td>
+  {{ number_format((float) str_replace(',', '', Session::get('discounts')['subtotal']) + 20000, 0, ',', ',') }} VND
+</td>      </tr>
+    </tbody>
+  </table>
             @else
               <table class="cart-totals">
                 <tbody>
                   <tr>
                     <th>Subtotal</th>
-                    <td>{{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, ',', '.') }}VND</td>
+                    <td>{{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, ',', ',') }}VND</td>
                   </tr>
                   <tr>
                     <th>Shipping</th>
-                    <td>{{ number_format(20000, 0, ',', '.') }}VND</td>
+                    <td>{{ number_format(20000, 0, ',', ',') }}VND</td>
                   </tr>
                   <tr>
                     <th>Total</th>
-                    <td>{{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()) + 20000, 0, ',', '.') }}VND</td>
+                    <td>{{ number_format((float) str_replace('.', '', Cart::instance('cart')->subtotal()) + 20000, 0, ',', ',') }}VND</td>
                   </tr>
                 </tbody>
               </table>
             @endif
+
+          </div>
+          <div>
+          @if(Session::has('success'))
+          <p class="text-success">{{Session::get('success')}}</p>
+          @elseif(Session::has('error'))
+         <p class="text-error">{{Session::get('error')}}</p>
+         @endif
 
           </div>
           <div class="mobile_fixed-btn_wrapper">
