@@ -33,17 +33,17 @@
             <span style="font-size: 30px; font-weight: 400">{{$product->product_name}}</span>
           </div>
           <div class="product-price">
-            <span style="font-size: 20px; font-weight: 200">{{number_format($product->price_sale,0,',',',')}}₫</span>
+            <span style="font-size: 20px; font-weight: bold">{{number_format($product->price_sale,0,',',',')}}₫</span>
             <span
               style="
                 font-size: 14px;
                 color: #979797;
-                font-weight: 200;
+                font-weight: bold;
                 text-decoration: line-through;
               "
               >{{number_format($product->price,0,',',',')}}₫
             </span>
-            <span style="font-size: 14px; color: red; font-weight: 300">-{{number_format(($product->price-$product->price_sale)*100/$product->price,0,'.','')}}%</span>
+            <span style="font-size: 14px; color: red; font-weight: bold">-{{number_format(($product->price-$product->price_sale)*100/$product->price,0,'.','')}}%</span>
           </div>
           <div class="product-price-save">
             <span style="font-size: 16px; font-weight: bold"
@@ -65,12 +65,30 @@
               <div style="border: 1px solid black; font-size: 16px;" class="product-size-item">{{$product->size}}</div>
             </div>
           </div>
+          <form action="{{route('cart.add')}}" method="post" enctype="multipart/form-data">
+          @csrf
+         <div class="quantity-wrapper">
+              <label for="quantity" class="quantity-label">Số lượng</label>
+                 <div class="quantity-control">
+                      <input type="number" id="quantity" name="quantity" class="quantity-input" value="1" min="1" />
+                    <div class="quantity-buttons">
+                      <button onclick="increaseQty()">+</button>
+                      <button onclick="decreaseQty()">−</button>
+                    </div>
+                  </div>
+          </div>
+          <input type="hidden" name="id" value="{{$product->id}}">
+           <input type="hidden" name="name" value="{{$product->product_name}}">
+            <input type="hidden" name="price" value="{{$product->price_sale}}">
+            <input type="hidden" name="size" value="{{$product->size}}">
+            <input type="hidden" name="color" value="{{$product->color}}">
           <a class="buy-now" href="{{route('cart.checkout')}}" style="text-decoration:none; color:black;" >
             <span  class="text" style='font-weight: 400'>MUA NGAY</span>
           </a>
-          <a class="add-to-cart" href="{{route('cart.add')}}" style= "text-decoration:none" >
+          <button type="submit" class="add-to-cart"  >
             <span class="text" style='font-weight: 400'>THÊM VÀO GIỎ</span>
-          </a>
+          </button>
+    </form>
           <div class="product-description">
             <button class="product-description-item">
               <span style="font-size: 16px; color: black; font-weight: 300"
@@ -434,4 +452,19 @@
 @push('scripts')
   <script src="{{asset('assets/js/product-detail.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script>
+  function increaseQty() {
+    let qtyInput = document.getElementById("quantity");
+    let current = parseInt(qtyInput.value);
+    qtyInput.value = current + 1;
+  }
+
+  function decreaseQty() {
+    let qtyInput = document.getElementById("quantity");
+    let current = parseInt(qtyInput.value);
+    if (current > 1) {
+      qtyInput.value = current - 1;
+    }
+  }
+</script>
 @endpush
