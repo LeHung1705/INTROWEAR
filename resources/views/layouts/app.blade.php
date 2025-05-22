@@ -32,9 +32,13 @@
             </div>
             
             <div class="search-bar">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" placeholder="Search">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" id="search-input" placeholder="Search">
             </div>
+            <div id="box-content-search" class="search-result">
+                <ul id="search-list"></ul>
+            </div>
+            
           @guest
             <div class="header-actions">
                 <div class="icons">
@@ -84,7 +88,10 @@
             </nav>
 
         </div>
-       
+       <!-- Dropdown kết quả tìm kiếm -->
+      <div id="box-content-search" class="search-result">
+          <ul id="search-list"></ul>
+      </div>
     </header>
       
                  <div class="content">
@@ -214,7 +221,63 @@
 
     <script src="{{ asset('assets/js/main.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    $(function() {
+    $("#search-input").on("keyup", function() {
+        var searchQuery = $(this).val().trim();
+        const $searchResult = $("#box-content-search");
 
+        if (searchQuery.length > 1) {
+            $.ajax({
+                type: "GET",
+                url: "{{ route('home.search') }}", // Thay bằng URL thực tế của bạn
+                data: { query: searchQuery },
+                dataType: 'json',
+                success: function(data) {
+                    $searchResult.empty();
+
+                    if (data.length > 0) {
+                        $searchResult.show();
+                        $.each(data, function(index, item) {
+                            var url = "{{ route('shop.product.details', ['id' => '__ID__']) }}".replace('__ID__', item.id);
+                            $searchResult.append(`
+                                <li class="product-item">
+                                    <div class="image">
+                                        <img src="{{ asset('uploads/products/') }}/${item.image}" alt="${item.product_name}">
+                                    </div>
+                                    <div class="name">
+                                        <a href="${url}">${item.product_name}</a>
+                                    </div>
+                                </li>
+                                ${index < data.length - 1 ? '<li><div class="divider"></div></li>' : ''}
+                                      `);
+                                  });
+                              } else {
+                                  $searchResult.hide();
+                              }
+                          },
+                          error: function() {
+                              $searchResult.hide();
+                          }
+                      });
+                    } else {
+                        $searchResult.hide();
+                    }
+                    });
+
+                    // Ẩn dropdown khi nhấp ra ngoài
+                    $(document).on('click', function(event) {
+                        if (!$(event.target).closest('.search-bar').length && !$(event.target).closest('#box-content-search').length) {
+                            $("#box-content-search").hide();
+                        }
+                    });
+
+                    // Ẩn dropdown khi chọn một sản phẩm
+                    $("#box-content-search").on('click', 'a', function() {
+                        $("#box-content-search").hide();
+                    });
+                });
+    </script>
     @stack('scripts')
   </body>
 </html>

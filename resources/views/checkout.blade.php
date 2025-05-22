@@ -138,8 +138,8 @@
               </label>
             
               <label class="payment-option">
-                <input type="radio" name="mode" value="paypal" id="mode3"/>
-                <span>Momo</span>
+                <input type="radio" name="mode" value="vnpay" id="mode3"/>
+                <span>VNPAY</span>
               </label>
           </div>
             

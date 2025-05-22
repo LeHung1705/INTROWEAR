@@ -36,11 +36,11 @@
               <tbody>
                 <tr>
                   <th>SHIPPING</th>
-                  <td>20,000VND</td>
+                  <td>20.000VND</td>
                 </tr>
                 <tr>
                   <th>TOTAL</th>
-                  <td>{{ number_format(floatval(str_replace(',', '', $order->total)), 0, '.', ',') }}VND
+                  <td>{{ number_format(floatval(str_replace(',', '', $order->total)), 0, ',', '.') }}VND
                   </td>
                 </tr>
               </tbody>
