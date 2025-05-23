@@ -355,8 +355,23 @@ a.buy-now:hover {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
+
+    /* width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px; 
+
+    /* display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px; */
 }
 
 .product-watched-title {
@@ -381,6 +396,17 @@ a.buy-now:hover {
     gap: 10px;
     min-width: 150px;
     cursor: pointer;
+
+    /* flex: 0 0 auto; 
+    width: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px #acabab;
+    gap: 10px;
+    cursor: pointer; */
 }
 
 .product-watched-item:hover {

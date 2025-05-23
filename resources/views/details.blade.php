@@ -413,7 +413,7 @@
         <div class="product-watched-title">Sản phẩm đã xem</div>
         <div class="product-watched">
         @foreach ($viewedProducts as $vproduct )
-          <a class="product-watched-item" href="{{route('shop.product.details',['id'=>$rproduct->id])}}" style="text-decoration: none; font-size: 13px;">
+          <a class="product-watched-item" href="{{route('shop.product.details',['id'=>$vproduct->id])}}" style="text-decoration: none; font-size: 13px;">
             <img id="product-watched-item-img-1" src="{{asset('uploads/products')}}/{{$vproduct->image}}" alt="ex" width="100%" />
             <div class="product-watched-item-name">{{$vproduct->product_name}}</div>
             <div class="product-watched-item-price">
