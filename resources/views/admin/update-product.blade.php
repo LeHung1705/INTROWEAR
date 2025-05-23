@@ -17,9 +17,10 @@
                              <div id="product-image">
                                 <img
                                  id="preview-image"
-                                    src="{{asset('uploads')}}/{{$product->image}}"
+                                    src="{{asset('uploads/products')}}/{{$product->image}}"
                                     alt="Product image"
                                     style="height: 270px; width: 270px;"
+                                   
                                 />
                                 <p style=" margin-top: 10px; font-weight: bold; text-align: center;">{{$product->product_name}}</p>
                             </div>

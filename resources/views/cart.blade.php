@@ -109,7 +109,7 @@
         <td>{{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, ',', ',') }} VND</td>
       </tr>
       <tr>
-        <th>Discount {{ Session::get('coupon')['coupon_code'] }}</th>
+        <th>Discount <span style="color: red">{{ Session::get('coupon')['coupon_code'] }}</span></th>
         <td>{{ number_format((float) Session::get('discounts')['discount'], 0,',', ',') }} VND</td>
       </tr>
       <tr>
