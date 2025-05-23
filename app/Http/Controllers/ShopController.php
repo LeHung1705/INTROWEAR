@@ -9,7 +9,7 @@ use App\Models\Cart;
 class ShopController extends Controller
 {
     public function index(){
-        $products = Product::orderBy('id', 'desc')->paginate(5);
+        $products = Product::orderBy('id', 'desc')->paginate(6);
         return view('shop', compact('products'));
 
     }
