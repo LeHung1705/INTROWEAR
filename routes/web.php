@@ -57,6 +57,7 @@ Route::get('/cart/remove/{rowId}', [CartController::class, 'remove'])->name('car
 Route::put('/cart/increase-quantity/{rowId}', [CartController::class, 'increase_cart_quantity'])->name('cart.qty.increase');
 Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_cart_quantity'])->name('cart.qty.decrease');
 Route::post('/cart/apply-coupon',[CartController::class,'apply_coupon_code'])->name('cart.coupon.apply');
+Route::get('/cart/coupon/remove', [CartController::class, 'remove_coupon'])->name('cart.coupon.remove');
 
 //Xử lý đơn hàng
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');

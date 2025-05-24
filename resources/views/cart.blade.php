@@ -83,17 +83,6 @@
             @endforeach
           </tbody>
           </table>
-
-          <div class="cart-table-footer">
-
-            <form action="{{route('cart.coupon.apply')}} " enctype="multipart/form-data" method="post" class="position-relative bg-body">
-            @csrf
-              <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value=" @if(Session::has('coupon')) {{Session::get('coupon')['coupon_code']}} Applied! @endif ">
-              <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">
-            </form>
-
-            <button class="btn btn-light">UPDATE CART</button>
-          </div>
         </div>
         
       <div class="shopping-cart__totals-wrapper">
@@ -121,10 +110,9 @@
       </tr>
       <tr>
         <th>Total</th>
-        <td>
-          {{ number_format((float) str_replace(',', '', Session::get('discounts')['subtotal']) + 20000, 0, ',', ',') }} VND
-        </td>      
-      </tr>
+<td>
+  {{ number_format((float) str_replace(',', '', Session::get('discounts')['subtotal']) + 20000, 0, ',', ',') }} VND
+</td>      </tr>
     </tbody>
   </table>
             @else
@@ -168,7 +156,7 @@
             <br>
             <p>Hãy thêm sản phẩm vào giỏ hàng để bắt đầu mua sắm!</p>
             <br>
-            <a href="{{ route('shop.index') }}" style="display: inline-block; padding: 10px 20px; background-color: black; color: white; text-decoration: none; text-align: center;">TIẾP TỤC MUA SẮM</a>
+            <a href="{{ route('shop.index') }}" style="display: inline-block;margin-bottom: 100px; padding: 10px 20px; background-color: black; color: white; text-decoration: none; text-align: center;">TIẾP TỤC MUA SẮM</a>
         </div>
        @endif
     </div>

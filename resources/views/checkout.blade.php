@@ -39,16 +39,30 @@
             @error('address') <span class="text-danger">{{$message}}</span> @enderror
           </div>
         </div>
-
-        <div class="cart-table-footer">
-
-          <form action="{{route('cart.coupon.apply')}} " enctype="multipart/form-data" method="post" class="position-relative bg-body">
-          @csrf
-            <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value=" @if(Session::has('coupon')) {{Session::get('coupon')['coupon_code']}} Applied! @endif ">
-            <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">
-          </form>
-
-          <button class="btn btn-light">UPDATE CART</button>
+      </form>
+        <div class="col-12 mt-4">
+          <div class="cart-table-footer">
+            <form action="{{route('cart.coupon.apply')}}" enctype="multipart/form-data" method="post" class="position-relative bg-body">
+              @csrf
+              <div class="row align-items-end">
+                <div class="col-md-8">
+                  <div class="form-floating">
+                    <input class="form-control" type="text" name="coupon_code" id="coupon_code" placeholder="" 
+                           value="@if(Session::has('coupon')){{Session::get('coupon')['coupon_code']}}@endif">
+                    <label for="coupon_code">Coupon Code</label>
+                  </div>
+                </div>
+                  <button class="btn btn-outline-primary w-100 h-100 custom-coupon-btn" type="submit">APPLY COUPON</button>
+              </div>
+              
+              @if(Session::has('coupon'))
+                <div style="margin-top:5px;">
+                  <span style="color:rgb(5, 181, 37);">Coupon "{{Session::get('coupon')['coupon_code']}}" applied!</span>
+                  <a href="{{ route('cart.coupon.remove') }}" class="fa-regular fa-circle-xmark" style="color: black; text-decoration: none;"></a>
+                </div>
+              @endif
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -70,71 +84,71 @@
                   {{$item->name}} x {{$item->qty}}
                 </td>
                 <td align="right">
-                  {{ number_format((float) str_replace(',', '', $item->subtotal()), 0, ',', '.') }}VND
+                  {{ number_format((float) str_replace(',', '', $item->subtotal()), 0, '.', ',') }}VND
                 </td>
               </tr>
               @endforeach
             </tbody>
           </table>
           @if(Session::has('discounts'))
-          <table class="checkout-totals">
-            <tbody>
-              <tr>
-                <th align="left">SUBTOTAL</th>
-                <td align="right">
-                  {{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, ',', '.') }}VND
-                </td>
-              </tr>
-              <tr>
-                <th align="left">DISCOUNT {{ Session::get('coupon')['coupon_code'] }}</th>
-                <td align="right">
-                  {{ number_format(Session::get('discounts')['discount'], 0, ',', '.') }}VND
-                </td>
-              </tr>
-              <tr>
-                <th align="left">SUBTOTAL AFTER DISCOUNT</th>
-                <td align="right">
-                  {{ number_format(Session::get('discounts')['subtotal'], 0, ',', '.') }}VND
-                </td>
-              </tr>
-              <tr>
-                <th align="left">SHIPPING</th>
-                <td align="right">
-                  {{ number_format(20000, 0, ',', '.') }}VND
-                </td>
-              </tr>
-              <tr>
-                <th align="left">TOTAL</th>
-                <td align="right">
-                  {{ number_format(Session::get('discounts')['total']+20000, 0, ',', '.') }}VND
-                </td>
-              </tr>
-            </tbody>            
-          </table>
-        @else
-          <table class="checkout-totals">
-            <tbody>
-              <tr>
-                <th align="left">SUBTOTAL</th>
-                <td align="right">
-                  {{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, ',', '.') }}VND
-                </td>
-              </tr>
-              <tr>
-                <th align="left">SHIPPING</th>
-                <td align="right">
-                  {{ number_format(20000, 0, ',', '.') }}VND
-                </td>
-              </tr>
-              <tr>
-                <th align="left">TOTAL</th>
-                <td align="right">
-                  {{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()) + 20000, 0, ',', '.') }}VND
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        @endif
+            <table class="checkout-totals">
+              <tbody>
+                <tr>
+                  <th align="left">SUBTOTAL</th>
+                  <td align="right">
+                    {{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, '.', ',') }}VND
+                  </td>
+                </tr>
+                <tr>
+                  <th align="left">DISCOUNT {{ Session::get('coupon')['coupon_code'] }}</th>
+                  <td align="right">
+                    {{ number_format(Session::get('discounts')['discount'], 0, '.', ',') }}VND
+                  </td>
+                </tr>
+                <tr>
+                  <th align="left">SUBTOTAL AFTER DISCOUNT</th>
+                  <td align="right">
+                    {{ number_format(Session::get('discounts')['subtotal'], 0, '.', ',') }}VND
+                  </td>
+                </tr>
+                <tr>
+                  <th align="left">SHIPPING</th>
+                  <td align="right">
+                    {{ number_format(20000, 0, '.', ',') }}VND
+                  </td>
+                </tr>
+                <tr>
+                  <th align="left">TOTAL</th>
+                  <td align="right">
+                    {{ number_format(Session::get('discounts')['total'] + 20000, 0, '.', ',') }}VND
+                  </td>
+                </tr>
+              </tbody>            
+            </table>
+          @else
+            <table class="checkout-totals">
+              <tbody>
+                <tr>
+                  <th align="left">SUBTOTAL</th>
+                  <td align="right">
+                    {{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()), 0, '.', ',') }}VND
+                  </td>
+                </tr>
+                <tr>
+                  <th align="left">SHIPPING</th>
+                  <td align="right">
+                    {{ number_format(20000, 0, '.', ',') }}VND
+                  </td>
+                </tr>
+                <tr>
+                  <th align="left">TOTAL</th>
+                  <td align="right">
+                    {{ number_format((float) str_replace(',', '', Cart::instance('cart')->subtotal()) + 20000, 0, '.', ',') }}VND
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          @endif
         </div>
         <div class="checkout__payment-methods">
           <div class="payment-methods">

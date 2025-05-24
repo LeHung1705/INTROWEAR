@@ -96,12 +96,14 @@ class CartController extends Controller
         if(!Auth::check()){
             return redirect()->route('login');
         }
+        
+        $this->setAmountForCheckout();
+        
         return view('checkout');
     }
 
     public function place_an_order(Request $request)
     {
-        // Xác thực dữ liệu đầu vào
         $request->validate([
             'name' => 'required|max:100',
             'phone' => 'required|numeric|digits:10',
@@ -109,15 +111,11 @@ class CartController extends Controller
             'mode' => 'required',
         ]);
 
-        // Lấy thông tin người dùng
         $user_id = Auth::user()->id;
 
-        // Thiết lập thông tin thanh toán
         $this->setAmountForCheckout();
 
-        // Xử lý thanh toán VNPay nếu được chọn
         if ($request->mode == 'vnpay') {
-            // Lưu thông tin đơn hàng vào session để sử dụng sau khi thanh toán
             Session::put('order_data', [
                 'name' => $request->name,
                 'phone' => $request->phone,
@@ -126,9 +124,6 @@ class CartController extends Controller
             
             return $this->vnpay_payment();
         }
-
-        // Xử lý các phương thức thanh toán khác (cod, cart)
-        // Tạo đơn hàng
         $order = new Order();
         $order->user_id = $user_id;
         $order->total = Session::get('checkout')['total']+20000;
@@ -137,7 +132,6 @@ class CartController extends Controller
         $order->address = $request->address;
         $order->save();
 
-        // Lưu các sản phẩm trong đơn hàng
         foreach (Cart::instance('cart')->content() as $item) {
             $orderItem = new OrderItem();
             $orderItem->product_id = $item->id;
@@ -147,11 +141,10 @@ class CartController extends Controller
             $orderItem->save();
         }
 
-        // Tạo giao dịch thanh toán
         $transaction = new Transaction();
         $transaction->user_id = $user_id;
         $transaction->order_id = $order->id;
-        $transaction->mode = $request->mode; // Phương thức thanh toán
+        $transaction->mode = $request->mode; 
         $transaction->save();
 
         // Dọn dẹp giỏ hàng và session
@@ -160,10 +153,8 @@ class CartController extends Controller
         Session::forget('coupon');
         Session::forget('discounts');
 
-        // Lưu order_id vào session để hiển thị trang xác nhận
         Session::put('order_id', $order->id);
 
-        // Chuyển hướng đến trang xác nhận đơn hàng
         return redirect()->route('cart.order.confirmation');
     }
 
@@ -208,54 +199,66 @@ class CartController extends Controller
     
     public function apply_coupon_code(Request $request)
     {
-        $coupon_code=$request->coupon_code;
-        if(isset($coupon_code)){
-            $coupon = Coupon::where('coupon_code',$coupon_code)->where('end_date','>=',Carbon::today())->first();
-            if (!$coupon) {
-                return redirect()->back()->with('error','Invalid coupon code!');
-
-            } 
-            else 
-            {
-                Session::put('coupon',[
-                    'coupon_code'=>$coupon->coupon_code,
-                    'discount_percentage'=>$coupon->discount_percentage
-
-                ]
-                );
-
-                $this->calculatorDiscount();
-                return redirect()->back()->with('success','Coupon has been applied');
-                
-
-            }
+        $coupon_code = trim($request->coupon_code);
+        
+        if(empty($coupon_code)){
+            return redirect()->back()->with('error','Please enter coupon code!');
         }
-        else return  redirect()->back()->with('error','Invalid coupon code!');
+        
+        $coupon = Coupon::where('coupon_code', $coupon_code)
+                        ->where('end_date', '>=', Carbon::today())
+                        ->first();
+                        
+        if (!$coupon) {
+            return redirect()->back()->with('error','Invalid or expired coupon code!');
+        } 
+        
+        // Lưu thông tin coupon vào session
+        Session::put('coupon', [
+            'coupon_code' => $coupon->coupon_code,
+            'discount_percentage' => $coupon->discount_percentage
+        ]);
+
+        // Tính toán giảm giá
+        $this->calculatorDiscount();
+        
+        // Cập nhật lại checkout
+        $this->setAmountForCheckout();
+        
+        return redirect()->back()->with('success', 'Coupon has been applied successfully!');
     }
-public function calculatorDiscount()
-{
-    // Lấy subtotal dưới dạng số float chính xác
-    $subtotal = floatval(str_replace('.', '', Cart::instance('cart')->subtotal(0, '', '')));
 
-    $discount = 0;
-    if (Session::has('coupon')) {
-        $discountPercentage = Session::get('coupon')['discount_percentage'];
-        $discount =floatval (($subtotal * $discountPercentage) / 100);
+    public function remove_coupon()
+    {
+        Session::forget('coupon');
+        Session::forget('discounts');
+        $this->setAmountForCheckout();
+        
+        return redirect()->back()->with('success', 'Coupon removed successfully!');
     }
 
-    $subtotalAfterDiscount =floatval ( $subtotal - $discount);
-   
-
-    // Lưu vào session cả giá trị raw và format
-    Session::put('discounts', [
-       
-
-        'discount' => $discount,
-        'subtotal' => $subtotalAfterDiscount,
-        'total' => $subtotalAfterDiscount
-    ]);
-
-}
+    public function calculatorDiscount()
+    {
+        // Lấy subtotal từ cart và chuyển đổi thành số
+        $cartSubtotal = Cart::instance('cart')->subtotal();
+        // Loại bỏ dấu phẩy và chuyển thành float
+        $subtotal = (float) str_replace([',', '.'], ['', ''], $cartSubtotal);
+    
+        $discount = 0;
+        if (Session::has('coupon')) {
+            $discountPercentage = Session::get('coupon')['discount_percentage'];
+            $discount = ($subtotal * $discountPercentage) / 100;
+        }
+    
+        $subtotalAfterDiscount = $subtotal - $discount;
+    
+        // Lưu vào session
+        Session::put('discounts', [
+            'discount' => $discount,
+            'subtotal' => $subtotalAfterDiscount,
+            'total' => $subtotalAfterDiscount
+        ]);
+    }
     
 
     public function vnpay_payment()
