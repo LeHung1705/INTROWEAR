@@ -65,30 +65,36 @@
               <div style="border: 1px solid black; font-size: 16px;" class="product-size-item">{{$product->size}}</div>
             </div>
           </div>
+          <!-- Form cho "Thêm vào giỏ" -->
           <form action="{{route('cart.add')}}" method="post" enctype="multipart/form-data">
-          @csrf
-         <div class="quantity-wrapper">
-              <label for="quantity" class="quantity-label">Số lượng</label>
-                 <div class="quantity-control">
-                      <input type="number" id="quantity" name="quantity" class="quantity-input" value="1" min="1" />
-                    <div class="quantity-buttons">
-                     <button type="button" id="increase-btn">+</button>
-      <button type="button" id="decrease-btn">−</button>
+            @csrf
+           <div class="quantity-wrapper">
+                <label for="quantity" class="quantity-label">Số lượng</label>
+                   <div class="quantity-control">
+                        <input type="number" id="quantity" name="quantity" class="quantity-input" value="1" min="1" />
+                      <div class="quantity-buttons">
+                       <button type="button" id="increase-btn">+</button>
+                       <button type="button" id="decrease-btn">−</button>
+                      </div>
                     </div>
-                  </div>
-          </div>
-          <input type="hidden" name="id" value="{{$product->id}}">
-           <input type="hidden" name="name" value="{{$product->product_name}}">
+            </div>
+            <input type="hidden" name="id" value="{{$product->id}}">
+            <input type="hidden" name="name" value="{{$product->product_name}}">
             <input type="hidden" name="price" value="{{$product->price_sale}}">
             <input type="hidden" name="size" value="{{$product->size}}">
             <input type="hidden" name="color" value="{{$product->color}}">
-          <a class="buy-now" href="{{route('cart.checkout')}}" style="text-decoration:none; color:black;" >
-            <span  class="text" style='font-weight: 400'>MUA NGAY</span>
-          </a>
-          <button type="submit" class="add-to-cart"  >
-            <span class="text" style='font-weight: 400'>THÊM VÀO GIỎ</span>
-          </button>
-    </form>
+            
+            <!-- Button "Mua ngay" - sẽ submit form với action khác -->
+            <button type="button" class="buy-now" onclick="buyNow()" style="text-decoration:none; color:black; border:none; cursor:pointer;">
+              <span class="text" style='font-weight: 400'>MUA NGAY</span>
+            </button>
+            
+            <!-- Button "Thêm vào giỏ" -->
+            <button type="submit" class="add-to-cart">
+              <span class="text" style='font-weight: 400'>THÊM VÀO GIỎ</span>
+            </button>
+            </form>
+
           <div class="product-description">
             <button class="product-description-item">
               <span style="font-size: 16px; color: black; font-weight: 300"
@@ -451,25 +457,31 @@
 @endsection
 @push('scripts')
   <script src="{{asset('assets/js/product-detail.js')}}"></script>
-    <script src="{{asset('assets/js/main.js')}}"></script>
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const qtyInput = document.getElementById("quantity");
-  const increaseBtn = document.getElementById("increase-btn");
-  const decreaseBtn = document.getElementById("decrease-btn");
-
-  increaseBtn.addEventListener("click", function () {
-    let current = parseInt(qtyInput.value) || 1;
-    qtyInput.value = current + 1;
-  });
-
-  decreaseBtn.addEventListener("click", function () {
-    let current = parseInt(qtyInput.value) || 1;
-    if (current > 1) {
-      qtyInput.value = current - 1;
+  <script src="{{asset('assets/js/main.js')}}"></script>
+  <script>
+    function buyNow() {
+      const form = document.querySelector('form[action="{{route('cart.add')}}"]');
+      form.action = "{{route('cart.buy_now')}}";
+      form.submit();
     }
-  });
-});
+
+      document.addEventListener("DOMContentLoaded", function () {
+      const qtyInput = document.getElementById("quantity");
+      const increaseBtn = document.getElementById("increase-btn");
+      const decreaseBtn = document.getElementById("decrease-btn");
+
+      increaseBtn.addEventListener("click", function () {
+        let current = parseInt(qtyInput.value) || 1;
+        qtyInput.value = current + 1;
+      });
+
+      decreaseBtn.addEventListener("click", function () {
+        let current = parseInt(qtyInput.value) || 1;
+        if (current > 1) {
+          qtyInput.value = current - 1;
+        }
+      });
+    });
 
 </script>
 @endpush

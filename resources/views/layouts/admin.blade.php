@@ -15,10 +15,10 @@
     <meta charset="UTF-8" />
 
 
-        <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;600&display=swap" rel="stylesheet">
 
-
-     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="icon" href="{{ asset('assets/images/462693387_859571592991640_8271743291619247352_n.jpg') }}" type="image/png">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"

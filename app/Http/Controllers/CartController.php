@@ -41,6 +41,27 @@ class CartController extends Controller
        
     }
     
+    // Thêm method buy_now mới
+    public function buy_now(Request $request)
+    {
+        // Xóa giỏ hàng hiện tại
+        Cart::instance('cart')->destroy();
+        
+        // Thêm sản phẩm vào giỏ hàng
+        Cart::instance('cart')->add(
+            $request->id,
+            $request->name,
+            $request->quantity,
+            $request->price,
+            [
+                'color' => $request->color,
+                'size' => $request->size
+            ]
+        )->associate('App\Models\Product');
+        
+        // Chuyển hướng đến trang checkout
+        return redirect()->route('cart.checkout');
+    }
 
     public function remove($rowId)
     {
