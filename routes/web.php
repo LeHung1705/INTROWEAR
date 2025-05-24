@@ -18,6 +18,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //Login
 Route::middleware(['auth'])->group(function(){
     Route::get('/account-dashboard',[UserController::class, 'index'])->name('user.index');
+    Route::put('/account-dashboard', [UserController::class, 'edit_details'])->name('user.update'); // Xử lý cập nhật thông tin
+
 });
 
 Route::middleware(['auth', AuthAdmin::class])->group(function() {
