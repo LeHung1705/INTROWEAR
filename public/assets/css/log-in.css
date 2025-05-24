@@ -147,6 +147,7 @@ input[type="submit"]:hover {
     align-items: center;
     background-color: #ffcad4;
     border: none;
+    text-decoration: none;
 }
 
 .login-with-google .logo-google {
@@ -228,5 +229,8 @@ input[type="submit"]:hover {
   }
 }
 
-
+.logo-facebook i {
+    font-size: 20px; 
+    color: #ffffff;
+}
 

@@ -12,6 +12,7 @@ use App\Http\Controllers\OrderController; // Import controller-K
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\OrderItemController;// Import controller-K
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\Auth\GoogleController;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 //Xử lý shop
@@ -91,3 +92,7 @@ Route::post('/place-an-order', [CartController::class, 'place_an_order'])->name(
 Route::post('/vnpay-payment', [CartController::class, 'vnpay_payment'])->name('cart.vnpay.payment');
 Route::get('/vnpay-callback', [CartController::class, 'vnpay_callback'])->name('cart.vnpay.callback');
 
+//Google
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('redirect.google');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

@@ -58,17 +58,17 @@
           </form>
 
           <div class="font-tinos">Hoặc</div>
-
-          <button class="login-with-google font-inter item-size">
-            <div class="logo-google">
-              <img src="{{ asset('assets/images/logo-google.png') }}" alt="logo-google" width="18px" />
-            </div>
-            <span class="btn-google font-inter btn-link">ĐĂNG NHẬP GOOGLE</span>
-          </button>
-
+        
+       <a href="{{ route('redirect.google') }}" class="login-with-google font-inter item-size">
+          <div class="logo-google">
+              <img src="{{ asset('assets/images/logo-google.png') }}" alt="logo-google" width="10px" />
+          </div>
+          <span class="btn-google font-inter btn-link">ĐĂNG NHẬP GOOGLE</span>
+      </a>
+        
           <button class="login-with-facebook font-inter item-size">
             <div class="logo-facebook">
-              <i class="fa-brands fa-facebook" style="color: #ffffff; width: 18px"></i>
+              <i class="fa-brands fa-facebook" style="color: #ffffff; width: 20px"></i>
             </div>
             <span class="btn-facebook font-inter btn-link">ĐĂNG NHẬP FACEBOOK</span>
           </button>
