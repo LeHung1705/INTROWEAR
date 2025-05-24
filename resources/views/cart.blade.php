@@ -83,17 +83,16 @@
             @endforeach
           </tbody>
           </table>
+
           <div class="cart-table-footer">
 
-          <form action="{{route('cart.coupon.apply')}} " enctype="multipart/form-data" method="post" class="position-relative bg-body">
-          @csrf
+            <form action="{{route('cart.coupon.apply')}} " enctype="multipart/form-data" method="post" class="position-relative bg-body">
+            @csrf
+              <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value=" @if(Session::has('coupon')) {{Session::get('coupon')['coupon_code']}} Applied! @endif ">
+              <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">
+            </form>
 
-            <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value=" @if(Session::has('coupon')) {{Session::get('coupon')['coupon_code']}} Applied! @endif ">
-            <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">
-
-
-          </form>
-          <button class="btn btn-light">UPDATE CART</button>
+            <button class="btn btn-light">UPDATE CART</button>
           </div>
         </div>
         
@@ -122,9 +121,10 @@
       </tr>
       <tr>
         <th>Total</th>
-<td>
-  {{ number_format((float) str_replace(',', '', Session::get('discounts')['subtotal']) + 20000, 0, ',', ',') }} VND
-</td>      </tr>
+        <td>
+          {{ number_format((float) str_replace(',', '', Session::get('discounts')['subtotal']) + 20000, 0, ',', ',') }} VND
+        </td>      
+      </tr>
     </tbody>
   </table>
             @else
