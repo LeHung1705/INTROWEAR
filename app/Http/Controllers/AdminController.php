@@ -34,7 +34,7 @@ class AdminController extends Controller
    
     public function products()
     {
-        $products=Product::orderBy('created_at', 'DESC')->paginate(10);;
+        $products=Product::orderBy('created_at', 'DESC')->paginate(5);;
         return view('admin.manage-product',compact('products'));    }
     public function product_add()
     { $products = Product::all();
@@ -138,9 +138,9 @@ public function edit_product(Request $request)
     if ($request->hasFile('image')) {
     $image = $request->file('image');
     $imageName = time() . '_' . $image->getClientOriginalName();
-    $image->move(public_path('uploads'), $imageName); // Lưu trực tiếp vào public/uploads
-     if ($product->image && file_exists(public_path('uploads/' . $product->image))) {
-            unlink(public_path('uploads/' . $product->image));
+    $image->move(public_path('uploads/products'), $imageName); // Lưu trực tiếp vào public/uploads
+     if ($product->image && file_exists(public_path('uploads/products' . $product->image))) {
+            unlink(public_path('uploads/products' . $product->image));
         }
     $product->image = $imageName;
 }

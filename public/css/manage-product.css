@@ -129,7 +129,33 @@
 .pagination a.disabled:hover {
     background-color: #c7c7c7;
 }
+/*phan trang*/
+.page-link {
+    padding: 6px 16px;
+    margin:0px 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s, border-color 0.2s;
+}
 
+.page-link:disabled,
+.page-link[disabled],
+.page-link.disabled {
+    color: #aaa;
+    background-color: #eee;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+
+
+.page-link:hover {
+    background-color: #e2e2e2;
+    border-color: #bbb;
+}
 @media (max-width: 768px) {
     .action-bar {
         flex-direction: column;

@@ -72,8 +72,8 @@
                  <div class="quantity-control">
                       <input type="number" id="quantity" name="quantity" class="quantity-input" value="1" min="1" />
                     <div class="quantity-buttons">
-                      <button onclick="increaseQty()">+</button>
-                      <button onclick="decreaseQty()">−</button>
+                     <button type="button" id="increase-btn">+</button>
+      <button type="button" id="decrease-btn">−</button>
                     </div>
                   </div>
           </div>
@@ -413,7 +413,7 @@
         <div class="product-watched-title">Sản phẩm đã xem</div>
         <div class="product-watched">
         @foreach ($viewedProducts as $vproduct )
-          <a class="product-watched-item" href="{{route('shop.product.details',['id'=>$rproduct->id])}}" style="text-decoration: none; font-size: 13px;">
+          <a class="product-watched-item" href="{{route('shop.product.details',['id'=>$vproduct->id])}}" style="text-decoration: none; font-size: 13px;">
             <img id="product-watched-item-img-1" src="{{asset('uploads/products')}}/{{$vproduct->image}}" alt="ex" width="100%" />
             <div class="product-watched-item-name">{{$vproduct->product_name}}</div>
             <div class="product-watched-item-price">
@@ -453,18 +453,23 @@
   <script src="{{asset('assets/js/product-detail.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script>
-  function increaseQty() {
-    let qtyInput = document.getElementById("quantity");
-    let current = parseInt(qtyInput.value);
-    qtyInput.value = current + 1;
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+  const qtyInput = document.getElementById("quantity");
+  const increaseBtn = document.getElementById("increase-btn");
+  const decreaseBtn = document.getElementById("decrease-btn");
 
-  function decreaseQty() {
-    let qtyInput = document.getElementById("quantity");
-    let current = parseInt(qtyInput.value);
+  increaseBtn.addEventListener("click", function () {
+    let current = parseInt(qtyInput.value) || 1;
+    qtyInput.value = current + 1;
+  });
+
+  decreaseBtn.addEventListener("click", function () {
+    let current = parseInt(qtyInput.value) || 1;
     if (current > 1) {
       qtyInput.value = current - 1;
     }
-  }
+  });
+});
+
 </script>
 @endpush
