@@ -28,13 +28,32 @@
     <div class="filter-section">
         <h3>SẮP XẾP</h3>
         <ul>
-            <li><a href="#">Sản phẩm bán chạy</a></li>
-            <li><a href="#">Giá từ thấp đến cao</a></li>
-            <li><a href="#">Giá từ cao đến thấp</a></li>
-            <li><a href="#">Sản phẩm mới nhất</a></li>
+            <li>
+                <a href="{{ route('shop.index', ['sort' => 'best_selling']) }}" 
+                   class="{{ request('sort') == 'best_selling' ? 'active' : '' }}">
+                   Sản phẩm bán chạy
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('shop.index', ['sort' => 'price_low_high']) }}" 
+                   class="{{ request('sort') == 'price_low_high' ? 'active' : '' }}">
+                   Giá từ thấp đến cao
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('shop.index', ['sort' => 'price_high_low']) }}" 
+                   class="{{ request('sort') == 'price_high_low' ? 'active' : '' }}">
+                   Giá từ cao đến thấp
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('shop.index', ['sort' => 'newest']) }}" 
+                   class="{{ request('sort') == 'newest' ? 'active' : '' }}">
+                   Sản phẩm mới nhất
+                </a>
+            </li>
         </ul>
     </div>
-
     <!-- Product list -->
     <div class="product-list">
         @foreach ($products as $product)
