@@ -5,6 +5,13 @@
 @endpush
 
 @section('content')
+<style>
+    .filter-section ul li a.active {
+    font-weight: bold; 
+    color: black; 
+    text-decoration: underline; 
+}
+</style>
 <div class="breadcrumb-bar">
     <div class="breadcrumb-text">
         <a href="{{route('home.index')}}" class="subnav">
