@@ -67,7 +67,7 @@
           </div>
           <!-- Form cho "Thêm vào giỏ" -->
           @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
-            <a href="{{route('cart.index')}}" class="add-to-cart" style="font-weight:400px;">Go to cart</a>
+            <a href="{{route('cart.index')}}" class="add-to-cart" style="font-weight:400px; text-decoration:none;">Go to cart</a>
           @else
           <form action="{{route('cart.add')}}" method="post" enctype="multipart/form-data">
             @csrf
@@ -87,14 +87,9 @@
             <input type="hidden" name="size" value="{{$product->size}}">
             <input type="hidden" name="color" value="{{$product->color}}">
             
-            <!-- Button "Mua ngay" - sẽ submit form với action khác -->
-            <button type="button" class="buy-now" onclick="buyNow()" style="text-decoration:none; color:black; border:none; cursor:pointer;">
-              <span class="text" style='font-weight: 400'>MUA NGAY</span>
-            </button>
-            
             <!-- Button "Thêm vào giỏ" -->
             <button type="submit" class="add-to-cart">
-              <span class="text" style='font-weight: 400'>THÊM VÀO GIỎ</span>
+              <span class="text" style='font-weight: 400;'>THÊM VÀO GIỎ</span>
             </button>
           </form>
           @endif
