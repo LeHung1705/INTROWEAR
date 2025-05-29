@@ -5,6 +5,16 @@
 @endpush
 
 @section('content')
+<style>
+.text-success
+{
+  color: green !important;
+}
+.text-error
+{
+  color: red !important;
+}
+</style>
 <form name="checkout-form" action="{{route('cart.place.an.order')}}" method="POST">
   @csrf
   <div class="checkout-form">
@@ -150,6 +160,14 @@
             </table>
           @endif
         </div>
+        <div>
+          @if(Session::has('success'))
+          <p class="text-success">{{Session::get('success')}}</p>
+          @elseif(Session::has('error'))
+         <p class="text-error">{{Session::get('error')}}</p>
+         @endif
+
+          </div>
         <div class="checkout__payment-methods">
           <div class="payment-methods">
               <label class="payment-option">

@@ -206,8 +206,9 @@ class CartController extends Controller
         }
         
         $coupon = Coupon::where('coupon_code', $coupon_code)
-                        ->where('end_date', '>=', Carbon::today())
-                        ->first();
+                ->where('start_date', '<=', Carbon::today())
+                ->where('end_date', '>=', Carbon::today())
+                ->first();
                         
         if (!$coupon) {
             return redirect()->back()->with('error','Invalid or expired coupon code!');
