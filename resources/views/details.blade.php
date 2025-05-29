@@ -85,7 +85,7 @@
             <input type="hidden" name="color" value="{{$product->color}}">
             
             <!-- Button "Mua ngay" - sẽ submit form với action khác -->
-            <button type="button" class="buy-now" onclick="buyNow()" style="text-decoration:none; color:black; border:none; cursor:pointer;">
+            <button type="button" class="buy-now" onclick="buyNow()" style="text-decoration:none; color:black; cursor:pointer;">
               <span class="text" style='font-weight: 400'>MUA NGAY</span>
             </button>
             
