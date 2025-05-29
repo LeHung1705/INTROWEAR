@@ -83,6 +83,8 @@
                     <input type="hidden" name="quantity" value="1">
                     <input type="hidden" name="name" value="{{$product->product_name}}">
                     <input type="hidden" name="price" value="{{$product->price_sale == '' ? $product->price : $product->price_sale}}">
+                    <input type="hidden" name="size" value="{{ $product->size }}">
+                    <input type="hidden" name="color" value="{{ $product->color }}">
                     <button type="submit" class="add-to-cart">Add to cart</button>
                 </form>
                 @endif

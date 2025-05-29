@@ -66,9 +66,12 @@
             </div>
           </div>
           <!-- Form cho "Thêm vào giỏ" -->
+          @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
+            <a href="{{route('cart.index')}}" class="add-to-cart" style="font-weight:400px; text-decoration:none;">Go to cart</a>
+          @else
           <form action="{{route('cart.add')}}" method="post" enctype="multipart/form-data">
             @csrf
-           <div class="quantity-wrapper">
+             <div class="quantity-wrapper">
                 <label for="quantity" class="quantity-label">Số lượng</label>
                    <div class="quantity-control">
                         <input type="number" id="quantity" name="quantity" class="quantity-input" value="1" min="1" />
@@ -85,15 +88,16 @@
             <input type="hidden" name="color" value="{{$product->color}}">
             
             <!-- Button "Mua ngay" - sẽ submit form với action khác -->
-            <button type="button" class="buy-now" onclick="buyNow()" style="text-decoration:none; color:black; cursor:pointer;">
+            <button type="button" class="buy-now" onclick="buyNow()" style="text-decoration:none; color:black;  cursor:pointer;">
               <span class="text" style='font-weight: 400'>MUA NGAY</span>
             </button>
             
             <!-- Button "Thêm vào giỏ" -->
             <button type="submit" class="add-to-cart">
-              <span class="text" style='font-weight: 400'>THÊM VÀO GIỎ</span>
+              <span class="text" style='font-weight: 400;'>THÊM VÀO GIỎ</span>
             </button>
-            </form>
+          </form>
+          @endif
 
           <div class="product-description">
             <button class="product-description-item">
