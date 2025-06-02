@@ -58,7 +58,6 @@ Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add
 Route::get('/cart/remove/{rowId}', [CartController::class, 'remove'])->name('cart.remove');
 Route::put('/cart/increase-quantity/{rowId}', [CartController::class, 'increase_cart_quantity'])->name('cart.qty.increase');
 Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_cart_quantity'])->name('cart.qty.decrease');
-Route::post('/cart/apply-coupon',[CartController::class,'apply_coupon_code'])->name('cart.coupon.apply');
 Route::get('/cart/coupon/remove', [CartController::class, 'remove_coupon'])->name('cart.coupon.remove');
 
 //Xử lý đơn hàng
@@ -68,6 +67,7 @@ Route::get('/order-confirmation', [CartController::class, 'order_confirmation'])
 
 //Route thanh toán
 Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+Route::post('/apply-coupon',[CartController::class,'apply_coupon_code'])->name('cart.coupon.apply');
 Route::post('/place-an-order', [CartController::class, 'place_an_order'])->name('cart.place.an.order');
 Route::post('/vnpay-payment', [CartController::class, 'vnpay_payment'])->name('cart.vnpay.payment');
 Route::get('/vnpay-callback', [CartController::class, 'vnpay_callback'])->name('cart.vnpay.callback');
