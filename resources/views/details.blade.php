@@ -458,12 +458,6 @@
   <script src="{{asset('assets/js/product-detail.js')}}"></script>
   <script src="{{asset('assets/js/main.js')}}"></script>
   <script>
-    function buyNow() {
-      const form = document.querySelector('form[action="{{route('cart.add')}}"]');
-      form.action = "{{route('cart.buy_now')}}";
-      form.submit();
-    }
-
       document.addEventListener("DOMContentLoaded", function () {
       const qtyInput = document.getElementById("quantity");
       const increaseBtn = document.getElementById("increase-btn");
