@@ -11,32 +11,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 class UserController extends Controller
 {
-//     public function index()
-//     {
-//         return view('user.index');
-//     }
-//     public function update_details($id)
-//     {
-//         $user = User::find($id);
-//         return view('user.index',compact('user'));
-//     }
 
-//     public function edit_details(Request $request)
-// { $request->validate([
-//         'name'=>'required',
-//         'phone'=>'required',
-//         'email'=>'required',
-//         'password'=> 'nullable',
-//     ]);
-//     $user = User::find($request->id);
-//     $user->name = $request->name;
-//     $user->phone = $request->phone;
-//     $user->email = $request->email;
-//     $user->password = $request->password;
-//    $user->save();
-//     return redirect()->route('user.index')->with('status','Cập nhật thông tin thành công!');
- 
-// }
 
 public function index()
 {
