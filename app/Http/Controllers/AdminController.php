@@ -86,21 +86,7 @@ if ($request->hasFile('image')) {
  
 }
 
-    /*public function GenerateProductThumbnailImage($image, $imageName)
-{
-    $destinationPath = public_path('uploads/products');
-
-    if (!file_exists($destinationPath)) {
-        mkdir($destinationPath, 0775, true);
-    }
-
-    $img = Image::read($image->path());
-    $img->cover(540, 689, 'top');
-    $img->resize(540, 689, function ($constraint) {
-        $constraint->aspectRatio();
-    })->save($destinationPath . '/' . $imageName);
-}*/
-
+   
 // Cập nhật sản phẩm
 public function update_product($id)
 {
