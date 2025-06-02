@@ -79,11 +79,6 @@
             <input type="hidden" name="size" value="{{$product->size}}">
             <input type="hidden" name="color" value="{{$product->color}}">
             
-            <!-- Button "Mua ngay" - sẽ submit form với action khác -->
-            <button type="button" class="buy-now" onclick="buyNow()" style="text-decoration:none; color:black;  cursor:pointer;">
-              <span class="text" style='font-weight: 400'>MUA NGAY</span>
-            </button>
-            
             <!-- Button "Thêm vào giỏ" -->
             <button type="submit" class="add-to-cart">
               <span class="text" style='font-weight: 400;'>THÊM VÀO GIỎ</span>
@@ -373,12 +368,6 @@
   <script src="{{asset('assets/js/product-detail.js')}}"></script>
   <script src="{{asset('assets/js/main.js')}}"></script>
   <script>
-    function buyNow() {
-      const form = document.querySelector('form[action="{{route('cart.add')}}"]');
-      form.action = "{{route('cart.buy_now')}}";
-      form.submit();
-    }
-
       document.addEventListener("DOMContentLoaded", function () {
       const qtyInput = document.getElementById("quantity");
       const increaseBtn = document.getElementById("increase-btn");

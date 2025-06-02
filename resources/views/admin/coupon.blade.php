@@ -37,7 +37,7 @@
                                         <td>{{$coupon->discount_percentage}}</td>
                                         
                                         <td>{{ \Carbon\Carbon::parse($coupon->start_date)->format('d/m/Y') }}</td>
-                                        <td>{{ \Carbon\Carbon::parse($coupon->start_date)->format('d/m/Y') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($coupon->end_date)->format('d/m/Y') }}</td>
                                         <td>{{$coupon->description}}</td>
                                         
                                     </tr>

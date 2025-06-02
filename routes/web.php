@@ -71,7 +71,6 @@ Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkou
 Route::post('/place-an-order', [CartController::class, 'place_an_order'])->name('cart.place.an.order');
 Route::post('/vnpay-payment', [CartController::class, 'vnpay_payment'])->name('cart.vnpay.payment');
 Route::get('/vnpay-callback', [CartController::class, 'vnpay_callback'])->name('cart.vnpay.callback');
-Route::post('/cart/buy-now', [CartController::class, 'buy_now'])->name('cart.buy_now');
 
 
 //Xử lý shop
