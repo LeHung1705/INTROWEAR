@@ -9,15 +9,7 @@
         <div class="product-detail-container-item1">
           <div class="slider-wrapper">
              <div class="slider-viewport">
-             {{-- <div class="slider-inner" id="slider-inner">
-                <div class="slider-item" id="slider-item1">
-                  <img
-                    src="{{asset('uploads/products')}}/{{$product->image}}"
-                    alt="ex"
-                    width="93px"
-                  />
-                </div> 
-              </div>  --}}
+            
             </div> 
           </div>
           <div class="product-images">
@@ -354,66 +346,7 @@
           </div>
         </a>
           @endforeach
-          {{-- <div class="product-suggest-item">
-            <img id="product-suggest-item-img-2" src="/Website/assets/images/so_mi_xanh.png" alt="STRIPED BOXY SHIRT" width="100%" />
-            <div class="product-suggest-item-name">STRIPED BOXY SHIRT</div>
-            <div class="product-suggest-item-price">
-              <span
-                id="product-suggest-item-cost-2"
-                style="font-size: 12px; color: black; font-weight: 200"
-                >580,000₫</span
-              ><span
-                id="product-suggest-item-actual-cost-2"
-                style="
-                  font-size: 12px;
-                  color: #979797;
-                  font-weight: 200;
-                  text-decoration: line-through;
-                "
-                >650,000₫</span
-              >
-            </div>
-          </div>
-          <div class="product-suggest-item">
-            <img id="product-suggest-item-img-3" src="/Website/assets/images/cardian_hong.png" alt="BASIC TYPO BOXY LONG-SLEEVE T-SHIRT" width="100%" />
-            <div class="product-suggest-item-name">BASIC TYPO BOXY LONG-SLEEVE T-SHIRT</div>
-            <div class="product-suggest-item-price">
-              <span
-                id="product-suggest-item-cost-3"
-                style="font-size: 12px; color: black; font-weight: 200"
-                >450,000₫</span
-              ><span
-                id="product-suggest-item-actual-cost-3"
-                style="
-                  font-size: 12px;
-                  color: #979797;
-                  font-weight: 200;
-                  text-decoration: line-through;
-                "
-                >520,000₫</span
-              >
-            </div>
-          </div>
-          <div class="product-suggest-item" id="product-suggest-item-4">
-            <img id="product-suggest-item-img-4" src="/Website/assets/images/sweater_xanh.png" alt="STAFF BIG BOXY LONG SLEEVE T-SHIRT" width="100%" />
-            <div class="product-suggest-item-name">STAFF BIG BOXY LONG SLEEVE T-SHIRT</div>
-            <div class="product-suggest-item-price">
-              <span
-                id="product-suggest-item-cost-4"
-                style="font-size: 12px; color: black; font-weight: 200"
-                >309,000₫</span
-              ><span
-                id="product-suggest-item--actual-cost-4"
-                style="
-                  font-size: 12px;
-                  color: #979797;
-                  font-weight: 200;
-                  text-decoration: line-through;
-                "
-                >450,000₫</span
-              >
-            </div>
-          </div> --}}
+          
         </div>
       </div>
 
@@ -431,30 +364,7 @@
               <span id="product-watched-item-actual-cost-1" style="font-size: 12px; color: #979797; font-weight: 200; text-decoration: line-through;">{{number_format($vproduct->price_sale,0,',',',')}}₫</span>
             </div>
           </a>
-          {{-- <div class="product-watched-item">
-            <img id="product-watched-item-img-2" src="" alt="ex" width="100%" />
-            <div class="product-watched-item-name"></div>
-            <div class="product-watched-item-price">
-              <span id="product-watched-item-cost-2" style="font-size: 12px; color: black; font-weight: 200"></span>
-              <span id="product-watched-item-actual-cost-2" style="font-size: 12px; color: #979797; font-weight: 200; text-decoration: line-through;"></span>
-            </div>
-          </div>
-          <div class="product-watched-item">
-            <img id="product-watched-item-img-3" src="" alt="ex" width="100%" />
-            <div class="product-watched-item-name"></div>
-            <div class="product-watched-item-price">
-              <span id="product-watched-item-cost-3" style="font-size: 12px; color: black; font-weight: 200"></span>
-              <span id="product-watched-item-actual-cost-3" style="font-size: 12px; color: #979797; font-weight: 200; text-decoration: line-through;"></span>
-            </div>
-          </div>
-          <div class="product-watched-item" id="product-watched-item-4">
-            <img id="product-watched-item-img-4" src="" alt="ex" width="100%" />
-            <div class="product-watched-item-name"></div>
-            <div class="product-watched-item-price">
-              <span id="product-watched-item-cost-4" style="font-size: 12px; color: black; font-weight: 200"></span>
-              <span id="product-watched-item-actual-cost-4" style="font-size: 12px; color: #979797; font-weight: 200; text-decoration: line-through;"></span>
-            </div>
-          </div> --}}
+          
            @endforeach
         </div>
       </div>
