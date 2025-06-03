@@ -13,9 +13,10 @@
 | Nguyễn Thị Ý Khuyên        | 23520795          | - Figma<br>- Database: orders, order_items, ERD<br>- Lưu đơn hàng<br>- Xác nhận đơn (FE)<br>- Quản lý đơn: danh sách, tìm kiếm, trạng thái<br>- Dashboard: thống kê đơn, doanh thu |
 | Nguyễn Nhật Minh           | 23520940          | - Figma<br>- FE: danh mục sản phẩm, header, add product (JS)<br>- Viết báo cáo<br>- Thuyết trình |
 
-# 
+## 
 **Giới thiệu dự án:** INTROWEAR là một trang web thương mại điện tử mẫu (demo) được phát triển trên nền tảng **Laravel**. 
-#
+
+##
 **Ngôn ngữ:** 
 * **Frontend:** HTML, CSS, JS
 * **Backend:** Laravel 11
