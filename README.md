@@ -14,7 +14,11 @@
 | Nguyễn Nhật Minh           | 23520940          | - Figma<br>- FE: danh mục sản phẩm, header, add product (JS)<br>- Viết báo cáo<br>- Thuyết trình |
 
 # 
-**Giới thiệu dự án:** INTROWEAR là một trang web thương mại điện tử mẫu (demo) được phát triển trên nền tảng **Laravel**. Mục đích của dự án là minh họa các chức năng cơ bản của một website bán hàng hiện đại như xem danh mục sản phẩm, xem chi tiết sản phẩm, thêm sản phẩm vào giỏ hàng và thanh toán đơn hàng. Người dùng có thể duyệt các danh mục, lọc/sắp xếp sản phẩm và sử dụng tính năng phân trang danh sách sản phẩm để tìm kiếm dễ dàng. Dự án sử dụng Laravel – một framework PHP nổi tiếng với cú pháp linh hoạt và nhiều tính năng mạnh mẽ. Ngoài ra, dự án có thể bao gồm giao diện quản trị (admin) cho phép quản lý danh mục, sản phẩm và đơn hàng.
+**Giới thiệu dự án:** INTROWEAR là một trang web thương mại điện tử mẫu (demo) được phát triển trên nền tảng **Laravel**. 
+**Ngôn ngữ:** 
+* **Frontend:** HTML, CSS, JS
+* **Backend:** Laravel 11
+* **Database:** MySQL
 
 ## Tính năng
 
