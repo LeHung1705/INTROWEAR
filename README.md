@@ -2,16 +2,16 @@
 ![UIT](https://i0.wp.com/www.senviet.art/wp-content/uploads/edd/2021/12/dhuit.jpg?fit=945%2C709&ssl=1)
 # INTROWEAR – Trang web bán quần áo
 
-| Tên thành viên             | Mã số sinh viên | Công việc |
-|----------------------------|-----------------|-----------|
-| Trần Thị Ngọc Anh          | 23520080        | - Figma: thanh toán, phương thức thanh toán<br>- FE: footer, quản lý sản phẩm, thanh toán<br>- Báo cáo: test, usecase<br>- Chỉnh layout báo cáo |
-| Nguyễn Khắc Hải Đăng       | 23520229        | - Figma<br>- FE: chi tiết sản phẩm (JS, slider), đăng nhập, đăng ký, coupon, đơn hàng<br>- Viết báo cáo<br>- Chỉnh layout báo cáo |
-| Nguyễn Thị Thu Hiền        | 23520464        | - Figma<br>- Database: coupons, products<br>- FE: quick view sản phẩm, sản phẩm đề xuất<br>- CRUD sản phẩm (admin)<br>- Quản lý khuyến mãi<br>- Cập nhật tài khoản (FE+BE)<br>- Làm slide |
-| Nguyễn Văn Lê Hùng         | 23520570 (Lead) | - Logo, banner, Figma<br>- Database: Transaction, chuẩn hóa Model/Controller<br>- Quản lý Github, công việc<br>- Giỏ hàng: thêm, cập nhật, xóa<br>- Thanh toán: tính tiền, VNPay<br>- Bộ lọc sản phẩm<br>- Kiểm thử XAMPP |
-| Lê Đoàn Kim Hương          | 23520586        | - Figma<br>- FE: trang chủ, about us, giỏ hàng, quản lý sản phẩm (admin), JS liên kết<br>- Viết báo cáo<br>- Làm slide |
-| Võ Đăng Khoa               | 23520758        | - Figma<br>- Database: users<br>- Phân tích yêu cầu, usecase<br>- Xác thực: đăng nhập, đăng ký, Google login<br>- Tìm kiếm, sidebar<br>- Thuyết trình |
-| Nguyễn Thị Ý Khuyên        | 23520795        | - Figma<br>- Database: orders, order_items, ERD<br>- Lưu đơn hàng<br>- Xác nhận đơn (FE)<br>- Quản lý đơn: danh sách, tìm kiếm, trạng thái<br>- Dashboard: thống kê đơn, doanh thu |
-| Nguyễn Nhật Minh           | 23520940        | - Figma<br>- FE: danh mục sản phẩm, header, add product (JS)<br>- Viết báo cáo<br>- Thuyết trình |
+| Tên thành viên             | Mã số sinh viên   | Công việc |
+|----------------------------|-------------------|-----------|
+| Trần Thị Ngọc Anh          | 23520080          | - Figma: thanh toán, phương thức thanh toán<br>- FE: footer, quản lý sản phẩm, thanh toán<br>- Báo cáo: test, usecase<br>- Chỉnh layout báo cáo |
+| Nguyễn Khắc Hải Đăng       | 23520229          | - Figma<br>- FE: chi tiết sản phẩm (JS, slider), đăng nhập, đăng ký, coupon, đơn hàng<br>- Viết báo cáo<br>- Chỉnh layout báo cáo |
+| Nguyễn Thị Thu Hiền        | 23520464          | - Figma<br>- Database: coupons, products<br>- FE: quick view sản phẩm, sản phẩm đề xuất<br>- CRUD sản phẩm (admin)<br>- Quản lý khuyến mãi<br>- Cập nhật tài khoản (FE+BE)<br>- Làm slide |
+| Nguyễn Văn Lê Hùng         | 23520570 (Leader) | - Logo, banner, Figma<br>- Database: Transaction, chuẩn hóa Model/Controller<br>- Quản lý Github, công việc<br>- Giỏ hàng: thêm, cập nhật, xóa<br>- Thanh toán: tính tiền, VNPay<br>- Bộ lọc sản phẩm<br>- Kiểm thử XAMPP |
+| Lê Đoàn Kim Hương          | 23520586          | - Figma<br>- FE: trang chủ, about us, giỏ hàng, quản lý sản phẩm (admin), JS liên kết<br>- Viết báo cáo<br>- Làm slide |
+| Võ Đăng Khoa               | 23520758          | - Figma<br>- Database: users<br>- Phân tích yêu cầu, usecase<br>- Xác thực: đăng nhập, đăng ký, Google login<br>- Tìm kiếm, sidebar<br>- Thuyết trình |
+| Nguyễn Thị Ý Khuyên        | 23520795          | - Figma<br>- Database: orders, order_items, ERD<br>- Lưu đơn hàng<br>- Xác nhận đơn (FE)<br>- Quản lý đơn: danh sách, tìm kiếm, trạng thái<br>- Dashboard: thống kê đơn, doanh thu |
+| Nguyễn Nhật Minh           | 23520940          | - Figma<br>- FE: danh mục sản phẩm, header, add product (JS)<br>- Viết báo cáo<br>- Thuyết trình |
 
 # 
 **Giới thiệu dự án:** INTROWEAR là một trang web thương mại điện tử mẫu (demo) được phát triển trên nền tảng **Laravel**. Mục đích của dự án là minh họa các chức năng cơ bản của một website bán hàng hiện đại như xem danh mục sản phẩm, xem chi tiết sản phẩm, thêm sản phẩm vào giỏ hàng và thanh toán đơn hàng. Người dùng có thể duyệt các danh mục, lọc/sắp xếp sản phẩm và sử dụng tính năng phân trang danh sách sản phẩm để tìm kiếm dễ dàng. Dự án sử dụng Laravel – một framework PHP nổi tiếng với cú pháp linh hoạt và nhiều tính năng mạnh mẽ. Ngoài ra, dự án có thể bao gồm giao diện quản trị (admin) cho phép quản lý danh mục, sản phẩm và đơn hàng.
